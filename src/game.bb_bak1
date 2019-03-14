@@ -55,6 +55,8 @@ Function drawWorld()
 	Cls
 End Function
 
+
+
 Function checkInput()
 	;Kill-program 
 	If KeyHit(1) Then
@@ -64,6 +66,7 @@ Function checkInput()
 	;Toggle FPS Display
 	If KeyHit(2) Then
 		toggleFpsDisplay()
+		mirrorImage(test)
 	End If
 	
 	If KeyDown(17) Then
@@ -130,4 +133,10 @@ Function initGlobalValues()
 
 	player_x = 0
 	player_y = 0
+End Function
+
+Function mirrorImage(image)
+	TFormImage(image,0,1,1,0)
+	RotateImage(image,90)
+	HandleImage(image,0,0)
 End Function
