@@ -22,9 +22,7 @@ loadGlobalImages()
 Repeat
 	fake_count = fake_count + 1
 	Text 0,25,fake_count
-	
 	If fpsTracker() Then
-	
 		fps_count = fps_count + 1
 		If fps_count > 60 Then
 			;fps_count = 0
@@ -35,9 +33,7 @@ Repeat
 	
 		Flip
 		Cls
-	
 	End If
-
 Forever
 
 
