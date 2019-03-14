@@ -4,7 +4,7 @@ SetBuffer BackBuffer()
 
 ; Game-timing 
 Const fps=60
-Global elapsed,time,tween#,period=1000/fps
+Global elapsed#,time,tween#,period#=1000/fps,current#,lag#,previous#,fps_to_display,fps_time_tracker#
 SeedRnd MilliSecs()
 
 
@@ -17,40 +17,56 @@ Global test
 ;Global Values
 Global fps_count,fake_count
 
+;Game Settings
+Global display_fps_on=True
+
 loadGlobalImages()
 
 Repeat
-	fake_count = fake_count + 1
-	Text 0,25,fake_count
-	If fpsTracker() Then
-		fps_count = fps_count + 1
-		If fps_count > 60 Then
-			;fps_count = 0
-		End If
-		Text 0,0,fps_count
-		checkInput()
+
+	While True
+		current = MilliSecs()
+		elapsed# = current# - previous#
+		previous# = current#
+		lag = lag + elapsed
+		
+		While lag# >= period#
+			checkInput()
+			;update
+			
+			fps_count = fps_count + 1
+			lag# = lag# - period#
+
+		Wend
+		
+		fpsTracker()
+
+		;draw
+		displayFPS(display_fps_on)
 		DrawImage(test,player_x,player_y,0)
 	
 		Flip
 		Cls
-	End If
+	
+	Wend
+
 Forever
 
 
 
+
 Function fpsTracker()
-		Repeat
-			elapsed=MilliSecs()-time
-		Until elapsed
-	
-		tween#=Float(elapsed)/Float(period)
-	
-		While tween>=1
-			Return True 
-		Wend
-		
-		Return False 
-		
+		If MilliSecs() - fps_time_tracker# >= 1000 Then
+			fps_to_display = fps_count
+			fps_count = 0
+			fps_time_tracker# = MilliSecs()
+		End If
+End Function
+
+Function displayFPS(on)
+	If on = 1 Then
+		Text 0,0,fps_to_display
+	End If
 End Function
 
 
@@ -58,6 +74,11 @@ Function checkInput()
 	;Kill-program 
 	If KeyHit(1) Then
 		End
+	End If
+	
+	;Toggle FPS Display
+	If KeyHit(2) Then
+		toggleFpsDisplay()
 	End If
 	
 	If KeyDown(17) Then
@@ -78,6 +99,13 @@ Function checkInput()
 	
 End Function 
 
+Function toggleFpsDisplay()
+	If display_fps_on = True Then
+		display_fps_on = False
+	Else 
+		display_fps_on = True
+	End If
+End Function
 
 Function loadGlobalImages()
 	test = LoadImage("../img/char.png")
@@ -85,8 +113,13 @@ Function loadGlobalImages()
 End Function
 
 Function initGlobalValues()
+	;fps
+	previous# = MilliSecs()
+	fps_time_tracker# = MilliSecs()
+	lag# = 0.0
+	fps_count = 0
+
+
 	player_x = 0
 	player_y = 0
-	fps_count = 0
-	fake_count = 0
 End Function
