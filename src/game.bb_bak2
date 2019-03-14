@@ -25,14 +25,12 @@ loadGlobalImages()
 Repeat
 
 	While True
-		current = MilliSecs()
-		elapsed# = current# - previous#
-		previous# = current#
-		lag = lag + elapsed
 		
+		lagCalculation()
 		While lag# >= period#
 			checkInput()
-			;update
+
+			;update world logiv
 			
 			fps_count = fps_count + 1
 			lag# = lag# - period#
@@ -52,7 +50,12 @@ Repeat
 
 Forever
 
-
+Function lagCalculation()
+	current = MilliSecs()
+	elapsed# = current# - previous#
+	previous# = current#
+	lag = lag + elapsed
+End Function
 
 
 Function fpsTracker()

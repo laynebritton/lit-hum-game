@@ -25,14 +25,11 @@ loadGlobalImages()
 Repeat
 
 	While True
-		current = MilliSecs()
-		elapsed# = current# - previous#
-		previous# = current#
-		lag = lag + elapsed
-		
+		lagCalculation()
 		While lag# >= period#
 			checkInput()
-			;update
+
+			;update world logic
 			
 			fps_count = fps_count + 1
 			lag# = lag# - period#
@@ -41,34 +38,20 @@ Repeat
 		
 		fpsTracker()
 
-		;draw
-		displayFPS(display_fps_on)
-		DrawImage(test,player_x,player_y,0)
-	
-		Flip
-		Cls
-	
+		drawWorld()
 	Wend
 
 Forever
 
 
-
-
-Function fpsTracker()
-		If MilliSecs() - fps_time_tracker# >= 1000 Then
-			fps_to_display = fps_count
-			fps_count = 0
-			fps_time_tracker# = MilliSecs()
-		End If
+Function drawWorld()
+	DrawImage(test,player_x,player_y,0)
+	
+	;Should always be last three lines
+	displayFPS(display_fps_on)
+	Flip
+	Cls
 End Function
-
-Function displayFPS(on)
-	If on = 1 Then
-		Text 0,0,fps_to_display
-	End If
-End Function
-
 
 Function checkInput()
 	;Kill-program 
@@ -104,6 +87,28 @@ Function toggleFpsDisplay()
 		display_fps_on = False
 	Else 
 		display_fps_on = True
+	End If
+End Function
+
+Function lagCalculation()
+	current = MilliSecs()
+	elapsed# = current# - previous#
+	previous# = current#
+	lag = lag + elapsed
+End Function
+
+
+Function fpsTracker()
+		If MilliSecs() - fps_time_tracker# >= 1000 Then
+			fps_to_display = fps_count
+			fps_count = 0
+			fps_time_tracker# = MilliSecs()
+		End If
+End Function
+
+Function displayFPS(on)
+	If on = 1 Then
+		Text 0,0,fps_to_display
 	End If
 End Function
 
