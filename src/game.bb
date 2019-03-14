@@ -4,7 +4,7 @@ SetBuffer BackBuffer()
 
 ; Game-timing 
 Const fps=60
-Global elapsed#,time,tween#,period#=1000/fps,current#,lag#,previous#,fps_to_display,fps_time_tracker#
+Global elapsed#,period#=1000/fps,current#,lag#,previous#,fps_to_display,fps_time_tracker#
 SeedRnd MilliSecs()
 
 

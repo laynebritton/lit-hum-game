@@ -25,12 +25,11 @@ loadGlobalImages()
 Repeat
 
 	While True
-		
 		lagCalculation()
 		While lag# >= period#
 			checkInput()
 
-			;update world logiv
+			;update world logic
 			
 			fps_count = fps_count + 1
 			lag# = lag# - period#
@@ -39,11 +38,7 @@ Repeat
 		
 		fpsTracker()
 
-		;draw
-
-	
-
-	
+		drawWorld()
 	Wend
 
 Forever
