@@ -1,5 +1,5 @@
 ;Graphics Settings
-Graphics 1920,1080,32,3
+Graphics 1920,1080,32,2
 SetBuffer BackBuffer()
 
 ; Game-timing 
@@ -13,6 +13,7 @@ Global player_x,player_y
 
 ;Global Media
 Global test
+Global test_bg
 
 ;Global Values
 Global fps_count,fake_count
@@ -45,6 +46,7 @@ Forever
 
 
 Function drawWorld()
+	DrawImage(test_bg,0,0,0)
 	DrawImage(test,player_x,player_y,0)
 	
 	;Should always be last three lines
@@ -65,19 +67,19 @@ Function checkInput()
 	End If
 	
 	If KeyDown(17) Then
-		player_y = player_y - 5
+		player_y = player_y - 10
 	End If
 	
 	If KeyDown(31) Then
-		player_y = player_y + 5
+		player_y = player_y + 10
 	End If
 
 	If KeyDown(30) Then
-		player_x = player_x - 5
+		player_x = player_x - 10
 	End If
 	
 	If KeyDown(32) Then
-		player_x = player_x + 5
+		player_x = player_x + 10
 	End If
 	
 End Function 
@@ -113,8 +115,9 @@ Function displayFPS(on)
 End Function
 
 Function loadGlobalImages()
-	test = LoadImage("../img/char.png")
-	MaskImage(test,255,255,255)
+	test = LoadImage("../img/Dante/dante-resized.png")
+	test_bg = LoadImage("../img/bg/acropolis.png")
+	MaskImage(test,255,0,220)
 End Function
 
 Function initGlobalValues()

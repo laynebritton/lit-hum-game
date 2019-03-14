@@ -1,10 +1,10 @@
 ;Graphics Settings
-Graphics 1920,1080,32,3
+Graphics 1920,1080,32,2
 SetBuffer BackBuffer()
 
 ; Game-timing 
 Const fps=60
-Global elapsed#,time,tween#,period#=1000/fps,current#,lag#,previous#,fps_to_display,fps_time_tracker#
+Global elapsed#,period#=1000/fps,current#,lag#,previous#,fps_to_display,fps_time_tracker#
 SeedRnd MilliSecs()
 
 
@@ -13,6 +13,7 @@ Global player_x,player_y
 
 ;Global Media
 Global test
+Global test_bg
 
 ;Global Values
 Global fps_count,fake_count
@@ -25,12 +26,11 @@ loadGlobalImages()
 Repeat
 
 	While True
-		
 		lagCalculation()
 		While lag# >= period#
 			checkInput()
 
-			;update world logiv
+			;update world logic
 			
 			fps_count = fps_count + 1
 			lag# = lag# - period#
@@ -39,17 +39,14 @@ Repeat
 		
 		fpsTracker()
 
-		;draw
-
-	
-
-	
+		drawWorld()
 	Wend
 
 Forever
 
 
 Function drawWorld()
+	DrawImage(test_bg,0,0,0)
 	DrawImage(test,player_x,player_y,0)
 	
 	;Should always be last three lines
@@ -118,8 +115,9 @@ Function displayFPS(on)
 End Function
 
 Function loadGlobalImages()
-	test = LoadImage("../img/char.png")
-	MaskImage(test,255,255,255)
+	test = LoadImage("../img/Dante/dante-resized.png")
+	test_bg = LoadImage("../img/bg/acropolis.png")
+	MaskImage(test,255,0,220)
 End Function
 
 Function initGlobalValues()
