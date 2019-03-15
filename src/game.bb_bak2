@@ -24,11 +24,13 @@ Global display_fps_on=True
 loadGlobalImages()
 
 Repeat
-
+	createFighter("Dante")
 	While True
+		createFighter("Dante")
 		lagCalculation()
 		While lag# >= period#
 			checkInput()
+	
 
 			;update world logic
 			
@@ -47,7 +49,9 @@ Forever
 
 Function drawWorld()
 	DrawImage(test_bg,0,0,0)
-	DrawImage(test,player_x,player_y,0)
+	;DrawImage(test,player_x,player_y,0)
+	
+	drawFighters()
 	
 	;Should always be last three lines
 	displayFPS(display_fps_on)
@@ -55,7 +59,59 @@ Function drawWorld()
 	Cls
 End Function
 
+.fighterCreationAndDrawing
 
+Function createFighter(fighterName$)
+
+	Select fighterName$
+	
+	Case "Dante"
+	;Dante
+		char.fighter = New Fighter
+			char\name$ = "Dante"
+			
+			;Location		
+			char\x = Rnd(0,1920)
+			char\y = Rnd(0,1080)
+			
+			;Stats
+			char\hp = 100
+			char\strength = 5
+			char\speed = 10
+			
+			;Graphics
+			char\body = LoadImage("../img/Dante/dante-resized.png")
+			MaskImage(char\body,255,0,220)
+	
+	End Select
+	
+End Function
+
+Function drawFighters()
+	For char.fighter = Each fighter
+		;Print game\name
+		Select char\name
+
+		
+		Case "Dante"
+			
+			drawDante()
+			
+		End Select
+	Next
+End Function
+
+
+Function drawDante()
+	For char.fighter = Each fighter
+		If char\name = "Dante"
+
+			DrawImage(char\body,char\x,char\y,0)
+			
+		
+		End If
+	Next
+End Function
 
 Function checkInput()
 	;Kill-program 
@@ -140,3 +196,21 @@ Function mirrorImage(image)
 	RotateImage(image,90)
 	HandleImage(image,0,0)
 End Function
+
+
+Type Fighter
+	Field name$
+	
+	;Graphics
+	Field body
+	
+	;Physical Locations
+	Field x#
+	Field y#
+	
+	;Stats
+	Field hp
+	Field strength
+	Field speed
+
+End Type
