@@ -30,6 +30,26 @@ Function moveFighterY(direction$,player)
 	Next
 End Function
 
+Function basicAttack(player)
+	For char.fighter = Each fighter
+		If char\player = player And char\state$ = "NONE" Then
+			char\state$ = "BASIC_ATTACK"
+		End If
+	Next
+End Function
+
+Function offsetCalculator(amount#, player)
+	If player = 2 Then
+		Return (-1)*amount#
+	Else 
+		Return amount#
+	End If
+End Function 
+
+Function playSoundAtFrame(current,target,sound)
+	If current = target Then PlaySound(sound)
+End Function
+
 Function checkInput()
 	;Kill-program 
 	If KeyHit(1) Then
@@ -64,6 +84,11 @@ Function checkInput()
 	If KeyDown(32) Then
 		;Player 1 Move Right
 		moveFighterX("RIGHT",1)
+	End If
+	
+	;Player 1 Actions
+	If KeyHit(33) Then
+		basicAttack(1)
 	End If
 	
 	;Player 2 Movement

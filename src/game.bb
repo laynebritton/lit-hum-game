@@ -10,6 +10,7 @@ Include "draw.bb"
 Include "types.bb"
 Include "engine.bb"
 Include "update.bb"
+Include "collisions.bb"
 
 ; Game-timing 
 Const fps=60
@@ -18,7 +19,7 @@ SeedRnd MilliSecs()
 
 
 ;Global Meta-game setting
-Global floor_level=600
+Global floor_level=400
 
 ;Global Media
 Global test

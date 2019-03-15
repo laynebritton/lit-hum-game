@@ -18,7 +18,7 @@ SeedRnd MilliSecs()
 
 
 ;Global Meta-game setting
-Global floor_level=600
+Global floor_level=400
 
 ;Global Media
 Global test
@@ -40,8 +40,8 @@ Repeat
 			
 		While lag# >= period#
 			checkInput()
-
-
+			
+			refreshWorld()
 			;update world logic
 			
 			fps_count = fps_count + 1
