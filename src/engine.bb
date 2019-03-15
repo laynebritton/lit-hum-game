@@ -1,3 +1,11 @@
+Function gravity(strength#,height)
+	For char.fighter = Each fighter
+		If char\y# < height Then
+			char\y# = char\y# + strength#
+		End If
+	Next
+End Function
+
 Function moveFighterX(direction$,player)
 	For char.fighter = Each fighter
 		If char\player = player Then
@@ -21,7 +29,6 @@ Function moveFighterY(direction$,player)
 		End If
 	Next
 End Function
-
 
 Function checkInput()
 	;Kill-program 

@@ -3,12 +3,18 @@ Function drawWorld()
 	;DrawImage(test,player_x,player_y,0)
 	
 	drawFighters()
+	drawFloorVisual()
 	
 	;Should always be last lines
 	displayFPS(display_fps_on)
 	displayPlayer1Coords(display_player1_coords_on)
 	Flip
 	Cls
+End Function
+
+Function drawFloorVisual()
+	Color 128,128,128
+	Rect 0,floor_level + 360,1920,10,1
 End Function
 
 Function drawFighters()

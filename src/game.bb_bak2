@@ -2,14 +2,14 @@
 Graphics 1920,1080,32,2
 SetBuffer BackBuffer()
 
-	Include "framerate.bb"
-	Include "debug.bb"
-	Include "util.bb"
-	Include "factory.bb"
-	Include "draw.bb"
-	Include "types.bb"
-	Include "engine.bb"
-;includeFiles()
+Include "framerate.bb"
+Include "debug.bb"
+Include "util.bb"
+Include "factory.bb"
+Include "draw.bb"
+Include "types.bb"
+Include "engine.bb"
+Include "update.bb"
 
 ; Game-timing 
 Const fps=60
@@ -69,16 +69,4 @@ Function initGlobalValues()
 	lag# = 0.0
 	fps_count = 0
 End Function
-
-Function includeFiles()
-	
-	Include "framerate.bb"
-	Include "debug.bb"
-	Include "util.bb"
-	Include "factory.bb"
-	Include "draw.bb"
-	Include "types.bb"
-	Include "engine.bb"
-	
-End Function 
 

@@ -9,6 +9,7 @@ Include "factory.bb"
 Include "draw.bb"
 Include "types.bb"
 Include "engine.bb"
+Include "update.bb"
 
 ; Game-timing 
 Const fps=60
@@ -39,8 +40,8 @@ Repeat
 			
 		While lag# >= period#
 			checkInput()
-
-
+			
+			refreshWorld()
 			;update world logic
 			
 			fps_count = fps_count + 1
