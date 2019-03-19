@@ -70,4 +70,3 @@ Function initGlobalValues()
 	lag# = 0.0
 	fps_count = 0
 End Function
-

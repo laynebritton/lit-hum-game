@@ -1,7 +1,6 @@
 Function drawWorld()
 	DrawImage(test_bg,0,0,0)
-	;DrawImage(test,player_x,player_y,0)
-	
+		
 	drawFighters()
 	drawFloorVisual()
 	

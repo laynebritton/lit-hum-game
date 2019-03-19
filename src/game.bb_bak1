@@ -10,6 +10,7 @@ Include "draw.bb"
 Include "types.bb"
 Include "engine.bb"
 Include "update.bb"
+Include "collisions.bb"
 
 ; Game-timing 
 Const fps=60

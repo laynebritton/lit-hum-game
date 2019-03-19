@@ -1,11 +1,13 @@
 Function displayFPS(on)
 	If on = 1 Then
+		Color 255,242,0
 		Text 0,0,fps_to_display
 	End If
 End Function
 
 Function displayPlayer1Coords(on)
 	If on Then
+		Color 255,242,0
 		For char.fighter = Each fighter
 			If char\player = 1 Then
 				Text 0,25,char\x#
