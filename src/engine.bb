@@ -38,14 +38,6 @@ Function basicAttack(player)
 	Next
 End Function
 
-Function offsetCalculator(amount#, player)
-	If player = 2 Then
-		Return (-1)*amount#
-	Else 
-		Return amount#
-	End If
-End Function 
-
 Function playSoundAtFrame(current,target,sound)
 	If current = target Then PlaySound(sound)
 End Function
@@ -93,23 +85,28 @@ Function checkInput()
 	
 	;Player 2 Movement
 	If KeyDown(200) Then
-		;Player 1 Move Up
+		;Player 2 Move Up
 		moveFighterY("UP",2)
 	End If
 	
 	If KeyDown(208) Then
-		;Player 1 Move Down
+		;Player 2 Move Down
 		moveFighterY("DOWN",2)
 	End If
 
 	If KeyDown(203) Then
-		;Player 1 Move Left
+		;Player 2 Move Left
 		moveFighterX("LEFT",2)
 	End If
 	
 	If KeyDown(205) Then
-		;Player 1 Move Right
+		;Player 2 Move Right
 		moveFighterX("RIGHT",2)
+	End If
+	
+		;Player 2 Actions
+	If KeyHit(34) Then
+		basicAttack(2)
 	End If
 	
 	

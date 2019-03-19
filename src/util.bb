@@ -4,4 +4,10 @@ Function mirrorImage(image)
 	HandleImage(image,0,0)
 End Function
 
-
+Function offsetCalculator(amount#, player)
+	If player = 2 Then
+		Return (-1)*amount#
+	Else 
+		Return amount#
+	End If
+End Function 

@@ -1,4 +1,4 @@
-;Graphics Settings
+d;Graphics Settings
 Graphics 1920,1080,32,2
 SetBuffer BackBuffer()
 
@@ -10,6 +10,7 @@ Include "draw.bb"
 Include "types.bb"
 Include "engine.bb"
 Include "update.bb"
+Include "collisions.bb"
 
 ; Game-timing 
 Const fps=60
@@ -69,4 +70,3 @@ Function initGlobalValues()
 	lag# = 0.0
 	fps_count = 0
 End Function
-

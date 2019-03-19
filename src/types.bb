@@ -15,6 +15,9 @@ Type Fighter
 	Field breathingDirection$
 	Field attackAnimFrame = 0
 	
+	;Frame counts
+	Field basic_attack_frames
+	
 	;Physical Locations
 	Field x#
 	Field y#
