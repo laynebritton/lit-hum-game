@@ -24,6 +24,7 @@ Global floor_level=400
 ;Global Media
 Global test
 Global test_bg
+Global crit_sound
 
 ;Global Values
 Global fps_count,fake_count
@@ -60,6 +61,7 @@ Forever
 
 Function loadGlobalImages()
 	test_bg = LoadImage("../img/bg/acropolis.png")
+	crit_sound = LoadSound("../snd/sfx/thwack.wav")
 	;test_bg = LoadImage("../img/bg/9th-circle.jpg")
 End Function
 

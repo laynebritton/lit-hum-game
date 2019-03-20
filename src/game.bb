@@ -24,7 +24,7 @@ Global floor_level=400
 ;Global Media
 Global test
 Global test_bg
-Global crit_sound
+Global crit_sound,character_collision_sound
 
 ;Global Values
 Global fps_count,fake_count
@@ -32,7 +32,7 @@ Global fps_count,fake_count
 ;Game Settings
 Global display_fps_on=True,display_player1_coords_on=False
 
-loadGlobalImages()
+loadGlobalMedia()
 
 Repeat
 	createFighter("Dante",1)
@@ -59,10 +59,10 @@ Repeat
 Forever
 
 
-Function loadGlobalImages()
+Function loadGlobalMedia()
 	test_bg = LoadImage("../img/bg/acropolis.png")
 	crit_sound = LoadSound("../snd/sfx/thwack.wav")
-	;test_bg = LoadImage("../img/bg/9th-circle.jpg")
+	character_collision_sound = LoadSound("../snd/sfx/character_collision.wav")
 End Function
 
 Function initGlobalValues()
