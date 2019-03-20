@@ -1,7 +1,7 @@
 Function displayFPS(on)
 	If on = 1 Then
 		Color 255,242,0
-		Text 0,0,fps_to_display
+		Text 0,0,"FPS: " + fps_to_display
 	End If
 End Function
 
