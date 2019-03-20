@@ -1,4 +1,4 @@
-d;Graphics Settings
+;Graphics Settings
 Graphics 1920,1080,32,2
 SetBuffer BackBuffer()
 

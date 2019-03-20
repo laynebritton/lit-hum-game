@@ -35,7 +35,7 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\arm,255,0,220)
 			char\attack1 = LoadAnimImage("../img/Dante/dante-weapon-anim.png",198,360,0,5)
 			MaskImage(char\attack1,255,0,220)
-			char\basic_attack_frames = 5
+			char\basic_attack_frames = 4
 			
 			If player = 2 Then
 				char\playerMultiplier = -1

@@ -53,6 +53,9 @@ Function danteAttackAnimation()
 	
 	For char.fighter = Each fighter
 		If char\name = "Dante" And char\state$ = "BASIC_ATTACK" Then 
+			char\attack_x = char\x + offsetCalculator(100,char\player)
+			char\attack_y = char\y - 60
+			
 			char\attackAnimFrame = char\attackAnimFrame + 1
 		
 			playsoundAtFrame(char\attackAnimFrame,1,char\swing_sound)
@@ -62,7 +65,7 @@ Function danteAttackAnimation()
 				char\attackAnimFrame = 0
 				char\state$ = "NONE"
 			End If
-			DrawImage(char\attack1,char\x + offsetCalculator(80,char\player),char\y - 60,(char\attackAnimFrame / 30))
+			DrawImage(char\attack1,char\attack_x,char\attack_y,(char\attackAnimFrame / 30))
 			
 		End If
 	Next 

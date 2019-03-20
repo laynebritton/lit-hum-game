@@ -22,6 +22,9 @@ Type Fighter
 	Field x#
 	Field y#
 	
+	;Attack locations
+	Field attack_x#=0
+	Field attack_y#=0
 	;Stats
 	Field hp
 	Field strength
