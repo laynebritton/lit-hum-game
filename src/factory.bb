@@ -27,12 +27,15 @@ Function createFighter(fighterName$,player)
 			char\breathingSpeed# = 0.03
 			char\breathingDirection$ = "UP"
 			char\projectile_animation_frames = 1
+			char\walk_frame = 0
+			char\walk_draw_frame = 0
+			char\walk_max_draw_frame = 1
 
 			;State
 			char\state$ = "NONE"
 			
 			;Graphics
-			char\body = LoadImage("../img/Dante/dante-body-3.png")
+			char\body = LoadImage("../img/Dante/dante-body-4.png")
 			MaskImage(char\body,255,0,220)
 			char\head = LoadImage("../img/Dante/dante-head.png")
 			MaskImage(char\head,255,0,220)
@@ -40,6 +43,8 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\arm,255,0,220)
 			char\crouch = LoadImage("../img/Dante/dante-crouch.png")
 			MaskImage(char\crouch,255,0,220)
+			char\walk = LoadAnimImage("../img/Dante/dante-walk.png",198,37,0,2)
+			MaskImage(char\walk,255,0,220)
 			
 			char\attack1 = LoadAnimImage("../img/Dante/dante-weapon-anim.png",198,360,0,5)
 			MaskImage(char\attack1,255,0,220)
@@ -55,6 +60,7 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\head)
 				mirrorImage(char\arm)
 				mirrorImage(char\crouch)
+				mirrorImage(char\walk)
 				
 				mirrorImage(char\attack1)
 				

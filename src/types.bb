@@ -11,12 +11,16 @@ Type Fighter
 	Field attack1
 	Field projectile_graphic
 	Field crouch
+	Field walk
 	
 	;Animation
 	Field breathing#
 	Field breathingSpeed#
 	Field breathingDirection$
 	Field attackAnimFrame = 0
+	Field walk_frame
+	Field walk_draw_frame
+	Field walk_max_draw_frame
 	
 	;Frame counts
 	Field basic_attack_frames
@@ -28,6 +32,8 @@ Type Fighter
 	Field head_x#
 	Field head_y#
 	Field arm_y#
+	Field leg_x#
+	Field leg_y#
 	
 	;Attack data
 	Field attack_x#=0

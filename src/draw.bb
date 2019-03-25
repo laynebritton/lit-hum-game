@@ -51,12 +51,11 @@ Function drawFighters()
 End Function
 
 
-
-
 Function drawDante()
 	For char.fighter = Each fighter
 		If char\name = "Dante" Then 
-			danteBreathing()
+			danteBreathing()	
+			danteWalk(char\player)
 
 			If char\crouch_state$="TRUE" Then
 				danteCrouch(char\player)
@@ -70,6 +69,8 @@ Function drawDante()
 				danteAttackAnimation()
 			End If
 			
+
+
 		End If
 	Next
 End Function
@@ -102,8 +103,18 @@ Function danteCrouch(player)
 	Next
 End Function
 
+Function danteWalk(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\leg_x# = char\x#
+			char\leg_y# = char\y# + (ImageHeight(char\body) - ImageHeight(char\walk))
+			DrawImage(char\walk,char\leg_x#,char\leg_y#,char\walk_draw_frame)
+		End If
+	Next
+End Function
+			
+			
 Function danteAttackAnimation()
-	
 	For char.fighter = Each fighter
 		If char\name = "Dante" And char\state$ = "BASIC_ATTACK" Then 
 			char\attack_x = char\x + offsetCalculator(100,char\player)
@@ -122,6 +133,30 @@ Function danteAttackAnimation()
 			
 		End If
 	Next 
+End Function 
+
+Function walkAnimation(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\walk_frame = char\walk_frame  + 1
+			
+			playsoundAtFrame(char\walk_frame,5,step_sound)
+			
+			If (char\walk_frame = 5) Then
+				char\walk_draw_frame = char\walk_draw_frame + 1
+			End If
+			
+			If char\walk_draw_frame > char\walk_max_draw_frame Then
+				char\walk_draw_frame = 0
+			End If
+			
+			If (char\walk_frame = 10) Then
+				char\walk_frame = 0
+			End If
+			
+			
+		End If
+	Next
 End Function 
 
 Function danteBreathing()

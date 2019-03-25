@@ -14,6 +14,9 @@ Function moveFighterX(direction$,player)
 			Else If direction$ = "RIGHT" Then
 				char\x# = char\x# + char\speed#
 			End If
+			
+			walkAnimation(char\player)
+			
 		End If
 	Next
 End Function
@@ -65,8 +68,7 @@ Function unCrouch(player)
 			char\crouch_state$="FALSE"
 		End If
 	Next
-End Function
-		
+End Function		
 
 Function checkInput()
 	;Kill-program 
