@@ -41,21 +41,10 @@ Repeat
 
 	While True
 		WaitTimer(frameTimer)
-		lagCalculation()
+		checkInput()
 			
-		;While lag# >= period#
-			checkInput()
-			
-			refreshWorld()
-			;update world logic
-			
-		;	fps_count = fps_count + 1
-		;	lag# = lag# - period#
-
-		;Wend
+		refreshWorld()
 		
-		fpsTracker()
-
 		drawWorld()
 	Wend
 

@@ -46,7 +46,7 @@ Repeat
 		;While lag# >= period#
 		;	checkInput()
 			
-		;	refreshWorld()
+			refreshWorld()
 			;update world logic
 			
 		;	fps_count = fps_count + 1

@@ -44,7 +44,7 @@ Repeat
 		lagCalculation()
 			
 		;While lag# >= period#
-		;	checkInput()
+			checkInput()
 			
 			refreshWorld()
 			;update world logic
