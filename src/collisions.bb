@@ -36,3 +36,25 @@ Function fighter_movement_collision()
 		Next
 	Next
 End Function
+
+Function projectile_collisions()
+	For entity.projectile = Each Projectile
+		For char.fighter = Each fighter
+			If (Not entity\player = char\player) Then
+				For frame = 0 To entity\animation_frames -1
+					;Body
+					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\body,char\x,char\y, 0) Then
+						PlaySound character_collision_sound
+						entity\toDelete = True
+					End If
+					
+					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\head,char\x,char\y, 0) Then
+						PlaySound crit_sound
+						entity\toDelete = True
+					End If
+				Next
+			End If
+		Next
+	Next
+End Function 
+						

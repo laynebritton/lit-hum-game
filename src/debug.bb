@@ -1,7 +1,8 @@
 Function displayFPS(on)
 	If on = 1 Then
 		Color 255,242,0
-		Text 0,0,"FPS: " + fps_to_display
+		;Text 0,0,"FPS: " + fps_to_display
+		Text 0,0,"MouseX: " + MouseX() + ", MouseY: " + MouseY()
 	End If
 End Function
 

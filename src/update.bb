@@ -3,8 +3,8 @@ Function refreshWorld()
 	
 	updateProjectiles()
 	deleteProjectiles()
-	
+
+	fighter_movement_collision()	
 	basic_attack_collisions()
-	
-	fighter_movement_collision()
+	projectile_collisions()
 End Function

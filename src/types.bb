@@ -19,6 +19,7 @@ Type Fighter
 	
 	;Frame counts
 	Field basic_attack_frames
+	Field projectile_animation_frames
 	
 	;Physical Locations
 	Field x#
@@ -53,6 +54,9 @@ Type Projectile
 	
 	;Graphic
 	Field graphic
+	
+	;Animation
+	Field animation_frames
 	
 	;Stats
 	Field speed#

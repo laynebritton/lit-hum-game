@@ -25,7 +25,8 @@ Function createFighter(fighterName$,player)
 			char\breathing# = 2
 			char\breathingSpeed# = 0.03
 			char\breathingDirection$ = "UP"
-			
+			char\projectile_animation_frames = 1
+
 			;State
 			char\state$ = "NONE"
 			
@@ -70,8 +71,18 @@ Function createProjectile(player)
 				entity\graphic = char\Projectile_graphic
 				entity\speed = char\Projectile_speed
 				entity\damage = char\Projectile_damage
+				
 				entity\x# = char\x#
 				entity\y# = char\y#
+				
+				entity\animation_frames = char\projectile_animation_frames
+			
+			Select char\name$
+				
+			Case "Dante"
+				entity\x# = entity\x# - offsetCalculator(120,entity\player) 
+				entity\y# = entity\y# + 130
+			End Select
 				
 		End If
 	Next 
