@@ -61,11 +61,11 @@ Function danteAttackAnimation()
 			playsoundAtFrame(char\attackAnimFrame,1,char\swing_sound)
 			playsoundAtFrame(char\attackAnimFrame,60,char\swing_sound)
 			
-			If (char\attackAnimFrame / 30) > 4 Then
+			If (char\attackAnimFrame / 15) > 4 Then
 				char\attackAnimFrame = 0
 				char\state$ = "NONE"
 			End If
-			DrawImage(char\attack1,char\attack_x,char\attack_y,(char\attackAnimFrame / 30))
+			DrawImage(char\attack1,char\attack_x,char\attack_y,(char\attackAnimFrame / 15))
 			
 		End If
 	Next 

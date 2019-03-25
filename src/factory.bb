@@ -20,7 +20,7 @@ Function createFighter(fighterName$,player)
 			
 			;Animation
 			char\breathing# = 2
-			char\breathingSpeed# = 0.01
+			char\breathingSpeed# = 0.03
 			char\breathingDirection$ = "UP"
 			
 			;State

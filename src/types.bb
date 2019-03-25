@@ -39,3 +39,13 @@ Type Fighter
 	Field attacking
 
 End Type
+
+Type Projectile
+	;Data
+	Field player
+	
+	;Stats
+	Field speed
+	Field power
+	
+End Type
