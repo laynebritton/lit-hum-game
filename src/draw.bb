@@ -106,7 +106,7 @@ End Function
 Function danteWalk(player)
 	For char.fighter = Each fighter
 		If char\player = player Then
-			char\leg_x# = char\x#
+			char\leg_x# = char\x# - offsetCalculator(10,char\player)
 			char\leg_y# = char\y# + (ImageHeight(char\body) - ImageHeight(char\walk))
 			DrawImage(char\walk,char\leg_x#,char\leg_y#,char\walk_draw_frame)
 		End If

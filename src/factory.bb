@@ -18,7 +18,7 @@ Function createFighter(fighterName$,player)
 			char\strength = 5
 			char\speed = 10
 			char\projectile_count_max = 3
-			char\projectile_speed# = 12
+			char\projectile_speed# = 8
 			char\projectile_damage = 3
 			char\critMultiplier# = 2
 			
@@ -41,7 +41,7 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\head,255,0,220)
 			char\arm= LoadImage("../img/Dante/dante-arm.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Dante/dante-crouch.png")
+			char\crouch = LoadImage("../img/Dante/dante-crouch-2.png")
 			MaskImage(char\crouch,255,0,220)
 			char\walk = LoadAnimImage("../img/Dante/dante-walk.png",198,37,0,2)
 			MaskImage(char\walk,255,0,220)
@@ -50,7 +50,7 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
 			
-			char\projectile_graphic = LoadImage("../img/Dante/dante-head.png")
+			char\projectile_graphic = LoadImage("../img/Dante/dante-projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			If player = 2 Then
