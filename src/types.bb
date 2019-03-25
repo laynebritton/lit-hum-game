@@ -37,6 +37,7 @@ Type Fighter
 	Field projectile_count_max
 	Field projectile_speed#
 	Field projectile_damage
+	Field critMultiplier#=2
 	
 	;Sounds
 	Field swing_sound

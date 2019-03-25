@@ -24,3 +24,11 @@ Function deleteProjectiles()
 		End If
 	Next
 End Function
+
+Function dealDamageTo(player,amount)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\hp= char\hp - amount
+		End If
+	Next
+End Function 

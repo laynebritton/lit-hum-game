@@ -5,6 +5,7 @@ Function drawWorld()
 	drawProjectiles()
 	drawFloorVisual()
 	
+	drawHealthBars()
 	;Should always be last lines
 	displayFPS(display_fps_on)
 	displayPlayer1Coords(display_player1_coords_on)
@@ -22,6 +23,18 @@ Function drawProjectiles()
 		DrawImage(entity\graphic,entity\x#,entity\y#,0)
 	Next
 End Function
+
+Function drawHealthBars()
+	For char.fighter = Each fighter
+		Color 255,0,0
+		If char\player = 1 Then
+			Rect 400,100,(char\hp)*2,50
+		Else If char\player = 2 Then
+			Rect 1320 + (200 - (char\hp*2)),100,(char\hp)*2,50
+		End If
+	Next
+End Function 
+
 
 Function drawFighters()
 	For char.fighter = Each fighter

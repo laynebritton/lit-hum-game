@@ -8,12 +8,14 @@ Function basic_attack_collisions()
 						;Body
 						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\body, char2\x, char2\y, 0) Then
 							PlaySound char\basic_hit_sound
+							dealDamageTo(char2\player, char\strength)
 							char2\x = char2\x - offsetCalculator(200,char2\player)
 						End If
 						
 						;Head
 						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\head, char2\x, char2\y, 0) Then
 							PlaySound crit_sound
+							dealDamageTo(char2\player, (char\strength) * char\critMultiplier#)
 							char2\x = char2\x - offsetCalculator(200,char2\player)
 						End If
 					Next
@@ -45,11 +47,13 @@ Function projectile_collisions()
 					;Body
 					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\body,char\x,char\y, 0) Then
 						PlaySound character_collision_sound
+						dealDamageTo(char\player, entity\damage)
 						entity\toDelete = True
 					End If
 					
 					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\head,char\x,char\y, 0) Then
 						PlaySound crit_sound
+						dealDamageTo(char\player, (entity\damage)*2)
 						entity\toDelete = True
 					End If
 				Next

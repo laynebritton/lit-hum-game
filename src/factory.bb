@@ -10,7 +10,7 @@ Function createFighter(fighterName$,player)
 			char\player = player
 			
 			;Location		
-			char\x = 490
+			char\x = 600
 			char\y = floor_level
 			
 			;Stats
@@ -20,6 +20,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_count_max = 3
 			char\projectile_speed# = 12
 			char\projectile_damage = 3
+			char\critMultiplier# = 2
 			
 			;Animation
 			char\breathing# = 2
@@ -45,7 +46,7 @@ Function createFighter(fighterName$,player)
 			
 			If player = 2 Then
 				char\playerMultiplier = -1
-				char\x = 1430
+				char\x = 1320 - ImageWidth(char\body)
 				mirrorImage(char\body)
 				mirrorImage(char\head)
 				mirrorImage(char\arm)
