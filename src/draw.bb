@@ -51,20 +51,53 @@ Function drawFighters()
 End Function
 
 
+
+
 Function drawDante()
 	For char.fighter = Each fighter
 		If char\name = "Dante" Then 
 			danteBreathing()
-			DrawImage(char\head,char\x,char\y + char\breathing#,0)
-			DrawImage(char\body,char\x,char\y,0)
+
+			If char\crouch_state$="TRUE" Then
+				danteCrouch(char\player)
+			Else If char\crouch_state$="FALSE" Then 
+				danteBody(char\player)
+			End If
 			
 			If char\state$ = "NONE" Then
-				DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\y,0)
+				DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\arm_y#,0)
 			Else If char\state$ = "BASIC_ATTACK" Then
 				danteAttackAnimation()
 			End If
 			
+		End If
+	Next
+End Function
+
+Function danteBody(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\head_x# = char\x#
+			char\head_y# = char\y#
+			char\arm_y# = char\y#
 			
+			DrawImage(char\head,char\head_x#,char\head_y#+ char\breathing#,0)
+			DrawImage(char\body,char\x,char\y,0)
+
+		End If
+	Next 
+End Function
+
+Function danteCrouch(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\head_x# = char\x#
+			char\head_y# = char\y# + 140
+			char\arm_y# = char\y# + 70
+			
+			DrawImage(char\head,char\head_x#,char\head_y#+ char\breathing#,0)
+			DrawImage(char\crouch,char\x,char\y,0)
+		
 		End If
 	Next
 End Function
@@ -74,7 +107,7 @@ Function danteAttackAnimation()
 	For char.fighter = Each fighter
 		If char\name = "Dante" And char\state$ = "BASIC_ATTACK" Then 
 			char\attack_x = char\x + offsetCalculator(100,char\player)
-			char\attack_y = char\y - 60
+			char\attack_y = char\arm_y# - 60
 			
 			char\attackAnimFrame = char\attackAnimFrame + 1
 		

@@ -51,6 +51,23 @@ Function playSoundAtFrame(current,target,sound)
 	If current = target Then PlaySound(sound)
 End Function
 
+Function crouch(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\crouch_state$="TRUE"
+		End If
+	Next
+End Function
+
+Function unCrouch(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\crouch_state$="FALSE"
+		End If
+	Next
+End Function
+		
+
 Function checkInput()
 	;Kill-program 
 	If KeyHit(1) Then
@@ -74,7 +91,10 @@ Function checkInput()
 	
 	If KeyDown(31) Then
 		;Player 1 Move Down
-		moveFighterY("DOWN",1)
+		;moveFighterY("DOWN",1)
+		crouch(1)
+	Else 
+		uncrouch(1)
 	End If
 
 	If KeyDown(30) Then
@@ -104,7 +124,10 @@ Function checkInput()
 	
 	If KeyDown(208) Then
 		;Player 2 Move Down
-		moveFighterY("DOWN",2)
+		;moveFighterY("DOWN",2)
+		crouch(2)
+	Else 
+		uncrouch(2)
 	End If
 
 	If KeyDown(203) Then

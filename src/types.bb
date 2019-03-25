@@ -10,6 +10,7 @@ Type Fighter
 	Field arm
 	Field attack1
 	Field projectile_graphic
+	Field crouch
 	
 	;Animation
 	Field breathing#
@@ -24,6 +25,9 @@ Type Fighter
 	;Physical Locations
 	Field x#
 	Field y#
+	Field head_x#
+	Field head_y#
+	Field arm_y#
 	
 	;Attack data
 	Field attack_x#=0
@@ -45,6 +49,7 @@ Type Fighter
 	
 	;Game State
 	Field state$="NONE"
+	Field crouch_state$ = "FALSE"
 	Field attacking
 
 End Type

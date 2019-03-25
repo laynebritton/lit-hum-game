@@ -38,9 +38,13 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\head,255,0,220)
 			char\arm= LoadImage("../img/Dante/dante-arm.png")
 			MaskImage(char\arm,255,0,220)
+			char\crouch = LoadImage("../img/Dante/dante-crouch.png")
+			MaskImage(char\crouch,255,0,220)
+			
 			char\attack1 = LoadAnimImage("../img/Dante/dante-weapon-anim.png",198,360,0,5)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
+			
 			char\projectile_graphic = LoadImage("../img/Dante/dante-head.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
@@ -50,7 +54,10 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\body)
 				mirrorImage(char\head)
 				mirrorImage(char\arm)
+				mirrorImage(char\crouch)
+				
 				mirrorImage(char\attack1)
+				
 				mirrorImage(char\projectile_graphic)
 			End If
 	
