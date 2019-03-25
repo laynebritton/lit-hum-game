@@ -74,6 +74,7 @@ Type Fighter
 	Field crouch_state$ = "FALSE"
 	Field jump_state$ = "FALSE"
 	Field attacking
+	
 
 End Type
 

@@ -1,0 +1,7 @@
+
+Graphics 800,600,16,2
+
+Print "Hello World"
+
+WaitKey
+End

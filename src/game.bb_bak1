@@ -11,6 +11,7 @@ Include "types.bb"
 Include "engine.bb"
 Include "update.bb"
 Include "collisions.bb"
+Include "quotes.bb"
 
 ; Game-timing 
 Const fps=60
@@ -34,11 +35,21 @@ Global fps_count,fake_count
 ;Game Settings
 Global display_fps_on=False,display_player1_coords_on=False
 
+;Font
+Global font,big_quote_font
+;General Quotes
+Dim quote_out$(8)
+
 loadGlobalMedia()
 
 Repeat
-	font = LoadFont("../font/Lato-Regular.ttf")
-	SetFont font,22
+	;font = LoadFont("../font/Lato-Regular.ttf",22)
+	font = LoadFont("Lucida Sans",22)
+	big_quote_font = LoadFont("Lucida Sans",32)
+	
+	loadingScreenQuote()
+	
+	SetFont font
 	createFighter("Dante",1)
 	createFighter("Dante",2)
 	frameTimer=CreateTimer(60)
@@ -55,6 +66,13 @@ Repeat
 
 Forever
 
+Function loadingScreenQuote()
+	writeQuote(1)
+	Text 0,1020,"Loading..."	
+	
+	Flip
+	Cls
+End Function
 
 Function loadGlobalMedia()
 	test_bg = LoadImage("../img/bg/acropolis.png")
