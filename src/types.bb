@@ -15,6 +15,16 @@ Type Fighter
 	Field breathingDirection$
 	Field attackAnimFrame = 0
 	
+	;Animation timers
+	Field attack_timer=0
+	Field breathing_timer=0
+	
+	;Animation
+	
+	;Animation frame knowledge
+	Field basic_attack_timer_length=0
+	Field breathing_timer_length=0
+	
 	;Frame counts
 	Field basic_attack_frames
 	

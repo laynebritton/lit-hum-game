@@ -23,6 +23,10 @@ Function createFighter(fighterName$,player)
 			char\breathingSpeed# = 0.01
 			char\breathingDirection$ = "UP"
 			
+			;Animation Timer Lengths
+			char\basic_attack_timer_length = 4000
+			
+			
 			;State
 			char\state$ = "NONE"
 			

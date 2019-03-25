@@ -34,6 +34,7 @@ Function basicAttack(player)
 	For char.fighter = Each fighter
 		If char\player = player And char\state$ = "NONE" Then
 			char\state$ = "BASIC_ATTACK"
+			char\attack_timer = MilliSecs()
 		End If
 	Next
 End Function

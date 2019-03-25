@@ -14,7 +14,7 @@ Include "collisions.bb"
 
 ; Game-timing 
 Const fps=60
-Global elapsed#,period#=1000/fps,current#,lag#,previous#,fps_to_display,fps_time_tracker#
+Global elapsed#,period#=1000/fps,current#,lag#=0.0,previous#=MilliSecs(),fps_to_display,fps_time_tracker#=MilliSecs()
 SeedRnd MilliSecs()
 
 
@@ -27,7 +27,8 @@ Global test_bg
 Global crit_sound,character_collision_sound
 
 ;Global Values
-Global fps_count,fake_count
+Global fps_count=0,fake_count
+Global current_frame=0
 
 ;Game Settings
 Global display_fps_on=True,display_player1_coords_on=False
@@ -37,12 +38,15 @@ loadGlobalMedia()
 Repeat
 	createFighter("Dante",1)
 	createFighter("Dante",2)
+	yeet = MilliSecs()
+	temp# = 0
 	While True
 		lagCalculation()
 			
 		While lag# >= period#
 			checkInput()
 			
+
 			refreshWorld()
 			;update world logic
 			
@@ -50,10 +54,11 @@ Repeat
 			lag# = lag# - period#
 
 		Wend
-		
+	
 		fpsTracker()
-
 		drawWorld()
+		
+
 	Wend
 
 Forever
@@ -65,10 +70,10 @@ Function loadGlobalMedia()
 	character_collision_sound = LoadSound("../snd/sfx/character_collision.wav")
 End Function
 
-Function initGlobalValues()
-	;fps
-	previous# = MilliSecs()
-	fps_time_tracker# = MilliSecs()
-	lag# = 0.0
-	fps_count = 0
+Function getCurrentFrame()
+	Return current_frame;
+End Function
+
+Function setCurrentFrame(new_current_frame)
+	current_frame = new_current_frame
 End Function

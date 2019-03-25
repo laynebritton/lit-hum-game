@@ -56,15 +56,22 @@ Function danteAttackAnimation()
 			char\attack_x = char\x + offsetCalculator(100,char\player)
 			char\attack_y = char\y - 60
 			
-			char\attackAnimFrame = char\attackAnimFrame + 1
-		
-			playsoundAtFrame(char\attackAnimFrame,1,char\swing_sound)
-			playsoundAtFrame(char\attackAnimFrame,60,char\swing_sound)
+			If(char\attack_timer + 10 < MilliSecs()) Then
+				char\attackAnimFrame = char\attackAnimFrame + 1
+				char\attack_timer = MilliSecs()
+				playsoundAtFrame(char\attackAnimFrame,1,char\swing_sound)
+				playsoundAtFrame(char\attackAnimFrame,60,char\swing_sound)
+			End If
 			
 			If (char\attackAnimFrame / 30) > 4 Then
 				char\attackAnimFrame = 0
 				char\state$ = "NONE"
 			End If
+			If(char\attack_timer > char\basic_attack_timer_length + MilliSecs()) Then 
+				char\attackAnimFrame = 0
+				char\state$ = "NONE"
+			End If
+			
 			DrawImage(char\attack1,char\attack_x,char\attack_y,(char\attackAnimFrame / 30))
 			
 		End If
