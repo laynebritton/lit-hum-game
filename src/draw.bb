@@ -6,6 +6,7 @@ Function drawWorld()
 	drawFloorVisual()
 	
 	drawHealthBars()
+	drawProjectilesAvailable()
 	;Should always be last lines
 	displayFPS(display_fps_on)
 	displayPlayer1Coords(display_player1_coords_on)
@@ -35,6 +36,21 @@ Function drawHealthBars()
 	Next
 End Function 
 
+Function drawProjectilesAvailable()
+	For char.fighter = Each fighter
+		Color 255,255,0
+		If char\player = 1 Then
+			For i = 0 To (char\projectile_count_max - char\projectile_count) -1
+				Oval 400 + i*(30), 175, 25,25,1
+			Next
+		End If
+		If char\player = 2 Then
+			For i = 0 To (char\projectile_count_max - char\projectile_count) -1
+				Oval 1490 - i*(30), 175, 25,25,1
+			Next
+		End If
+	Next
+End Function 
 
 Function drawFighters()
 	For char.fighter = Each fighter

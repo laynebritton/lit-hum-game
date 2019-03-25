@@ -59,6 +59,18 @@ Function projectile_collisions()
 				Next
 			End If
 		Next
+		
+		For entity2.projectile = Each projectile
+			If(Not entity\player = entity2\player) Then
+				For frame = 0 To entity\animation_frames -1
+					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, entity2\graphic, entity2\x#, entity2\y#, frame) Then
+						entity\toDelete = True
+						entity2\toDelete = True
+						PlaySound projectile_collide_sound
+					End If
+				Next
+			End If
+		Next
 	Next
 End Function 
 						
