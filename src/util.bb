@@ -32,6 +32,9 @@ Function dealDamageTo(player,amount)
 			If char\hp <= 0 Then 
 				die(char\player)
 				start_highlight_state()
+			Else
+				char\state$="HURT"
+				char\invincibility_frames = char\invincibility_frames + 5
 			End If
 		End If
 	Next

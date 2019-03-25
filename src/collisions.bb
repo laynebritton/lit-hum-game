@@ -6,18 +6,18 @@ Function basic_attack_collisions()
 				If (Not char\player# = char2\player#) Then
 					For frame = 0 To (char\basic_attack_frames -1) ;Frame counting logic
 						;Body
-						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\body, char2\x, char2\y, 0) And char\crouch_state$ = "FALSE" Then
+						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\body, char2\x, char2\y, 0) And char2\crouch_state$ = "FALSE" And (Not char2\state$="HURT") Then
 							PlaySound char\basic_hit_sound
 							dealDamageTo(char2\player, char\strength)
-							char\x = char\x - offsetCalculator(30,char\player)
+							char\x = char\x - offsetCalculator(50,char\player)
 							char2\x = char2\x - offsetCalculator(200,char2\player)
 						End If
 						
 						;Head
-						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\head, char2\head_x#, char2\head_y#, 0) Then
+						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\head, char2\head_x#, char2\head_y#, 0) And (Not char2\state$="HURT") Then
 							PlaySound char\crit_sound
 							dealDamageTo(char2\player, (char\strength) * char\critMultiplier#)
-							char\x = char\x - offsetCalculator(30,char\player)
+							char\x = char\x - offsetCalculator(50,char\player)
 							char2\x = char2\x - offsetCalculator(200,char2\player)
 						End If
 					Next
@@ -47,13 +47,13 @@ Function projectile_collisions()
 			If (Not entity\player = char\player) Then
 				For frame = 0 To entity\animation_frames -1
 					;Body
-					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\body,char\x,char\y, 0) And char\crouch_state$ = "FALSE" Then
+					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\body,char\x,char\y, 0) And char\crouch_state$ = "FALSE" And (Not char\state$="HURT") Then
 						PlaySound entity\impact_sound
 						dealDamageTo(char\player, entity\damage)
 						entity\toDelete = True
 					End If
 					
-					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\head,char\head_x#,char\head_y#, 0) Then
+					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\head,char\head_x#,char\head_y#, 0) And (Not char\state$="HURT") Then
 						PlaySound entity\crit_sound
 						dealDamageTo(char\player, (entity\damage)*2)
 						entity\toDelete = True

@@ -79,7 +79,17 @@ Function processJumps()
 	Next
 End Function
 
-
+Function decrementInvincibilityFrames()
+	For char.fighter = Each fighter
+		If char\invincibility_frames > 0 Then
+			char\invincibility_frames = char\invincibility_frames - 1
+		Else If char\invincibility_frames <= 0 Then
+			If char\state$="HURT" Then
+				char\state$="NONE"
+			End If
+		End If
+	Next
+End Function
 
 
 Function keepInBounds()

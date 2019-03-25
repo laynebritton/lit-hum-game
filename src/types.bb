@@ -27,6 +27,7 @@ Type Fighter
 	;Frame counts
 	Field basic_attack_frames
 	Field projectile_animation_frames
+	Field invincibility_frames
 	
 	;Physical Locations
 	Field x#

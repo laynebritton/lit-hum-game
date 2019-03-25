@@ -1,5 +1,7 @@
 Function refreshWorld()
 	game_states()
+	decrementInvincibilityFrames()
+
 	gravity(15,floor_level)
 	keepInBounds()
 	
