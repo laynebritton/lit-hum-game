@@ -19,8 +19,8 @@ Function createFighter(fighterName$,player)
 			char\strength = 5
 			char\speed = 10
 			char\projectile_count_max = 3
-			char\projectile_speed# = 8
-			char\projectile_damage = 3
+			char\projectile_speed# = 9
+			char\projectile_damage = 4
 			char\critMultiplier# = 2
 			
 			;Jump Stats

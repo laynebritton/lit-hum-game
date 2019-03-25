@@ -29,7 +29,10 @@ Function dealDamageTo(player,amount)
 	For char.fighter = Each fighter
 		If char\player = player Then
 			char\hp= char\hp - amount
-			If char\hp <= 0 Then die(char\player)
+			If char\hp <= 0 Then 
+				die(char\player)
+				start_highlight_state()
+			End If
 		End If
 	Next
 End Function 

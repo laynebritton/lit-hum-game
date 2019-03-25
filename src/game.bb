@@ -20,6 +20,8 @@ SeedRnd MilliSecs()
 
 ;Global Meta-game setting
 Global floor_level=400
+Global game_state$
+Global game_state_timer
 
 ;Global Media
 Global test
@@ -41,6 +43,7 @@ Repeat
 
 	While True
 		WaitTimer(frameTimer)
+
 		checkInput()
 			
 		refreshWorld()

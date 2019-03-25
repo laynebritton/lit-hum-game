@@ -18,12 +18,31 @@ Function drawFightHUD()
 	drawFighterDisplayName()
 	drawHealthBars()
 	drawProjectilesAvailable()
+	drawHighlight()
 End Function
 
 Function drawFloorVisual()
 	Color 128,128,128
 	Rect 0,floor_level + 360,1920,10,1
 End Function
+
+Function drawHighlight()
+	If game_state$ = "HIGHLIGHT" Then
+		
+		For char.fighter = Each fighter
+			For char2.fighter = Each fighter
+				If char2\state$ = "DEAD" Then
+					If (Not char\state$ = "DEAD") Then
+						Color 64,64,64
+						Rect 0,0,1920,char\y# - 75,1
+						Rect 0, char\y# + 400, 1920,1080,1
+					End If
+				End If
+			Next
+		Next
+	
+	End If
+End Function 
 
 Function drawProjectiles()
 	For entity.projectile = Each Projectile
@@ -182,7 +201,7 @@ Function walkAnimation(player)
 		If char\player = player Then
 			char\walk_frame = char\walk_frame  + 1
 			
-			playsoundAtFrame(char\walk_frame,5,step_sound)
+			playsoundAtFrame(char\walk_frame,5,char\step_sound)
 			
 			If (char\walk_frame = 5) Then
 				char\walk_draw_frame = char\walk_draw_frame + 1

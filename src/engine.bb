@@ -79,6 +79,9 @@ Function processJumps()
 	Next
 End Function
 
+
+
+
 Function keepInBounds()
 	For char.fighter = Each fighter
 		If char\x# < -50 Then char\x# = -50
