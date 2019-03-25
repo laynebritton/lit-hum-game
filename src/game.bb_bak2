@@ -37,6 +37,8 @@ Global display_fps_on=False,display_player1_coords_on=False
 loadGlobalMedia()
 
 Repeat
+	font = LoadFont("../font/Lato-Regular.ttf")
+	SetFont font
 	createFighter("Dante",1)
 	createFighter("Dante",2)
 	frameTimer=CreateTimer(60)

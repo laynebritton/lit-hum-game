@@ -52,7 +52,7 @@ End Function
 
 Function drawFighterDisplayName()
 	For char.fighter = Each fighter
-		Color 255,0,255
+		Color 59,82,73
 		If char\player = 1 Then
 			Text 400,75,char\display_name
 		Else If char\player = 2 Then
@@ -63,7 +63,7 @@ End Function
 
 Function drawHealthBars()
 	For char.fighter = Each fighter
-		Color 255,0,0
+		Color 71,0,36
 		If char\player = 1 Then
 			Rect 400,100,(char\hp)*2,50
 		Else If char\player = 2 Then
@@ -74,7 +74,7 @@ End Function
 
 Function drawProjectilesAvailable()
 	For char.fighter = Each fighter
-		Color 255,255,0
+		Color 44,87,132
 		If char\player = 1 Then
 			For i = 0 To (char\projectile_count_max - char\projectile_count) -1
 				Oval 400 + i*(30), 175, 25,25,1
