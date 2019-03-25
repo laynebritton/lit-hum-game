@@ -56,6 +56,7 @@ Function loadGlobalMedia()
 	crit_sound = LoadSound("../snd/sfx/thwack.wav")
 	character_collision_sound = LoadSound("../snd/sfx/character_collision.wav")
 	step_sound = LoadSound("../snd/sfx/step/step20.wav")
+	jump_sound = LoadSound("../snd/sfx/jump.wav")
 End Function
 
 Function initGlobalValues()

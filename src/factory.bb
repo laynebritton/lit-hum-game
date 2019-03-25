@@ -23,7 +23,7 @@ Function createFighter(fighterName$,player)
 			char\critMultiplier# = 2
 			
 			;Jump Stats
-			char\jump_max_frame = 25
+			char\jump_max_frame = 28
 			char\jump_speed = 25
 			
 			;Animation

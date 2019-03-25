@@ -55,7 +55,7 @@ Function loadGlobalMedia()
 	test_bg = LoadImage("../img/bg/acropolis.png")
 	crit_sound = LoadSound("../snd/sfx/thwack.wav")
 	character_collision_sound = LoadSound("../snd/sfx/character_collision.wav")
-	step_sound = LoadSound("../snd/sfx/step/step10.wav")
+	step_sound = LoadSound("../snd/sfx/step/step20.wav")
 End Function
 
 Function initGlobalValues()
