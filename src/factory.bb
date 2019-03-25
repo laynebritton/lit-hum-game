@@ -22,6 +22,10 @@ Function createFighter(fighterName$,player)
 			char\projectile_damage = 3
 			char\critMultiplier# = 2
 			
+			;Jump Stats
+			char\jump_max_frame = 25
+			char\jump_speed = 25
+			
 			;Animation
 			char\breathing# = 2
 			char\breathingSpeed# = 0.03

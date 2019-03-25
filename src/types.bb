@@ -35,6 +35,11 @@ Type Fighter
 	Field leg_x#
 	Field leg_y#
 	
+	;Jump Data
+	Field jump_frame
+	Field jump_max_frame
+	Field jump_speed#
+	
 	;Attack data
 	Field attack_x#=0
 	Field attack_y#=0
@@ -56,6 +61,7 @@ Type Fighter
 	;Game State
 	Field state$="NONE"
 	Field crouch_state$ = "FALSE"
+	Field jump_state$ = "FALSE"
 	Field attacking
 
 End Type

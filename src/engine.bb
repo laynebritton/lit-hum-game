@@ -50,6 +50,30 @@ Function updateProjectiles()
 	Next
 End Function 
 
+Function jump(player)
+	For char.fighter = Each fighter
+		If char\player = player And (Not char\jump_state$ = "TRUE") Then
+			char\jump_state$ = "TRUE"
+		End If
+	Next	
+End Function
+
+Function processJumps()
+	For char.fighter = Each fighter
+		If char\jump_state$ = "TRUE" Then
+			char\y# = char\y# - char\jump_speed#
+			
+			char\jump_frame = char\jump_frame + 1
+			
+			If char\jump_frame >= char\jump_max_frame Then
+				char\jump_frame = 0
+				char\jump_state$ = "FALSE"
+			End If
+		End If
+	Next
+End Function
+			
+
 Function playSoundAtFrame(current,target,sound)
 	If current = target Then PlaySound(sound)
 End Function
@@ -86,9 +110,10 @@ Function checkInput()
 	End If
 	
 	;Player 1 Movement
-	If KeyDown(17) Then
+	If KeyHit(17) Then
 		;Player 1 Move Up
-		moveFighterY("UP",1)
+		;moveFighterY("UP",1)
+		jump(1)
 	End If
 	
 	If KeyDown(31) Then
@@ -119,9 +144,10 @@ Function checkInput()
 	End If
 	
 	;Player 2 Movement
-	If KeyDown(200) Then
+	If KeyHit(200) Then
 		;Player 2 Move Up
-		moveFighterY("UP",2)
+		;moveFighterY("UP",2)
+		jump(2)
 	End If
 	
 	If KeyDown(208) Then

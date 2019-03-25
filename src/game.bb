@@ -24,7 +24,7 @@ Global floor_level=400
 ;Global Media
 Global test
 Global test_bg
-Global crit_sound,character_collision_sound,step_sound
+Global crit_sound,character_collision_sound,step_sound,jump_sound
 
 ;Global Values
 Global fps_count,fake_count
