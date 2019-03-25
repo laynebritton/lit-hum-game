@@ -24,6 +24,7 @@ Global floor_level=400
 ;Global Media
 Global test
 Global test_bg
+Global crit_sound,character_collision_sound
 
 ;Global Values
 Global fps_count,fake_count
@@ -31,24 +32,27 @@ Global fps_count,fake_count
 ;Game Settings
 Global display_fps_on=True,display_player1_coords_on=False
 
-loadGlobalImages()
+loadGlobalMedia()
 
 Repeat
 	createFighter("Dante",1)
 	createFighter("Dante",2)
+	frameTimer=CreateTimer(60)
+
 	While True
+		WaitTimer(frameTimer)
 		lagCalculation()
 			
-		While lag# >= period#
-			checkInput()
+		;While lag# >= period#
+		;	checkInput()
 			
-			refreshWorld()
+		;	refreshWorld()
 			;update world logic
 			
-			fps_count = fps_count + 1
-			lag# = lag# - period#
+		;	fps_count = fps_count + 1
+		;	lag# = lag# - period#
 
-		Wend
+		;Wend
 		
 		fpsTracker()
 
@@ -58,9 +62,10 @@ Repeat
 Forever
 
 
-Function loadGlobalImages()
+Function loadGlobalMedia()
 	test_bg = LoadImage("../img/bg/acropolis.png")
-	;test_bg = LoadImage("../img/bg/9th-circle.jpg")
+	crit_sound = LoadSound("../snd/sfx/thwack.wav")
+	character_collision_sound = LoadSound("../snd/sfx/character_collision.wav")
 End Function
 
 Function initGlobalValues()

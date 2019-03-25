@@ -37,19 +37,22 @@ loadGlobalMedia()
 Repeat
 	createFighter("Dante",1)
 	createFighter("Dante",2)
+	frameTimer=CreateTimer(60)
+
 	While True
+		WaitTimer(frameTimer)
 		lagCalculation()
 			
-		While lag# >= period#
+		;While lag# >= period#
 			checkInput()
 			
 			refreshWorld()
 			;update world logic
 			
-			fps_count = fps_count + 1
-			lag# = lag# - period#
+		;	fps_count = fps_count + 1
+		;	lag# = lag# - period#
 
-		Wend
+		;Wend
 		
 		fpsTracker()
 
