@@ -28,7 +28,7 @@ End Function
 
 Function highlight_state()
 	If game_state_timer + 1500 < MilliSecs() Then
-		game_state$ = "NONE"
+		game_state$ = "END"
 	Else 
 		Delay(150) 
 	End If

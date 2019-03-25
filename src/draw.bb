@@ -1,12 +1,15 @@
 Function drawWorld()
 	DrawImage(test_bg,0,0,0)
-		
-	drawFighters()
-	drawProjectiles()
+			
 	drawFloorVisual()
 	
-
 	drawFightHUD()
+	drawQuoteBoard()
+	
+	drawFighters()
+	drawProjectiles()
+
+
 	;Should always be last lines
 	displayFPS(display_fps_on)
 	displayPlayer1Coords(display_player1_coords_on)
@@ -43,6 +46,15 @@ Function drawHighlight()
 	
 	End If
 End Function 
+
+Function drawQuoteBoard()
+	If game_state$="END" Then
+		DrawImage(quote_board,400,50,0)
+		For char.fighter = Each fighter
+			writeQuote(char\win_quote)
+		Next
+	End If		
+End Function
 
 Function drawProjectiles()
 	For entity.projectile = Each Projectile

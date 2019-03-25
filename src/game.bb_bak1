@@ -28,6 +28,7 @@ Global game_state_timer
 Global test
 Global test_bg
 Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound
+Global quote_board
 
 ;Global Values
 Global fps_count,fake_count
@@ -42,11 +43,7 @@ Dim quote_out$(8)
 
 loadGlobalMedia()
 
-Repeat
-	;font = LoadFont("../font/Lato-Regular.ttf",22)
-	font = LoadFont("Lucida Sans",22)
-	big_quote_font = LoadFont("Lucida Sans",32)
-	
+Repeat	
 	loadingScreenQuote()
 	
 	SetFont font
@@ -75,7 +72,12 @@ Function loadingScreenQuote()
 End Function
 
 Function loadGlobalMedia()
+	font = LoadFont("Lucida Sans",22)
+	big_quote_font = LoadFont("Lucida Sans",32)
+	
 	test_bg = LoadImage("../img/bg/acropolis.png")
+	quote_board = LoadImage("../img/quote-board-3.png")
+	
 	character_collision_sound = LoadSound("../snd/sfx/character_collision.wav")
 	jump_sound = LoadSound("../snd/sfx/jump.wav")
 	projectile_collide_sound = LoadSound("../snd/sfx/projectile-collide.wav")

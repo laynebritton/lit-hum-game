@@ -15,7 +15,7 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
-			char\hp = 100
+			char\hp = 1
 			char\strength = 5
 			char\speed = 10
 			char\projectile_count_max = 3
@@ -38,6 +38,9 @@ Function createFighter(fighterName$,player)
 
 			;State
 			char\state$ = "NONE"
+			
+			;Quotes
+			char\win_quote = 2
 			
 			;Graphics
 			char\body = LoadImage("../img/Dante/dante-body-4.png")

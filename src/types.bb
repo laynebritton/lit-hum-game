@@ -75,6 +75,8 @@ Type Fighter
 	Field jump_state$ = "FALSE"
 	Field attacking
 	
+	;Quotes
+	Field win_quote
 
 End Type
 
