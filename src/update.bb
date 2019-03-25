@@ -1,5 +1,6 @@
 Function refreshWorld()
 	gravity(15,floor_level)
+	keepInBounds()
 	
 	processJumps()
 	

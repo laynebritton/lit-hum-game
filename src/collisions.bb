@@ -9,6 +9,7 @@ Function basic_attack_collisions()
 						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\body, char2\x, char2\y, 0) And char\crouch_state$ = "FALSE" Then
 							PlaySound char\basic_hit_sound
 							dealDamageTo(char2\player, char\strength)
+							char\x = char\x - offsetCalculator(30,char\player)
 							char2\x = char2\x - offsetCalculator(200,char2\player)
 						End If
 						
@@ -16,6 +17,7 @@ Function basic_attack_collisions()
 						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\head, char2\head_x#, char2\head_y#, 0) Then
 							PlaySound crit_sound
 							dealDamageTo(char2\player, (char\strength) * char\critMultiplier#)
+							char\x = char\x - offsetCalculator(30,char\player)
 							char2\x = char2\x - offsetCalculator(200,char2\player)
 						End If
 					Next

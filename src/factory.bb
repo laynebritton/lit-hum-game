@@ -6,7 +6,8 @@ Function createFighter(fighterName$,player)
 	;Dante
 		char.fighter = New Fighter
 			;Data
-			char\name$ = "Dante"	
+			char\name$ = "Dante"
+			char\display_name$ = "Dante Alighieri"	
 			char\player = player
 			
 			;Location		

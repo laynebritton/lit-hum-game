@@ -1,6 +1,7 @@
 Type Fighter
 	;Data
 	Field name$
+	Field display_name$
 	Field player
 	Field playerMultiplier=1
 	

@@ -73,7 +73,13 @@ Function processJumps()
 		End If
 	Next
 End Function
-			
+
+Function keepInBounds()
+	For char.fighter = Each fighter
+		If char\x# < -50 Then char\x# = -50
+		If char\x# > 1870 Then char\x# = 1870
+	Next
+End Function			
 
 Function playSoundAtFrame(current,target,sound)
 	If current = target Then PlaySound(sound)
