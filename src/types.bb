@@ -58,6 +58,12 @@ Type Fighter
 	;Sounds
 	Field swing_sound
 	Field basic_hit_sound
+	Field jump_sound
+	Field step_sound
+	Field crit_sound
+	Field projectile_sound
+	Field projectile_throw_sound
+	Field projectile_crit_sound
 	
 	;Game State
 	Field state$="NONE"
@@ -91,5 +97,6 @@ Type Projectile
 	;Sounds
 	Field throw_sound
 	Field impact_sound
+	Field crit_sound
 	
 End Type

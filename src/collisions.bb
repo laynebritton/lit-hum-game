@@ -15,7 +15,7 @@ Function basic_attack_collisions()
 						
 						;Head
 						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\head, char2\head_x#, char2\head_y#, 0) Then
-							PlaySound crit_sound
+							PlaySound char\crit_sound
 							dealDamageTo(char2\player, (char\strength) * char\critMultiplier#)
 							char\x = char\x - offsetCalculator(30,char\player)
 							char2\x = char2\x - offsetCalculator(200,char2\player)
@@ -48,13 +48,13 @@ Function projectile_collisions()
 				For frame = 0 To entity\animation_frames -1
 					;Body
 					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\body,char\x,char\y, 0) And char\crouch_state$ = "FALSE" Then
-						PlaySound character_collision_sound
+						PlaySound entity\impact_sound
 						dealDamageTo(char\player, entity\damage)
 						entity\toDelete = True
 					End If
 					
 					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\head,char\head_x#,char\head_y#, 0) Then
-						PlaySound crit_sound
+						PlaySound entity\crit_sound
 						dealDamageTo(char\player, (entity\damage)*2)
 						entity\toDelete = True
 					End If

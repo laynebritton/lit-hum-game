@@ -74,8 +74,14 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/swing2.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/hit/hit7.wav")
+			char\swing_sound = LoadSound("../snd/sfx/Dante/dante-swing.wav")
+			char\basic_hit_sound = LoadSound("../snd/sfx/Dante/dante-basic-hit.wav")
+			char\jump_sound = LoadSound("../snd/sfx/Dante/dante-jump.wav")
+			char\step_sound = LoadSound("../snd/sfx/Dante/dante-step.wav")
+			char\crit_sound = LoadSound("../snd/sfx/Dante/dante-crit.wav")
+			char\projectile_throw_sound = LoadSound("../snd/sfx/Dante/dante-projectile-throw.wav")
+			char\projectile_sound = LoadSound("../snd/sfx/Dante/dante-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
 	End Select
 	
 End Function
@@ -90,6 +96,9 @@ Function createProjectile(player)
 				entity\graphic = char\Projectile_graphic
 				entity\speed = char\Projectile_speed
 				entity\damage = char\Projectile_damage
+				entity\throw_sound = char\projectile_throw_sound
+				entity\impact_sound = char\projectile_sound
+				entity\crit_sound = char\projectile_crit_sound
 				
 				entity\x# = char\x#
 				entity\y# = char\y#
@@ -104,5 +113,6 @@ Function createProjectile(player)
 			End Select
 				
 		End If
+		PlaySound char\projectile_throw_sound
 	Next 
 End Function
