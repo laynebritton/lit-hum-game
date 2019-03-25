@@ -17,6 +17,9 @@ Function createFighter(fighterName$,player)
 			char\hp = 100
 			char\strength = 5
 			char\speed = 10
+			char\projectile_count_max = 3
+			char\projectile_speed# = 12
+			char\projectile_damage = 3
 			
 			;Animation
 			char\breathing# = 2
@@ -36,6 +39,8 @@ Function createFighter(fighterName$,player)
 			char\attack1 = LoadAnimImage("../img/Dante/dante-weapon-anim.png",198,360,0,5)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
+			char\projectile_graphic = LoadImage("../img/Dante/dante-head.png")
+			MaskImage(char\projectile_graphic,255,0,220)
 			
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -44,6 +49,7 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\head)
 				mirrorImage(char\arm)
 				mirrorImage(char\attack1)
+				mirrorImage(char\projectile_graphic)
 			End If
 	
 	

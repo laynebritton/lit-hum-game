@@ -30,7 +30,7 @@ Global crit_sound,character_collision_sound
 Global fps_count,fake_count
 
 ;Game Settings
-Global display_fps_on=True,display_player1_coords_on=False
+Global display_fps_on=False,display_player1_coords_on=False
 
 loadGlobalMedia()
 

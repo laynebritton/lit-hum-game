@@ -38,6 +38,32 @@ Function basicAttack(player)
 	Next
 End Function
 
+Function createProjectile(player)
+	For char.fighter = Each fighter
+		If char\player = player And char\projectile_count < char\projectile_count_max Then
+			char\projectile_count = char\projectile_count + 1
+			
+			entity.projectile = New Projectile
+				entity\player = char\player
+				entity\graphic = char\Projectile_graphic
+				entity\speed = char\Projectile_speed
+				entity\damage = char\Projectile_damage
+				entity\x# = char\x#
+				entity\y# = char\y#
+				
+		End If
+	Next 
+End Function
+
+Function updateProjectiles()
+	For entity.projectile = Each Projectile
+		entity\x# = entity\x# + offsetCalculator(entity\speed#,entity\player)
+		If entity\x# > 2220 Or entity\x# < -200 Then
+			entity\toDelete = True
+		End If
+	Next
+End Function 
+
 Function playSoundAtFrame(current,target,sound)
 	If current = target Then PlaySound(sound)
 End Function
@@ -83,6 +109,10 @@ Function checkInput()
 		basicAttack(1)
 	End If
 	
+	If KeyHit(46) Then
+		createProjectile(1)
+	End If
+	
 	;Player 2 Movement
 	If KeyDown(200) Then
 		;Player 2 Move Up
@@ -107,6 +137,10 @@ Function checkInput()
 		;Player 2 Actions
 	If KeyHit(34) Then
 		basicAttack(2)
+	End If
+	
+	If KeyHit(48) Then
+		createProjectile(2)
 	End If
 	
 	

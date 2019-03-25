@@ -2,6 +2,7 @@ Function drawWorld()
 	DrawImage(test_bg,0,0,0)
 		
 	drawFighters()
+	drawProjectiles()
 	drawFloorVisual()
 	
 	;Should always be last lines
@@ -14,6 +15,12 @@ End Function
 Function drawFloorVisual()
 	Color 128,128,128
 	Rect 0,floor_level + 360,1920,10,1
+End Function
+
+Function drawProjectiles()
+	For entity.projectile = Each Projectile
+		DrawImage(entity\graphic,entity\x#,entity\y#,0)
+	Next
 End Function
 
 Function drawFighters()

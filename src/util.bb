@@ -11,3 +11,16 @@ Function offsetCalculator(amount#, player)
 		Return amount#
 	End If
 End Function 
+
+Function deleteProjectiles()
+	For entity.projectile = Each Projectile
+		If entity\toDelete = True Then
+			For char.fighter = Each Fighter
+				If entity\player = char\player Then
+					char\projectile_count = char\projectile_count - 1
+				End If
+			Next
+			Delete entity
+		End If
+	Next
+End Function

@@ -3,11 +3,13 @@ Type Fighter
 	Field name$
 	Field player
 	Field playerMultiplier=1
+	
 	;Graphics
 	Field body
 	Field head
 	Field arm
 	Field attack1
+	Field projectile_graphic
 	
 	;Animation
 	Field breathing#
@@ -22,13 +24,18 @@ Type Fighter
 	Field x#
 	Field y#
 	
-	;Attack locations
+	;Attack data
 	Field attack_x#=0
 	Field attack_y#=0
+	Field projectile_count
+	
 	;Stats
 	Field hp
 	Field strength
 	Field speed#
+	Field projectile_count_max
+	Field projectile_speed#
+	Field projectile_damage
 	
 	;Sounds
 	Field swing_sound
@@ -44,8 +51,22 @@ Type Projectile
 	;Data
 	Field player
 	
+	;Graphic
+	Field graphic
+	
 	;Stats
-	Field speed
-	Field power
+	Field speed#
+	Field damage
+	
+	;Physical Locations
+	Field x#
+	Field y#
+	
+	;Game state
+	Field toDelete=False
+	
+	;Sounds
+	Field throw_sound
+	Field impact_sound
 	
 End Type
