@@ -15,7 +15,7 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
-			char\hp = 100
+			char\hp = 10
 			char\strength = 5
 			char\speed = 10
 			char\projectile_count_max = 3
@@ -48,6 +48,8 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\arm,255,0,220)
 			char\crouch = LoadImage("../img/Dante/dante-crouch-2.png")
 			MaskImage(char\crouch,255,0,220)
+			char\dead = LoadImage("../img/Dante/dante-dead.png")
+			MaskImage(char\dead,255,0,220)
 			char\walk = LoadAnimImage("../img/Dante/dante-walk.png",198,37,0,2)
 			MaskImage(char\walk,255,0,220)
 			
@@ -66,6 +68,7 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\arm)
 				mirrorImage(char\crouch)
 				mirrorImage(char\walk)
+				mirrorImage(char\dead)
 				
 				mirrorImage(char\attack1)
 				
@@ -82,13 +85,15 @@ Function createFighter(fighterName$,player)
 			char\projectile_throw_sound = LoadSound("../snd/sfx/Dante/dante-projectile-throw.wav")
 			char\projectile_sound = LoadSound("../snd/sfx/Dante/dante-projectile-impact.wav")
 			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
+			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
 	End Select
 	
 End Function
 
 Function createProjectile(player)
 	For char.fighter = Each fighter
-		If char\player = player And char\projectile_count < char\projectile_count_max Then
+		If char\player = player And char\projectile_count < char\projectile_count_max  And (Not char\state$="DEAD") Then
 			char\projectile_count = char\projectile_count + 1
 			
 			entity.projectile = New Projectile
@@ -112,7 +117,7 @@ Function createProjectile(player)
 				entity\y# = entity\y# + 130
 			End Select
 				
+			PlaySound char\projectile_throw_sound
 		End If
-		PlaySound char\projectile_throw_sound
 	Next 
 End Function

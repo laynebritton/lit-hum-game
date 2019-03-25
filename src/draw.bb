@@ -71,39 +71,48 @@ End Function
 
 Function drawFighters()
 	For char.fighter = Each fighter
-		;Print game\name
 		Select char\name
-
-		
-		Case "Dante"
+	
+			Case "Dante"
 			
-			drawDante()
-			
+				drawDante()
+				
 		End Select
-	Next
+	Next 
 End Function
+
 
 
 Function drawDante()
 	For char.fighter = Each fighter
 		If char\name = "Dante" Then 
-			danteBreathing()	
-			danteWalk(char\player)
-
-			If char\crouch_state$="TRUE" Then
-				danteCrouch(char\player)
-			Else If char\crouch_state$="FALSE" Then 
-				danteBody(char\player)
-			End If
+			If char\state$ = "DEAD" Then
+				drawDeadDante()
+			Else
+				danteBreathing()	
+				danteWalk(char\player)
+	
+				If char\crouch_state$="TRUE" Then
+					danteCrouch(char\player)
+				Else If char\crouch_state$="FALSE" Then 
+					danteBody(char\player)
+				End If
+				
+				If char\state$ = "NONE" Then
+					DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\arm_y#,0)
+				Else If char\state$ = "BASIC_ATTACK" Then
+					danteAttackAnimation()
+				End If
 			
-			If char\state$ = "NONE" Then
-				DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\arm_y#,0)
-			Else If char\state$ = "BASIC_ATTACK" Then
-				danteAttackAnimation()
 			End If
-			
+		End If
+	Next
+End Function
 
-
+Function drawDeadDante()
+	For char.fighter = Each fighter	
+		If char\state$ = "DEAD" Then
+			DrawImage(char\dead,char\x#,char\y#,0)
 		End If
 	Next
 End Function

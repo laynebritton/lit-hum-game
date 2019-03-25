@@ -1,6 +1,11 @@
 Function gravity(strength#,height)
 	For char.fighter = Each fighter
-		If char\y# < height Then
+		If char\state$ = "DEAD" Then
+			;Gravity for death
+			If char\y# < height + ImageHeight(char\dead) Then
+				char\y# = char\y# + strength#
+			End If
+		Else If char\y# < height Then
 			char\y# = char\y# + strength#
 		End If
 	Next
@@ -8,7 +13,7 @@ End Function
 
 Function moveFighterX(direction$,player)
 	For char.fighter = Each fighter
-		If char\player = player Then
+		If char\player = player And (Not char\state$="DEAD") Then
 			If direction$ = "LEFT" Then
 				char\x# = char\x# - char\speed#
 			Else If direction$ = "RIGHT" Then
@@ -52,7 +57,7 @@ End Function
 
 Function jump(player)
 	For char.fighter = Each fighter
-		If char\player = player And (Not char\jump_state$ = "TRUE") And (char\y# >= floor_level) Then
+		If char\player = player And (Not char\jump_state$ = "TRUE") And (char\y# >= floor_level) And (Not char\state$="DEAD") Then
 			char\jump_state$ = "TRUE"
 			PlaySound jump_sound
 		End If
@@ -97,6 +102,17 @@ Function unCrouch(player)
 	For char.fighter = Each fighter
 		If char\player = player Then
 			char\crouch_state$="FALSE"
+		End If
+	Next
+End Function
+
+Function die(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			jump(char\player)
+			char\state$ = "DEAD"
+			PlaySound(char\death_sound)
+			PlaySound(fighter_died_sound)
 		End If
 	Next
 End Function		

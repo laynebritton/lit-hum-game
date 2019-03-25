@@ -24,7 +24,7 @@ Global floor_level=400
 ;Global Media
 Global test
 Global test_bg
-Global crit_sound,character_collision_sound,step_sound,jump_sound,projectile_collide_sound
+Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound
 
 ;Global Values
 Global fps_count,fake_count
@@ -53,11 +53,10 @@ Forever
 
 Function loadGlobalMedia()
 	test_bg = LoadImage("../img/bg/acropolis.png")
-	crit_sound = LoadSound("../snd/sfx/thwack.wav")
 	character_collision_sound = LoadSound("../snd/sfx/character_collision.wav")
-	step_sound = LoadSound("../snd/sfx/step/step20.wav")
 	jump_sound = LoadSound("../snd/sfx/jump.wav")
 	projectile_collide_sound = LoadSound("../snd/sfx/projectile-collide.wav")
+	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
 End Function
 
 Function initGlobalValues()

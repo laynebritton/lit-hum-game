@@ -13,6 +13,7 @@ Type Fighter
 	Field projectile_graphic
 	Field crouch
 	Field walk
+	Field dead
 	
 	;Animation
 	Field breathing#
@@ -64,6 +65,8 @@ Type Fighter
 	Field projectile_sound
 	Field projectile_throw_sound
 	Field projectile_crit_sound
+	Field kill_sound
+	Field death_sound
 	
 	;Game State
 	Field state$="NONE"
