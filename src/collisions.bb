@@ -49,12 +49,14 @@ Function projectile_collisions()
 					;Body
 					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\body,char\x,char\y, 0) And char\crouch_state$ = "FALSE" And (Not char\state$="HURT") Then
 						PlaySound entity\impact_sound
+						char\x = char\x - offsetCalculator(50,char\player)
 						dealDamageTo(char\player, entity\damage)
 						entity\toDelete = True
 					End If
 					
 					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\head,char\head_x#,char\head_y#, 0) And (Not char\state$="HURT") Then
 						PlaySound entity\crit_sound
+						char\x = char\x - offsetCalculator(50,char\player)
 						dealDamageTo(char\player, (entity\damage)*2)
 						entity\toDelete = True
 					End If
