@@ -5,7 +5,7 @@ Function gravity(strength#,height)
 			If char\y# < height + ImageHeight(char\dead) Then
 				char\y# = char\y# + strength#
 			End If
-		Else If char\y# < height Then
+		Else If char\y#  + (ImageHeight(char\body) - height)< height Then
 			char\y# = char\y# + strength#
 		End If
 	Next
@@ -57,7 +57,7 @@ End Function
 
 Function jump(player)
 	For char.fighter = Each fighter
-		If char\player = player And (Not char\jump_state$ = "TRUE") And (char\y# >= floor_level) And (Not char\state$="DEAD") Then
+		If char\player = player And (Not char\jump_state$ = "TRUE") And (char\y# + (ImageHeight(char\body) - floor_level) >= floor_level) And (Not char\state$="DEAD") Then
 			char\jump_state$ = "TRUE"
 			PlaySound jump_sound
 		End If

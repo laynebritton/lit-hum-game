@@ -34,6 +34,7 @@ Type Fighter
 	Field y#
 	Field head_x#
 	Field head_y#
+	Field arm_x#
 	Field arm_y#
 	Field leg_x#
 	Field leg_y#

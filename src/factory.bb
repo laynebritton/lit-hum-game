@@ -15,7 +15,7 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
-			char\hp = 1
+			char\hp = 100
 			char\strength = 5
 			char\speed = 10
 			char\projectile_count_max = 3
@@ -90,6 +90,95 @@ Function createFighter(fighterName$,player)
 			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
 			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
 			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+			
+	Case "Don"
+	;Don Quixote
+		char.fighter = New Fighter
+			;Data
+			char\name$ = "Don"
+			char\display_name$ = "Don Quixote"	
+			char\player = player
+			
+			;Location		
+			char\x = 600
+			char\y = 0
+			
+			;Stats
+			char\hp = 120
+			char\strength = 9
+			char\speed = 15
+			char\projectile_count_max = 1
+			char\projectile_speed# = 6
+			char\projectile_damage = 5
+			char\critMultiplier# = 2
+			
+			;Jump Stats
+			char\jump_max_frame = 28
+			char\jump_speed = 25
+			
+			;Animation
+			char\breathing# = 2
+			char\breathingSpeed# = 0.1
+			char\breathingDirection$ = "UP"
+			char\projectile_animation_frames = 1
+			char\walk_frame = 0
+			char\walk_draw_frame = 0
+			char\walk_max_draw_frame = 1
+
+			;State
+			char\state$ = "NONE"
+			
+			;Quotes
+			char\win_quote = 3
+			
+			;Graphics
+			char\body = LoadImage("../img/Don/don-body-2.png")
+			MaskImage(char\body,255,0,220)
+			char\head = LoadImage("../img/Don/don-head.png")
+			MaskImage(char\head,255,0,220)
+			char\arm= LoadImage("../img/Don/don-arm.png")
+			MaskImage(char\arm,255,0,220)
+			char\crouch = LoadImage("../img/Don/don-crouch.png")
+			MaskImage(char\crouch,255,0,220)
+			char\dead = LoadImage("../img/Don/don-dead.png")
+			MaskImage(char\dead,255,0,220)
+			char\walk = LoadAnimImage("../img/Don/don-walk-2.png",225,124,0,2)
+			MaskImage(char\walk,255,0,220)
+			
+			char\attack1 = LoadAnimImage("../img/Don/don-weapon-anim.png",500,90,0,5)
+			MaskImage(char\attack1,255,0,220)
+			char\basic_attack_frames = 5
+			
+			char\projectile_graphic = LoadImage("../img/Don/don-projectile.png")
+			MaskImage(char\projectile_graphic,255,0,220)
+			
+			If player = 2 Then
+				char\playerMultiplier = -1
+				char\x = 1320 - ImageWidth(char\body)
+				mirrorImage(char\body)
+				mirrorImage(char\head)
+				mirrorImage(char\arm)
+				mirrorImage(char\crouch)
+				mirrorImage(char\walk)
+				mirrorImage(char\dead)
+				
+				mirrorImage(char\attack1)
+				
+				mirrorImage(char\projectile_graphic)
+			End If
+	
+	
+			;Sound
+			char\swing_sound = LoadSound("../snd/sfx/Dante/dante-swing.wav")
+			char\basic_hit_sound = LoadSound("../snd/sfx/Dante/dante-basic-hit.wav")
+			char\jump_sound = LoadSound("../snd/sfx/Dante/dante-jump.wav")
+			char\step_sound = LoadSound("../snd/sfx/Dante/dante-step.wav")
+			char\crit_sound = LoadSound("../snd/sfx/Dante/dante-crit.wav")
+			char\projectile_throw_sound = LoadSound("../snd/sfx/Dante/dante-projectile-throw.wav")
+			char\projectile_sound = LoadSound("../snd/sfx/Dante/dante-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
+			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
 	End Select
 	
 End Function
@@ -118,6 +207,9 @@ Function createProjectile(player)
 			Case "Dante"
 				entity\x# = entity\x# - offsetCalculator(120,entity\player) 
 				entity\y# = entity\y# + 130
+			Case "Don"
+				entity\x# = entity\x# - offsetCalculator(80,entity\player) 
+				entity\y# = entity\y# + 200
 			End Select
 				
 			PlaySound char\projectile_throw_sound

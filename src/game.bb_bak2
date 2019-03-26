@@ -47,8 +47,8 @@ Repeat
 	loadingScreenQuote()
 	
 	SetFont font
-	createFighter("Dante",1)
-	createFighter("Dante",2)
+	createFighter("Don",1)
+	createFighter("Don",2)
 	frameTimer=CreateTimer(60)
 
 	While True
@@ -76,7 +76,7 @@ Function loadGlobalMedia()
 	big_quote_font = LoadFont("Lucida Sans",32)
 	
 	test_bg = LoadImage("../img/bg/acropolis.png")
-	quote_board = LoadImage("../img/quote-board-2.png")
+	quote_board = LoadImage("../img/quote-board-3.png")
 	
 	character_collision_sound = LoadSound("../snd/sfx/character_collision.wav")
 	jump_sound = LoadSound("../snd/sfx/jump.wav")

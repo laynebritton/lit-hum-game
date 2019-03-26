@@ -51,7 +51,7 @@ Function drawQuoteBoard()
 	If game_state$="END" Then
 		DrawImage(quote_board,400,50,0)
 		For char.fighter = Each fighter
-			writeQuote(char\win_quote)
+			If (Not char\state$ = "DEAD") Then writeQuote(char\win_quote)
 		Next
 	End If		
 End Function
@@ -64,7 +64,8 @@ End Function
 
 Function drawFighterDisplayName()
 	For char.fighter = Each fighter
-		Color 59,82,73
+		;Color 59,82,73
+		Color 44,87,132
 		If char\player = 1 Then
 			Text 400,75,char\display_name
 		Else If char\player = 2 Then
@@ -108,11 +109,50 @@ Function drawFighters()
 			
 				drawDante()
 				
+			Case "Don"
+				drawDon()
+			
+				
 		End Select
 	Next 
 End Function
 
 
+Function drawDon()
+	For char.fighter = Each fighter
+		If char\name = "Don" Then 
+			If char\state$ = "DEAD" Then
+				drawDeadDante()
+			Else
+				drawBreathing()	
+				donWalk(char\player)
+	
+				If char\crouch_state$="TRUE" Then
+					donCrouch(char\player)
+				Else If char\crouch_state$="FALSE" Then 
+					body(char\player)
+				End If
+				
+				If char\state$ = "NONE" Then
+					DrawImage(char\arm,char\x + offsetCalculator(10, char\player),char\arm_y# + 5,0)
+				Else If char\state$ = "BASIC_ATTACK" Then
+					donAttackAnimation()
+				End If
+			
+			End If
+		End If
+	Next
+End Function
+
+Function donWalk(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\leg_x# = char\x# ;+ offsetCalculator(71,char\player)		
+			char\leg_y# = char\y# + (ImageHeight(char\body) - ImageHeight(char\walk) -5)
+			DrawImage(char\walk,char\leg_x#,char\leg_y#,char\walk_draw_frame)
+		End If
+	Next
+End Function
 
 Function drawDante()
 	For char.fighter = Each fighter
@@ -120,13 +160,13 @@ Function drawDante()
 			If char\state$ = "DEAD" Then
 				drawDeadDante()
 			Else
-				danteBreathing()	
+				drawBreathing()	
 				danteWalk(char\player)
 	
 				If char\crouch_state$="TRUE" Then
 					danteCrouch(char\player)
 				Else If char\crouch_state$="FALSE" Then 
-					danteBody(char\player)
+					body(char\player)
 				End If
 				
 				If char\state$ = "NONE" Then
@@ -148,7 +188,7 @@ Function drawDeadDante()
 	Next
 End Function
 
-Function danteBody(player)
+Function body(player)
 	For char.fighter = Each fighter
 		If char\player = player Then
 			char\head_x# = char\x#
@@ -176,6 +216,21 @@ Function danteCrouch(player)
 	Next
 End Function
 
+Function donCrouch(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\head_x# = char\x# - offsetCalculator(30,char\player)
+			char\head_y# = char\y# + 145
+			char\arm_x# = char\x# -offsetCalculator(50,char\player)
+			char\arm_y# = char\y# + 170
+			
+			DrawImage(char\head,char\head_x#,char\head_y#+ char\breathing#,0)
+			DrawImage(char\crouch,char\x,char\y,0)
+		
+		End If
+	Next
+End Function
+
 Function danteWalk(player)
 	For char.fighter = Each fighter
 		If char\player = player Then
@@ -185,8 +240,8 @@ Function danteWalk(player)
 		End If
 	Next
 End Function
-			
-			
+
+
 Function danteAttackAnimation()
 	For char.fighter = Each fighter
 		If char\name = "Dante" And char\state$ = "BASIC_ATTACK" Then 
@@ -203,6 +258,27 @@ Function danteAttackAnimation()
 				char\state$ = "NONE"
 			End If
 			DrawImage(char\attack1,char\attack_x,char\attack_y,(char\attackAnimFrame / 15))
+			
+		End If
+	Next 
+End Function 
+
+Function donAttackAnimation()
+	For char.fighter = Each fighter
+		If char\name = "Don" And char\state$ = "BASIC_ATTACK" Then 
+			char\attack_x = char\x + offsetCalculator(0,char\player)
+			char\attack_y = char\arm_y# + 270
+			
+			char\attackAnimFrame = char\attackAnimFrame + 1
+		
+			playsoundAtFrame(char\attackAnimFrame,1,char\swing_sound)
+			playsoundAtFrame(char\attackAnimFrame,30,char\swing_sound)
+			
+			If (char\attackAnimFrame / 10) > 4 Then
+				char\attackAnimFrame = 0
+				char\state$ = "NONE"
+			End If
+			DrawImage(char\attack1,char\attack_x,char\attack_y,(char\attackAnimFrame / 10))
 			
 		End If
 	Next 
@@ -232,9 +308,9 @@ Function walkAnimation(player)
 	Next
 End Function 
 
-Function danteBreathing()
+Function drawBreathing()
 	For char.fighter = Each fighter
-		If char\name = "Dante" Then 
+		;If char\name = "Dante" Then 
 			
 			If char\breathingDirection$ = "UP" Then
 				char\breathing# = char\breathing# - char\breathingSpeed#
@@ -251,6 +327,6 @@ Function danteBreathing()
 				End If
 			End If
 			
-		End If
+		;End If
 	Next
 End Function
