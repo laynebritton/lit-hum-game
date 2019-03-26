@@ -3,14 +3,14 @@
 Controls:
 Player 1:
 Move left/right: A/D
-Croush: S
+Crouch: S
 Jump: W
 Hit: J
 Throw: C
 
-Playwr 2:
+Player 2:
 Move left/right: left/right arrow keys
 Crouch: down arrow
-Jumo: Up arrow
+Jump: Up arrow
 Hit: G
 Throw: B
