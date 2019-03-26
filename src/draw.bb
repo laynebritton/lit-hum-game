@@ -266,7 +266,14 @@ End Function
 Function donAttackAnimation()
 	For char.fighter = Each fighter
 		If char\name = "Don" And char\state$ = "BASIC_ATTACK" Then 
-			char\attack_x = char\x + offsetCalculator(0,char\player)
+			
+			player_2_offset = 0
+			If char\player=2 Then
+				player_2_offset = ImageWidth(char\attack1) - 200
+			End If
+			
+			char\attack_x = char\x + offsetCalculator(player_2_offset,char\player)
+			
 			char\attack_y = char\arm_y# + 270
 			
 			char\attackAnimFrame = char\attackAnimFrame + 1

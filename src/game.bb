@@ -49,7 +49,7 @@ Repeat
 	
 	SetFont font
 	createFighter("Don",1)
-	createFighter("Dante",2)
+	createFighter("Don",2)
 	frameTimer=CreateTimer(60)
 
 	While True

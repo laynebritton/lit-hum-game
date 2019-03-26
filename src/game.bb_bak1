@@ -2,7 +2,7 @@
 Graphics 1920,1080,32,2
 SetBuffer BackBuffer()
 
-Include "controls.bb"aw
+Include "controls.bb"
 Include "framerate.bb"
 Include "debug.bb"
 Include "util.bb"
