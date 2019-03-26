@@ -169,16 +169,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Dante/dante-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Dante/dante-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Dante/dante-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Dante/dante-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Dante/dante-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Dante/dante-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Dante/dante-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+			char\swing_sound = LoadSound("../snd/sfx/Don/don-swing.wav")
+			char\basic_hit_sound = LoadSound("../snd/sfx/Don/don-basic-hit.wav")
+			char\jump_sound = LoadSound("../snd/sfx/Don/don-jump.wav")
+			char\step_sound = LoadSound("../snd/sfx/Don/don-step.wav")
+			char\crit_sound = LoadSound("../snd/sfx/Don/don-crit.wav")
+			char\projectile_throw_sound = LoadSound("../snd/sfx/Don/don-projectile-throw.wav")
+			char\projectile_sound = LoadSound("../snd/sfx/Don/don-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("../snd/sfx/Don/don-projectile-crit.wav")
+			char\kill_sound = LoadSound("../snd/sfx/Don/don-kill.wav")
+			char\death_sound = LoadSound("../snd/sfx/Don/don-kill.wav")
 	End Select
 	
 End Function
