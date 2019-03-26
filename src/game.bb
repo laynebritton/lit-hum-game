@@ -78,9 +78,9 @@ Function loadGlobalMedia()
 	test_bg = LoadImage("../img/bg/hell.png")
 	quote_board = LoadImage("../img/quote-board-3.png")
 	
-	character_collision_sound = LoadSound("../snd/sfx/character_collision.wav")
+	character_collision_sound = LoadSound("../snd/sfx/gbl/character_collision.wav")
 	jump_sound = LoadSound("../snd/sfx/jump.wav")
-	projectile_collide_sound = LoadSound("../snd/sfx/projectile-collide.wav")
+	projectile_collide_sound = LoadSound("../snd/sfx/gbl/projectile-collide.wav")
 	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
 End Function
 

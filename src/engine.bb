@@ -156,7 +156,6 @@ Function checkInput()
 		;Player 1 Move Down
 		;moveFighterY("DOWN",1)
 		crouch(1)
-		writeQuote(1)
 	Else 
 		uncrouch(1)
 	End If

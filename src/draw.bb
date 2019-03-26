@@ -37,8 +37,8 @@ Function drawHighlight()
 				If char2\state$ = "DEAD" Then
 					If (Not char\state$ = "DEAD") Then
 						Color 64,64,64
-						Rect 0,0,1920,char\y# - 75,1
-						Rect 0, char\y# + 400, 1920,1080,1
+						Rect 0,0,1920,char\y#,1
+						Rect 0, char\y# + ImageHeight(char\body), 1920,1080,1
 					End If
 				End If
 			Next
