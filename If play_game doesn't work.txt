@@ -1,0 +1,1 @@
+If play_game doesn't work, go to src folder and run game.exe

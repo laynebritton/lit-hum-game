@@ -59,7 +59,7 @@ Function jump(player)
 	For char.fighter = Each fighter
 		If char\player = player And (Not char\jump_state$ = "TRUE") And (char\y# + (ImageHeight(char\body) - floor_level) >= floor_level) And (Not char\state$="DEAD") Then
 			char\jump_state$ = "TRUE"
-			PlaySound jump_sound
+			PlaySound char\jump_sound
 		End If
 	Next	
 End Function
