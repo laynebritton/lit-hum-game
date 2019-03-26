@@ -8,7 +8,7 @@ Move left/right: A/D
 
 Crouch: S
 
-Jump: W
+Jump: V
 
 Hit: J
 
@@ -21,7 +21,7 @@ Move left/right: left/right arrow keys
 
 Crouch: down arrow
 
-Jump: Up arrow
+Jump: ,
 
 Hit: G
 
