@@ -104,7 +104,7 @@ Function createFighter(fighterName$,player)
 			char\y = 0
 			
 			;Stats
-			char\hp = 120
+			char\hp = 70
 			char\strength = 9
 			char\speed = 15
 			char\projectile_count_max = 1
@@ -220,7 +220,7 @@ Function createFighter(fighterName$,player)
 			char\shield_state$ ="FALSE"
 			
 			;Quotes
-			char\win_quote = 2
+			char\win_quote = 4
 			
 			;Graphics
 			char\body = LoadImage("../img/Achilleus/achilleus-body.png")

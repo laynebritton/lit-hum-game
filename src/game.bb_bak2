@@ -38,6 +38,7 @@ Global quote_board
 Global song
 
 ;Global Values
+Global player_1_char="Achilleus",player_2_char="Dante"
 Global fps_count,fake_count
 
 ;Game Settings
@@ -48,14 +49,16 @@ Global font,big_quote_font
 ;General Quotes
 Dim quote_out$(8)
 
+crapChooseCharacter()
 loadGlobalMedia()
-
 Repeat	
+
+
 	loadingScreenQuote()
 	
 	SetFont font
-	createFighter("Achilleus",1)
-	createFighter("Dante",2)
+	createFighter(player_1_char,1)
+	createFighter(player_2_char,2)
 	frameTimer=CreateTimer(60)
 	
 	PlaySound song
@@ -71,6 +74,46 @@ Repeat
 
 Forever
 
+Function crapChooseCharacter()
+	FlushKeys()
+
+	Print "Player 1 select charcter"
+	Print "1: Achilleus"
+	Print "2: Dante"
+	Print "3: Don Quixote"
+	
+	WaitKey
+	
+	If KeyHit(2) Then
+		 player_1_char = "Achilleus"
+	End If
+	
+	If KeyHit(3) Then
+		 player_1_char = "Dante"
+	End If
+	
+	If KeyHit(4) Then
+		 player_1_char = "Don"
+	End If
+
+	FlushKeys()
+	
+	Print "Player 2 select charcter"
+	WaitKey
+	
+	If KeyHit(2) Then
+		 player_2_char = "Achilleus"
+	End If
+	
+	If KeyHit(3) Then
+		 player_2_char = "Dante"
+	End If
+	
+	If KeyHit(4) Then
+		 player_2_char = "Don"
+	End If
+End Function
+ 
 Function loadingScreenQuote()
 	writeQuote(1)
 	Text 0,1020,"Loading..."	
@@ -83,13 +126,14 @@ Function loadGlobalMedia()
 	font = LoadFont("Lucida Sans",22)
 	big_quote_font = LoadFont("Lucida Sans",32)
 	
-	test_bg = LoadImage("../img/bg/hell.png")
+	test_bg = LoadImage("../img/bg/acropolis.png")
 	quote_board = LoadImage("../img/quote-board-3.png")
 	
 	character_collision_sound = LoadSound("../snd/sfx/gbl/character_collision.wav")
 	jump_sound = LoadSound("../snd/sfx/jump.wav")
 	projectile_collide_sound = LoadSound("../snd/sfx/gbl/projectile-collide.wav")
 	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
+	ding = LoadSound("../snd/sfx/gbl/ding.wav")
 	song  = LoadSound("../snd/bgm/menu.mp3")
 	SoundVolume song,.35
 End Function
