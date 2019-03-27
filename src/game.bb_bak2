@@ -38,7 +38,7 @@ Global quote_board
 Global song
 
 ;Global Values
-Global player_1_char="Achilleus",player_2_char="Dante"
+Global player_1_char$="Achilleus",player_2_char$="Dante"
 Global fps_count,fake_count
 
 ;Game Settings
@@ -112,6 +112,9 @@ Function crapChooseCharacter()
 	If KeyHit(4) Then
 		 player_2_char = "Don"
 	End If
+	
+	Flip
+	Cls
 End Function
  
 Function loadingScreenQuote()

@@ -81,6 +81,7 @@ Function crapChooseCharacter()
 	Print "1: Achilleus"
 	Print "2: Dante"
 	Print "3: Don Quixote"
+	Print "4: Hektor"
 	
 	WaitKey
 	
@@ -94,6 +95,10 @@ Function crapChooseCharacter()
 	
 	If KeyHit(4) Then
 		 player_1_char = "Don"
+	End If
+
+	If KeyHit(5) Then
+		 player_1_char = "Hektor"
 	End If
 
 	FlushKeys()
@@ -112,6 +117,9 @@ Function crapChooseCharacter()
 	If KeyHit(4) Then
 		 player_2_char = "Don"
 	End If
+	
+	Flip
+	Cls
 End Function
  
 Function loadingScreenQuote()
