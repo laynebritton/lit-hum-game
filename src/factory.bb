@@ -260,16 +260,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Dante/dante-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Dante/dante-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Dante/dante-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Dante/dante-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Dante/dante-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Dante/dante-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Dante/dante-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
 
 	End Select
 	
