@@ -22,3 +22,7 @@
 2019/03/26 18:12:23.055 Info   ConfigDir=C:\lit-hum-game\JoyToKey_en\*.cfg (ConfigFileManager.cpp#43)
 2019/03/26 18:12:23.059 Info   Failed to find AppLink.dat (AppLink\AppLinkManager.cpp#32)
 2019/03/26 18:12:23.090 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
+3/26/2019 11:16:32 PM Error  Access is denied.
+ (Utils\Utils.cpp#464)
+3/26/2019 11:34:08 PM Info   Received WM_QUERYENDSESSION.  Exiting... (Main.cpp#208)
+3/26/2019 11:34:08 PM Info   Application terminated (Utils\LogFile.cpp#20)

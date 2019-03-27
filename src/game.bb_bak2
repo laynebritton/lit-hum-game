@@ -1,5 +1,5 @@
 ;Graphics Settings
-Graphics 1920,1080,32,2
+Graphics3D 1920,1080,32,2
 SetBuffer BackBuffer()
 
 Include "controls.bb"
@@ -13,6 +13,7 @@ Include "engine.bb"
 Include "update.bb"
 Include "collisions.bb"
 Include "quotes.bb"
+Include "stage.bb"
 
 ;Fighter Files
 Include "dante.bb"
@@ -32,7 +33,6 @@ Global game_state_timer
 
 ;Global Media
 Global test
-Global test_bg
 Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound,ding
 Global quote_board
 Global song
@@ -51,11 +51,12 @@ Dim quote_out$(8)
 
 crapChooseCharacter()
 loadGlobalMedia()
+
 Repeat	
 
 
 	loadingScreenQuote()
-	
+	loadStage()
 	SetFont font
 	createFighter(player_1_char,1)
 	createFighter(player_2_char,2)
@@ -81,6 +82,7 @@ Function crapChooseCharacter()
 	Print "1: Achilleus"
 	Print "2: Dante"
 	Print "3: Don Quixote"
+	Print "4: Hektor"
 	
 	WaitKey
 	
@@ -94,6 +96,10 @@ Function crapChooseCharacter()
 	
 	If KeyHit(4) Then
 		 player_1_char = "Don"
+	End If
+
+	If KeyHit(5) Then
+		 player_1_char = "Hektor"
 	End If
 
 	FlushKeys()
@@ -112,6 +118,11 @@ Function crapChooseCharacter()
 	If KeyHit(4) Then
 		 player_2_char = "Don"
 	End If
+		
+	If KeyHit(5) Then
+		 player_2_char = "Hektor"
+	End If
+
 	
 	Flip
 	Cls
@@ -129,7 +140,6 @@ Function loadGlobalMedia()
 	font = LoadFont("Lucida Sans",22)
 	big_quote_font = LoadFont("Lucida Sans",32)
 	
-	test_bg = LoadImage("../img/bg/acropolis.png")
 	quote_board = LoadImage("../img/quote-board-3.png")
 	
 	character_collision_sound = LoadSound("../snd/sfx/gbl/character_collision.wav")

@@ -3,9 +3,11 @@ Function gravity(strength#,height)
 		If char\state$ = "DEAD" Then
 			;Gravity for death
 			If char\y# < height + ImageHeight(char\dead) Then
+				char\movement_state$="LEFT"
 				char\y# = char\y# + strength#
 			End If
 		Else If char\y#  + (ImageHeight(char\body) - height)< height Then
+			char\movement_state$="RIGHT"
 			char\y# = char\y# + strength#
 		End If
 	Next
@@ -15,8 +17,10 @@ Function moveFighterX(direction$,player)
 	For char.fighter = Each fighter
 		If char\player = player And (Not char\state$="DEAD") Then
 			If direction$ = "LEFT" Then
+				char\movement_state$="LEFT"
 				char\x# = char\x# - char\speed#
 			Else If direction$ = "RIGHT" Then
+				char\movement_state$="RIGHT"
 				char\x# = char\x# + char\speed#
 			End If
 			
@@ -146,4 +150,3 @@ Function die(player)
 		End If
 	Next
 End Function		
-

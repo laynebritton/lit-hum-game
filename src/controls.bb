@@ -17,12 +17,14 @@ Function checkInput()
 	If KeyHit(47) Then
 		;Player 1 Move Up
 		;moveFighterY("UP",1)
+		;moveStageY(-10)
 		jump(1)
 	End If
 	
 	If KeyDown(31) Then
 		;Player 1 Move Down
 		;moveFighterY("DOWN",1)
+		;moveStageY(10)
 		crouch(1)
 	Else 
 		uncrouch(1)
@@ -31,10 +33,12 @@ Function checkInput()
 	If KeyDown(30) Then
 		;Player 1 Move Left
 		moveFighterX("LEFT",1)
+		;moveStageX(-10)
 	End If
 	
 	If KeyDown(32) Then
 		;Player 1 Move Right
+		;moveStageX(10)
 		moveFighterX("RIGHT",1)
 	End If
 	

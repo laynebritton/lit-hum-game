@@ -78,6 +78,7 @@ Type Fighter
 	Field crouch_state$ = "FALSE"
 	Field jump_state$ = "FALSE"
 	Field shield_state$ ="FALSE"
+	Field movement_state$
 	Field attacking
 	
 	;Quotes
@@ -112,4 +113,11 @@ Type Projectile
 	Field impact_sound
 	Field crit_sound
 	
+End Type
+
+Type Stage
+	Field x#
+	Field y#
+	Field speed#
+	Field gfx
 End Type

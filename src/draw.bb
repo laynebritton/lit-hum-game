@@ -1,5 +1,5 @@
 Function drawWorld()
-	DrawImage(test_bg,0,0,0)
+	drawStage()
 			
 	drawFloorVisual()
 	
@@ -13,6 +13,7 @@ Function drawWorld()
 	;Should always be last lines
 	displayFPS(display_fps_on)
 	displayPlayer1Coords(display_player1_coords_on)
+	Text 0,0,stage_x#
 	Flip
 	Cls
 End Function
