@@ -14,6 +14,10 @@ Include "update.bb"
 Include "collisions.bb"
 Include "quotes.bb"
 
+;Fighter Files
+Include "dante.bb"
+Include "don.bb"
+
 ; Game-timing 
 Const fps=60
 Global elapsed#,period#=1000/fps,current#,lag#,previous#,fps_to_display,fps_time_tracker#
@@ -30,6 +34,7 @@ Global test
 Global test_bg
 Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound
 Global quote_board
+Global song
 
 ;Global Values
 Global fps_count,fake_count
@@ -48,10 +53,11 @@ Repeat
 	loadingScreenQuote()
 	
 	SetFont font
-	createFighter("Don",1)
+	createFighter("Dante",1)
 	createFighter("Don",2)
 	frameTimer=CreateTimer(60)
-
+	
+	PlaySound song
 	While True
 		WaitTimer(frameTimer)
 
@@ -83,6 +89,8 @@ Function loadGlobalMedia()
 	jump_sound = LoadSound("../snd/sfx/jump.wav")
 	projectile_collide_sound = LoadSound("../snd/sfx/gbl/projectile-collide.wav")
 	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
+	song  = LoadSound("../snd/bgm/menu.mp3")
+	SoundVolume song,.35
 End Function
 
 Function initGlobalValues()
