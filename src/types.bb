@@ -14,6 +14,7 @@ Type Fighter
 	Field crouch
 	Field walk
 	Field dead
+	Field spear
 	
 	;Animation
 	Field breathing#
@@ -55,7 +56,9 @@ Type Fighter
 	Field speed#
 	Field projectile_count_max
 	Field projectile_speed#
+	Field projectile_gravity#
 	Field projectile_damage
+	Field knockback=0
 	Field critMultiplier#=2
 	
 	;Sounds
@@ -74,6 +77,7 @@ Type Fighter
 	Field state$="NONE"
 	Field crouch_state$ = "FALSE"
 	Field jump_state$ = "FALSE"
+	Field shield_state$ ="FALSE"
 	Field attacking
 	
 	;Quotes
@@ -93,6 +97,7 @@ Type Projectile
 	
 	;Stats
 	Field speed#
+	Field gravity#
 	Field damage
 	
 	;Physical Locations

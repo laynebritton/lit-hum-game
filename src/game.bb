@@ -17,6 +17,7 @@ Include "quotes.bb"
 ;Fighter Files
 Include "dante.bb"
 Include "don.bb"
+Include "Achilleus.bb"
 
 ; Game-timing 
 Const fps=60
@@ -32,7 +33,7 @@ Global game_state_timer
 ;Global Media
 Global test
 Global test_bg
-Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound
+Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound,ding
 Global quote_board
 Global song
 
@@ -53,8 +54,8 @@ Repeat
 	loadingScreenQuote()
 	
 	SetFont font
-	createFighter("Dante",1)
-	createFighter("Don",2)
+	createFighter("Achilleus",1)
+	createFighter("Achilleus",2)
 	frameTimer=CreateTimer(60)
 	
 	PlaySound song
@@ -89,6 +90,7 @@ Function loadGlobalMedia()
 	jump_sound = LoadSound("../snd/sfx/jump.wav")
 	projectile_collide_sound = LoadSound("../snd/sfx/gbl/projectile-collide.wav")
 	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
+	ding = LoadSound("../snd/sfx/gbl/ding.wav")
 	song  = LoadSound("../snd/bgm/menu.mp3")
 	SoundVolume song,.35
 End Function

@@ -179,6 +179,98 @@ Function createFighter(fighterName$,player)
 			char\projectile_crit_sound = LoadSound("../snd/sfx/Don/don-projectile-crit.wav")
 			char\kill_sound = LoadSound("../snd/sfx/Don/don-kill.wav")
 			char\death_sound = LoadSound("../snd/sfx/Don/don-kill.wav")
+			
+	Case "Achilleus"
+	;Achilleus
+		char.fighter = New Fighter
+			;Data
+			char\name$ = "Achilleus"
+			char\display_name$ = "Achilleus, Son of Peleus"	
+			char\player = player
+			
+			;Location		
+			char\x = 600
+			char\y = floor_level
+			
+			;Stats
+			char\hp = 80
+			char\strength = 6
+			char\speed = 12
+			char\projectile_count_max = 1
+			char\projectile_speed# = 15
+			char\projectile_gravity# = 12
+			char\projectile_damage = 12
+			char\critMultiplier# = 2
+			char\knockback = 100
+			;Jump Stats
+			char\jump_max_frame = 28
+			char\jump_speed = 29
+			
+			;Animation
+			char\breathing# = 2
+			char\breathingSpeed# = 0.07
+			char\breathingDirection$ = "UP"
+			char\projectile_animation_frames = 1
+			char\walk_frame = 0
+			char\walk_draw_frame = 0
+			char\walk_max_draw_frame = 1
+
+			;State
+			char\state$ = "NONE"
+			char\shield_state$ ="FALSE"
+			
+			;Quotes
+			char\win_quote = 2
+			
+			;Graphics
+			char\body = LoadImage("../img/Achilleus/achilleus-body.png")
+			MaskImage(char\body,255,0,220)
+			char\head = LoadImage("../img/Achilleus/achilleus-head.png")
+			MaskImage(char\head,255,0,220)
+			char\arm= LoadImage("../img/Achilleus/achilleus-arm.png")
+			MaskImage(char\arm,255,0,220)
+			char\crouch = LoadImage("../img/Achilleus/achilleus-crouch.png")
+			MaskImage(char\crouch,255,0,220)
+			char\dead = LoadImage("../img/Achilleus/achilleus-dead.png")
+			MaskImage(char\dead,255,0,220)
+			char\walk = LoadAnimImage("../img/Achilleus/achilleus-walk.png",305,131,0,2)
+			MaskImage(char\walk,255,0,220)
+			
+			char\attack1 = LoadAnimImage("../img/Achilleus/achilleus-weapon-anim.png",200,200,0,5)
+			MaskImage(char\attack1,255,0,220)
+			char\basic_attack_frames = 5
+			
+			char\projectile_graphic = LoadImage("../img/Achilleus/achilleus-spear-2.png")
+			MaskImage(char\projectile_graphic,255,0,220)
+			
+			If player = 2 Then
+				char\playerMultiplier = -1
+				char\x = 1320 - ImageWidth(char\body)
+				mirrorImage(char\body)
+				mirrorImage(char\head)
+				mirrorImage(char\arm)
+				mirrorImage(char\crouch)
+				mirrorImage(char\walk)
+				mirrorImage(char\dead)
+				
+				mirrorImage(char\attack1)
+				
+				mirrorImage(char\projectile_graphic)
+			End If
+	
+	
+			;Sound
+			char\swing_sound = LoadSound("../snd/sfx/Dante/dante-swing.wav")
+			char\basic_hit_sound = LoadSound("../snd/sfx/Dante/dante-basic-hit.wav")
+			char\jump_sound = LoadSound("../snd/sfx/Dante/dante-jump.wav")
+			char\step_sound = LoadSound("../snd/sfx/Dante/dante-step.wav")
+			char\crit_sound = LoadSound("../snd/sfx/Dante/dante-crit.wav")
+			char\projectile_throw_sound = LoadSound("../snd/sfx/Dante/dante-projectile-throw.wav")
+			char\projectile_sound = LoadSound("../snd/sfx/Dante/dante-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
+			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+
 	End Select
 	
 End Function
@@ -201,6 +293,10 @@ Function createProjectile(player)
 				entity\y# = char\y#
 				
 				entity\animation_frames = char\projectile_animation_frames
+				
+				If (Not char\projectile_gravity = 0) Then
+					entity\gravity# = char\projectile_gravity#
+				End If
 			
 			Select char\name$
 				
@@ -210,6 +306,11 @@ Function createProjectile(player)
 			Case "Don"
 				entity\x# = entity\x# - offsetCalculator(80,entity\player) 
 				entity\y# = entity\y# + 200
+			Case "Achilleus"
+				;entity\x# = entity\x# - offsetCalculator(80,entity\player) 
+				;entity\y# = entity\y# + 200
+
+				
 			End Select
 				
 			PlaySound char\projectile_throw_sound

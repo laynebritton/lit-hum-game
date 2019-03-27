@@ -40,7 +40,7 @@ End Function
 
 Function basicAttack(player)
 	For char.fighter = Each fighter
-		If char\player = player And char\state$ = "NONE" Then
+		If char\player = player And char\state$ = "NONE" And (Not char\shield_state$ = "TRUE") Then
 			char\state$ = "BASIC_ATTACK"
 		End If
 	Next
@@ -49,6 +49,7 @@ End Function
 Function updateProjectiles()
 	For entity.projectile = Each Projectile
 		entity\x# = entity\x# + offsetCalculator(entity\speed#,entity\player)
+		entity\y# = entity\y# + entity\gravity#
 		If entity\x# > 2220 Or entity\x# < -200 Then
 			entity\toDelete = True
 		End If
@@ -118,6 +119,22 @@ Function unCrouch(player)
 		End If
 	Next
 End Function
+
+Function activateShield(player)
+	For char.fighter = Each fighter
+		If char\player = player And (Not char\state$="BASIC_ATTACK") Then
+			char\shield_state$ ="TRUE"
+		End If
+	Next
+End Function
+
+Function deactivateShield(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\shield_state$ ="FALSE"
+		End If
+	Next
+End Function 
 
 Function die(player)
 	For char.fighter = Each fighter

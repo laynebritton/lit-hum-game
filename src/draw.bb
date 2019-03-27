@@ -111,6 +111,9 @@ Function drawFighters()
 				
 			Case "Don"
 				drawDon()
+				
+			Case "Achilleus"
+				drawAchilleus()
 			
 				
 		End Select

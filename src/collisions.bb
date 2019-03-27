@@ -5,6 +5,13 @@ Function basic_attack_collisions()
 			For char2.fighter = Each fighter
 				If (Not char\player# = char2\player#) Then
 					For frame = 0 To (char\basic_attack_frames -1) ;Frame counting logic
+						;If blocked
+						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\crouch, char2\x, char2\y, 0) And char2\shield_state$ = "TRUE" Then
+							PlaySound ding
+							char\x = char\x - offsetCalculator(char2\knockback,char\player)
+							Exit
+						End If
+						
 						;Body
 						If ImagesCollide(char\attack1,char\attack_x,char\attack_y, frame, char2\body, char2\x, char2\y, 0) And char2\crouch_state$ = "FALSE" And (Not char2\state$="HURT") Then
 							PlaySound char\basic_hit_sound
@@ -46,6 +53,12 @@ Function projectile_collisions()
 		For char.fighter = Each fighter
 			If (Not entity\player = char\player) Then
 				For frame = 0 To entity\animation_frames -1
+					;If blocked
+					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\crouch, char\x, char\y, 0) And char\shield_state$ = "TRUE" Then
+						PlaySound ding
+						entity\toDelete = True
+						Exit
+					End If
 					;Body
 					If ImagesCollide(entity\graphic, entity\x#, entity\y#, frame, char\body,char\x,char\y, 0) And char\crouch_state$ = "FALSE" And (Not char\state$="HURT") Then
 						PlaySound entity\impact_sound
