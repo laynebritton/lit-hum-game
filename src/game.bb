@@ -112,11 +112,11 @@ Function crapChooseCharacter()
 		 player_2_char = "Achilleus"
 	End If
 	
-	If KeyHit(3) Or KeyHit(37) Then
+	If KeyHit(3) Or KeyHit(50) Then
 		 player_2_char = "Dante"
 	End If
 	
-	If KeyHit(4) Or KeyHit(50) Then
+	If KeyHit(4) Or KeyHit(37) Then
 		 player_2_char = "Don"
 	End If
 		
