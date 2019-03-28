@@ -167,7 +167,6 @@ Function loadGlobalMedia()
 	projectile_collide_sound = LoadSound("../snd/sfx/gbl/projectile-collide.wav")
 	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
 	ding = LoadSound("../snd/sfx/gbl/ding.wav")
-	song  = LoadSound("../snd/bgm/menu.mp3")
 	SoundVolume song,.35
 End Function
 

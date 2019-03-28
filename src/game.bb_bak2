@@ -129,6 +129,7 @@ Function crapChooseCharacter()
 	Print"Select Stage"
 	Print "1: 9th Circle of Hell"
 	Print "2: Montaigne's Room"
+	Print "3: Symposium"
 	WaitKey
 	
 	If KeyHit(2) Then

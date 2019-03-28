@@ -129,6 +129,7 @@ Function crapChooseCharacter()
 	Print"Select Stage"
 	Print "1: 9th Circle of Hell"
 	Print "2: Montaigne's Room"
+	Print "3: Symposium"
 	WaitKey
 	
 	If KeyHit(2) Then
@@ -166,7 +167,7 @@ Function loadGlobalMedia()
 	projectile_collide_sound = LoadSound("../snd/sfx/gbl/projectile-collide.wav")
 	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
 	ding = LoadSound("../snd/sfx/gbl/ding.wav")
-	song  = LoadSound("../snd/bgm/menu.mp3")
+	song  = LoadSound("../snd/bgm/menu.wav")
 	SoundVolume song,.35
 End Function
 
