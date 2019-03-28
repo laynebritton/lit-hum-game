@@ -1,5 +1,5 @@
 ;Graphics Settings
-Graphics3D 1920,1080,32,2
+Graphics3D 1920,1080,32,3
 SetBuffer BackBuffer()
 
 Include "controls.bb"
@@ -80,22 +80,22 @@ Function crapChooseCharacter()
 	FlushKeys()
 
 	Print "Player 1 select charcter"
-	Print "1: Achilleus"
-	Print "2: Dante"
-	Print "3: Don Quixote"
+	Print "A: Achilleus"
+	Print "B: Dante"
+	Print "X: Don Quixote"
 	;Print "4: Hektor"
 	
 	WaitKey
 	
-	If KeyHit(2) Then
+	If KeyHit(2) Or KeyHit(47) Then
 		 player_1_char = "Achilleus"
 	End If
 	
-	If KeyHit(3) Then
+	If KeyHit(3) Or KeyHit(46) Then
 		 player_1_char = "Dante"
 	End If
 	
-	If KeyHit(4) Then
+	If KeyHit(4) Or KeyHit(33) Then
 		 player_1_char = "Don"
 	End If
 
@@ -108,15 +108,15 @@ Function crapChooseCharacter()
 	Print "Player 2 select charcter"
 	WaitKey
 	
-	If KeyHit(2) Then
+	If KeyHit(2) Or KeyHit(51) Then
 		 player_2_char = "Achilleus"
 	End If
 	
-	If KeyHit(3) Then
+	If KeyHit(3) Or KeyHit(37) Then
 		 player_2_char = "Dante"
 	End If
 	
-	If KeyHit(4) Then
+	If KeyHit(4) Or KeyHit(50) Then
 		 player_2_char = "Don"
 	End If
 		
@@ -127,20 +127,20 @@ Function crapChooseCharacter()
 	
 	Print""
 	Print"Select Stage"
-	Print "1: 9th Circle of Hell"
-	Print "2: Montaigne's Room"
-	Print "3: Symposium"
+	Print "A: 9th Circle of Hell"
+	Print "B: Montaigne's Room"
+	Print "X: Symposium"
 	WaitKey
 	
-	If KeyHit(2) Then
+	If KeyHit(2) Or KeyHit(47)  Then
 		 selected_stage$ = "hell"
 	End If
 	
-	If KeyHit(3) Then
+	If KeyHit(3) Or KeyHit(46) Then
 		 selected_stage$ = "tower"
 	End If
 	
-	If KeyHit(4) Then
+	If KeyHit(4) Or KeyHit(33) Then
 		 selected_stage$ = "symposium"
 	End If
 	
@@ -167,7 +167,6 @@ Function loadGlobalMedia()
 	projectile_collide_sound = LoadSound("../snd/sfx/gbl/projectile-collide.wav")
 	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
 	ding = LoadSound("../snd/sfx/gbl/ding.wav")
-	song  = LoadSound("../snd/bgm/menu.wav")
 	SoundVolume song,.35
 End Function
 
