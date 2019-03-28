@@ -1,5 +1,5 @@
 ;Graphics Settings
-Graphics3D 1920,1080,32,3
+Graphics3D 1920,1080,32,2
 SetBuffer BackBuffer()
 
 Include "controls.bb"
