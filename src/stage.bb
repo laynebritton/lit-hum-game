@@ -1,12 +1,30 @@
 Global stage_x#,stage_y#,stage_gfx
 Global stage_speed#
 
-Function loadStage()
-	box.stage = New stage
-		box\gfx = LoadImage("../img/bg/9th-circle.jpg")
-		box\x# = -100
-		box\y# = -400
-		box\speed# = 1
+Function loadStage(name$)
+	Select name$
+	Case "hell"
+		box.stage = New stage
+			box\gfx = LoadImage("../img/bg/9th-circle.jpg")
+			box\x# = -100
+			box\y# = -400
+			box\speed# = 1
+			floor_level=400
+	Case "tower"
+		box.stage = New stage
+			box\gfx = LoadImage("../img/bg/house.jpg")
+			box\x# = -300
+			box\y# = -750
+			box\speed# = 3
+			floor_level=500
+	Case "symposium"
+		box.stage = New stage
+			box\gfx = LoadImage("../img/bg/symposium.jpg")
+			box\x# = -300
+			box\y# = 0
+			box\speed# = 3
+			floor_level=500
+	End Select
 End Function
 Function preventStageOverflow()
 	For box.stage = Each stage

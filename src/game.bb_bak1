@@ -39,6 +39,7 @@ Global song
 
 ;Global Values
 Global player_1_char$="Achilleus",player_2_char$="Dante"
+Global selected_stage$="tower"
 Global fps_count,fake_count
 
 ;Game Settings
@@ -56,7 +57,7 @@ Repeat
 
 
 	loadingScreenQuote()
-	loadS(-1) *tage()
+	loadStage(selected_stage$)
 	SetFont font
 	createFighter(player_1_char,1)
 	createFighter(player_2_char,2)
@@ -82,7 +83,7 @@ Function crapChooseCharacter()
 	Print "1: Achilleus"
 	Print "2: Dante"
 	Print "3: Don Quixote"
-	Print "4: Hektor"
+	;Print "4: Hektor"
 	
 	WaitKey
 	
@@ -122,7 +123,25 @@ Function crapChooseCharacter()
 	If KeyHit(5) Then
 		 player_2_char = "Hektor"
 	End If
-
+	FlushKeys()
+	
+	Print""
+	Print"Select Stage"
+	Print "1: 9th Circle of Hell"
+	Print "2: Montaigne's Room"
+	WaitKey
+	
+	If KeyHit(2) Then
+		 selected_stage$ = "hell"
+	End If
+	
+	If KeyHit(3) Then
+		 selected_stage$ = "tower"
+	End If
+	
+	If KeyHit(4) Then
+		 selected_stage$ = "symposium"
+	End If
 	
 	Flip
 	Cls
