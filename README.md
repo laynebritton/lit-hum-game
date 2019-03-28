@@ -1,6 +1,9 @@
 # lit-hum-game
 
-To launch the game, double click on 
+To play the game
+1) Go into the folder "src"
+2) Double click on "Play Game" 
+3) Make it fullscreen
 
 This game is meant to be played using Xbox Controllers, but it can
 also be played by two people sharing the keyboard. 
@@ -18,26 +21,27 @@ Move left/right: A/D
 
 Crouch: S
 
-Jump: V
+Jump: 	V
 
-Hit: F
+Hit:	F
 
-Throw: C
+Throw: 	C
 
+---
 
 Player 2:
 
 Move left/right: left/right arrow keys
 
-Crouch: down arrow
+Crouch: down arrow key
 
-Jump: ,
+Jump: 	,
 
-Hit: K
+Hit: 	K
 
-Throw: M
+Throw: 	M
 
 --------------------------------------
 
-If you want to use xbox controllers, launch the program JoyToKey in the
-folder, JoyToKey_en
+If you want to use xbox controllers, launch the program "JoyToKey" in the
+folder, JoyToKey_en. Also connect the controllers lol. 
