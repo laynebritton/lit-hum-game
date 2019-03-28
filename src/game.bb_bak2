@@ -57,7 +57,7 @@ Repeat
 
 
 	loadingScreenQuote()
-	loadStage("tower")
+	loadStage(selected_stage$)
 	SetFont font
 	createFighter(player_1_char,1)
 	createFighter(player_2_char,2)
