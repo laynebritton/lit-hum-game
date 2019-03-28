@@ -1,6 +1,16 @@
 # lit-hum-game
 
+To launch the game, double click on 
+
+This game is meant to be played using Xbox Controllers, but it can
+also be played by two people sharing the keyboard. 
+
+Select characters and stage using the 1,2, and 3 keys. 
+Play using the controls below. 
+
+--------------------------------------
 Controls:
+Close the game: ESC
 
 Player 1:
 
@@ -10,7 +20,7 @@ Crouch: S
 
 Jump: V
 
-Hit: J
+Hit: F
 
 Throw: C
 
@@ -23,6 +33,11 @@ Crouch: down arrow
 
 Jump: ,
 
-Hit: G
+Hit: K
 
-Throw: B
+Throw: M
+
+--------------------------------------
+
+If you want to use xbox controllers, launch the program JoyToKey in the
+folder, JoyToKey_en
