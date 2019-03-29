@@ -28,6 +28,15 @@ Function loadStage(name$)
 			box\speed# = 3
 			floor_level=500
 			song  = LoadSound("../snd/bgm/videruntomnes.mp3")
+	Case "troy"
+		box.stage = New stage
+			box\gfx = LoadImage("../img/bg/troy4.jpg")
+			box\x# = -200
+			box\y# = -750
+			box\speed# = 3.2
+			floor_level=450
+			song  = LoadSound("../snd/bgm/revenge.mp3")
+
 	End Select
 End Function
 Function preventStageOverflow()

@@ -105,8 +105,8 @@ Function crapChooseCharacter()
 
 	FlushKeys()
 	
+	Print ""
 	Print "Player 2 select charcter"
-	Print "Player 1 select charcter"
 	Print "A (1): Achilleus"
 	Print "B (2): Dante"
 	Print "X (3): Don Quixote"
