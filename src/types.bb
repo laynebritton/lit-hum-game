@@ -77,6 +77,7 @@ Type Fighter
 	Field state$="NONE"
 	Field crouch_state$ = "FALSE"
 	Field jump_state$ = "FALSE"
+	Field able_to_jump_state$ = "FALSE"
 	Field shield_state$ ="FALSE"
 	Field movement_state$
 	Field attacking
@@ -118,6 +119,8 @@ End Type
 Type Stage
 	Field x#
 	Field y#
+	Field base_height#
+	Field floor_mod#
 	Field speed#
 	Field gfx
 End Type

@@ -1,12 +1,14 @@
 Function refreshWorld()
 	game_states()
+
 	decrementInvincibilityFrames()
 
 	gravity(15,floor_level)
 	keepInBounds()
 	
 	processJumps()
-	
+	able_to_jump_state()
+
 	updateProjectiles()
 	deleteProjectiles()
 	
@@ -38,3 +40,13 @@ Function start_highlight_state()
 	game_state$ = "HIGHLIGHT"
 	game_state_timer = MilliSecs()
 End Function
+
+Function able_to_jump_state()
+	For char.fighter = Each fighter
+		If (char\y# + (ImageHeight(char\body) - floor_level) >= floor_level) Then
+			char\able_to_jump_state$ = "TRUE"
+		Else
+			char\able_to_jump_state$ = "FALSE"
+		End If
+	Next	
+End Function 
