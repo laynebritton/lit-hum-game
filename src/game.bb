@@ -39,7 +39,7 @@ Global song
 
 ;Global Values
 Global player_1_char$="Achilleus",player_2_char$="Dante"
-Global selected_stage$="tower"
+Global selected_stage$="troy"
 Global fps_count,fake_count
 
 ;Game Settings

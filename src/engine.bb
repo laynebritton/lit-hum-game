@@ -3,12 +3,16 @@ Function gravity(strength#,height)
 		If char\state$ = "DEAD" Then
 			;Gravity for death
 			If char\y# < height + ImageHeight(char\dead) Then
-				char\movement_state$="LEFT"
+				;TODO: REMOVE char\movement_state$="LEFT"
 				char\y# = char\y# + strength#
 			End If
 		Else If char\y#  + (ImageHeight(char\body) - height)< height Then
-			char\movement_state$="RIGHT"
+			;TODO: REMOVE char\movement_state$="RIGHT"
 			char\y# = char\y# + strength#
+		Else If char\y#  + (ImageHeight(char\body) - height)> height + 30 Then
+			;TODO: REMOVE char\movement_state$="RIGHT"
+			char\y# = char\y# - strength#
+			;char\y# = char\y# + strength#
 		End If
 	Next
 End Function

@@ -10,17 +10,21 @@ Function loadStage(name$)
 			box\y# = -400
 			box\base_height# = box\y#
 			box\speed# = 1
-			floor_level=400
+			floor_level=420
+			box\floor_mod# = floor_level
+
 			song  = LoadSound("../snd/bgm/menu.wav")
 
 	Case "tower"
 		box.stage = New stage
 			box\gfx = LoadImage("../img/bg/house.jpg")
 			box\x# = -300
-			box\y# = -750
+			box\y# = -730
 			box\base_height# = box\y#
 			box\speed# = 3
 			floor_level=500
+			box\floor_mod# = floor_level
+
 			song  = LoadSound("../snd/bgm/montaigne.mp3")
 	Case "symposium"
 		box.stage = New stage
@@ -30,6 +34,8 @@ Function loadStage(name$)
 			box\base_height# = box\y#
 			box\speed# = 3
 			floor_level=500
+			box\floor_mod# = floor_level
+
 			song  = LoadSound("../snd/bgm/videruntomnes.mp3")
 	Case "troy"
 		box.stage = New stage
@@ -39,9 +45,16 @@ Function loadStage(name$)
 			box\base_height# = box\y#
 			box\speed# = 3.2
 			floor_level=460
-			box\floor_mod = floor_level
+			box\floor_mod# = floor_level
+
 			song  = LoadSound("../snd/bgm/revenge.mp3")
 
+
+	For box.stage = Each stage
+		;box\floor_mod# = floor_level
+
+	Next
+	
 	End Select
 End Function
 Function preventStageOverflow()
@@ -92,23 +105,27 @@ Function trackStage()
 					If char\jump_state$="FALSE" And char2\jump_state$="FALSE" Then ;char\y# < floor_level - 250 Then
 						If char\able_to_jump_state$="FALSE" And char2\able_to_jump_state$="FALSE" Then
 							box\y# = box\y# - Float(2*box\speed#)
+							floor_level =floor_level - 1;Float(2*box\speed#)/2
+
 						Else If char\able_to_jump_state$="TRUE" And char2\able_to_jump_state$="FALSE" Then
 							box\y# = box\y# - box\speed#
+							floor_level =floor_level - 1;box\speed#/2
+
 						Else If char\able_to_jump_state$="TRUE" And char2\able_to_jump_state$="TRUE" Then
 							box\y# = box\y# - box\speed#
+							floor_level =floor_level - 1;box\speed#/2
 						End If
 
-						;floor_level =floor_level - Float(2*box\speed#)
 					Else If char\jump_state$="TRUE" And char2\jump_state$="FALSE" Then
 						box\y# = box\y# + box\speed#
-						;floor_level = floor_level + box\speed#
+						floor_level = floor_level + 1;(box\speed#)/2
 					Else If char\jump_state$="TRUE" And char2\jump_state$="TRUE" Then
 						box\y# = box\y# + ((2) * box\speed#)
-						;floor_level = floor_level + Float(2*box\speed#)
+						floor_level = floor_level + 1;Float(2*box\speed#)/2
 					End If
 				Next 
 				
-				;If floor_height < box\floor_mod# Then floor_height = box\floor_mod#
+				If floor_level < box\floor_mod# Then floor_level = box\floor_mod#
 
 		Next
 	Next
