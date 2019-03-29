@@ -38,7 +38,7 @@ Function loadStage(name$)
 			box\y# = -750
 			box\base_height# = box\y#
 			box\speed# = 3.2
-			floor_level=450
+			floor_level=460
 			box\floor_mod = floor_level
 			song  = LoadSound("../snd/bgm/revenge.mp3")
 
@@ -49,7 +49,7 @@ Function preventStageOverflow()
 		If box\x# < 1920-ImageWidth(box\gfx)  Then box\x# = 1920-ImageWidth(box\gfx)
 		If box\x# > 0 Then box\x# = 0 
 		
-		If box\y# > 0 Then stage_y# = 0
+		If box\y# > 0 Then box\y# = 0
 		If box\y# < box\base_height# Then box\y# = box\base_height
 	Next
 End Function
