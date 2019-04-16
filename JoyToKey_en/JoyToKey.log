@@ -1,36 +1,40 @@
-2019/03/28 07:20:30.661 Info   Starting JoyToKey Ver5.8.2
-2019/03/28 07:20:30.661 Info   ExeFile=C:\Users\admin\lit-hum-game\JoyToKey_en\JoyToKey.exe
-2019/03/28 07:20:30.661 Info   ConfigDir=C:\Users\admin\lit-hum-game\JoyToKey_en\
-2019/03/28 07:20:30.661 Info   IniFile=C:\Users\admin\lit-hum-game\JoyToKey_en\JoyToKey.ini
-2019/03/28 07:20:30.661 Info   Windows Version = 6.2
-2019/03/28 07:20:30.677 Info   Loaded VistaAPI.dll (Utils\Utils.cpp#217)
-2019/03/28 07:20:30.677 Info   LicenseKey "" is not valid
-2019/03/28 07:20:30.880 Info   Loading XInput1_3.dll (Joystick.cpp#126)
-2019/03/28 07:20:30.880 Error  Could not load XInput1_3.dll. Trying to load XInput1_4.dll... (Joystick.cpp#130)
-2019/03/28 07:20:30.896 Info   Initialized XInput (Joystick.cpp#144)
-2019/03/28 07:20:30.974 Info   Detected a XI joystick: XInput-0
-2019/03/28 07:20:30.974 Info   Preferred index = -1
-2019/03/28 07:20:30.974 Info   Detected a XI joystick: XInput-1
-2019/03/28 07:20:30.974 Info   Preferred index = -1
-2019/03/28 07:20:30.974 Info   DetectJoysticks: Detected 2 XI joystick(s)
-2019/03/28 07:20:32.036 Info   Detected a DI joystick: {9F2FFBE0-50DC-11E9-8002-444553540000}, Controller (Xbox One For Windows), Controller (Xbox One For Windows)
-2019/03/28 07:20:32.036 Info   It is an XInput device, so skipping...
-2019/03/28 07:20:32.036 Info   Detected a DI joystick: {9F2DB1F0-50DC-11E9-8001-444553540000}, Controller (Xbox One For Windows), Controller (Xbox One For Windows)
-2019/03/28 07:20:32.036 Info   It is an XInput device, so skipping...
-2019/03/28 07:20:32.036 Info   Joystick #1: XInput Device #1
-2019/03/28 07:20:32.036 Info   Joystick #2: XInput Device #2
-2019/03/28 07:20:32.036 Info   2 joysticks are detected (Joystick.cpp#166)
-2019/03/28 07:20:32.036 Info   ConfigDir=C:\Users\admin\lit-hum-game\JoyToKey_en\*.cfg (ConfigFileManager.cpp#43)
-2019/03/28 07:20:32.036 Info   Failed to find AppLink.dat (AppLink\AppLinkManager.cpp#32)
-2019/03/28 07:20:32.067 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
-2019/03/28 07:27:12.945 Info   Received PBT_APMSUSPEND: Disabling a timer... (Main.cpp#415)
-2019/03/28 08:16:56.265 Info   Received PBT_APMRESUMESUSPEND: Reinitializing joysticks... (Main.cpp#420)
-2019/03/28 08:16:56.265 Info   Loading XInput1_3.dll (Joystick.cpp#126)
-2019/03/28 08:16:56.265 Error  Could not load XInput1_3.dll. Trying to load XInput1_4.dll... (Joystick.cpp#130)
-2019/03/28 08:16:56.265 Info   Initialized XInput (Joystick.cpp#144)
-2019/03/28 08:16:56.265 Info   Detected a XI joystick: XInput-0
-2019/03/28 08:16:56.265 Info   Preferred index = -1
-2019/03/28 08:16:56.312 Info   DetectJoysticks: Detected 1 XI joystick(s)
-2019/03/28 08:17:01.584 Info   Joystick #1: XInput Device #1
-2019/03/28 08:17:01.584 Info   1 joysticks are detected (Joystick.cpp#166)
-2019/03/28 08:17:01.584 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
+2019/04/13 13:16:28.009 Info   Starting JoyToKey Ver5.8.2
+2019/04/13 13:16:28.009 Info   ExeFile=C:\lit-hum-game\JoyToKey_en\JoyToKey.exe
+2019/04/13 13:16:28.009 Info   ConfigDir=C:\lit-hum-game\JoyToKey_en\
+2019/04/13 13:16:28.009 Info   IniFile=C:\lit-hum-game\JoyToKey_en\JoyToKey.ini
+2019/04/13 13:16:28.009 Info   Windows Version = 6.2
+2019/04/13 13:16:28.010 Info   Loaded VistaAPI.dll (Utils\Utils.cpp#217)
+2019/04/13 13:16:28.011 Info   LicenseKey "" is not valid
+2019/04/13 13:16:28.056 Info   Loading XInput1_3.dll (Joystick.cpp#126)
+2019/04/13 13:16:28.057 Info   Initialized XInput (Joystick.cpp#144)
+2019/04/13 13:16:28.073 Info   Detected a XI joystick: XInput-0
+2019/04/13 13:16:28.073 Info   Preferred index = -1
+2019/04/13 13:16:28.073 Info   Detected a XI joystick: XInput-1
+2019/04/13 13:16:28.073 Info   Preferred index = -1
+2019/04/13 13:16:28.074 Info   DetectJoysticks: Detected 2 XI joystick(s)
+2019/04/13 13:16:28.418 Info   Detected a DI joystick: {0B0AA8C0-3271-11E6-8001-444553540000}, Controller (Xbox One For Windows), Controller (Xbox One For Windows)
+2019/04/13 13:16:28.418 Info   It is an XInput device, so skipping...
+2019/04/13 13:16:28.420 Info   Detected a DI joystick: {ACEB47E0-5FFB-11E7-8001-444553540000}, Controller (Xbox One For Windows), Controller (Xbox One For Windows)
+2019/04/13 13:16:28.420 Info   It is an XInput device, so skipping...
+2019/04/13 13:16:28.420 Info   Joystick #1: XInput Device #1
+2019/04/13 13:16:28.420 Info   Joystick #2: XInput Device #2
+2019/04/13 13:16:28.420 Info   2 joysticks are detected (Joystick.cpp#166)
+2019/04/13 13:16:28.420 Info   ConfigDir=C:\lit-hum-game\JoyToKey_en\*.cfg (ConfigFileManager.cpp#43)
+2019/04/13 13:16:28.422 Info   Failed to find AppLink.dat (AppLink\AppLinkManager.cpp#32)
+2019/04/13 13:16:28.434 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
+2019/04/13 13:17:51.858 Error  Access is denied.
+ (Utils\Utils.cpp#464)
+4/13/2019 1:36:33 PM Error  Access is denied.
+ (Utils\Utils.cpp#464)
+4/13/2019 1:36:36 PM Error  Access is denied.
+ (Utils\Utils.cpp#464)
+4/13/2019 1:36:43 PM Error  Access is denied.
+ (Utils\Utils.cpp#464)
+4/13/2019 1:37:56 PM Error  Access is denied.
+ (Utils\Utils.cpp#464)
+4/13/2019 1:38:03 PM Error  Access is denied.
+ (Utils\Utils.cpp#464)
+4/13/2019 1:38:08 PM Error  Access is denied.
+ (Utils\Utils.cpp#464)
+4/13/2019 1:38:13 PM Info   Received WM_QUERYENDSESSION.  Exiting... (Main.cpp#208)
+4/13/2019 1:38:13 PM Info   Application terminated (Utils\LogFile.cpp#20)
