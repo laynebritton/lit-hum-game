@@ -115,6 +115,9 @@ Function drawFighters()
 			Case "Achilleus"
 				drawAchilleus()
 			
+			Case "cly"
+				drawCly()
+			
 				
 		End Select
 	Next 
@@ -127,6 +130,9 @@ Function body(player)
 			char\head_x# = char\x#
 			char\head_y# = char\y#
 			char\arm_y# = char\y#
+			
+			;DrawImage(char\head,char\head_x#,char\head_y#,0)
+			;DrawImage(char\body,char\x,char\y# + char\breathing#,0)
 			
 			DrawImage(char\head,char\head_x#,char\head_y#+ char\breathing#,0)
 			DrawImage(char\body,char\x,char\y,0)

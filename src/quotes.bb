@@ -29,6 +29,11 @@ Function writeQuote(quote)
 			Text 960,105, "to hack your meat away and eat it raw for the things that",True,True
 			Text 960,140, "you have done to me."+ Chr(34),True,True
 			Text 960,175, "-Achilleus (Homer, Iliad (22.346-388))",True,True
+		
+		Case 5 
+			Text 960,70,Chr(34) + "If libations were proper to pour above the slain,",True,True
+			Text 960,105, "this man deserved, more than deserved, such sacrament." + Chr(34),True,True
+			Text 960,140, "-Clytaemestra (Aeschylis, Agamemnon (1395-1396))",True,True
 
 	End Select
 	

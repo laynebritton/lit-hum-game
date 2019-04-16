@@ -96,7 +96,7 @@ Function createFighter(fighterName$,player)
 		char.fighter = New Fighter
 			;Data
 			char\name$ = "Don"
-			char\display_name$ = "Don Quixote"	
+			char\display_name$ = "Don Quixote de La Mancha"	
 			char\player = player
 			
 			;Location		
@@ -364,7 +364,99 @@ Function createFighter(fighterName$,player)
 			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
 
 
-	End Select
+	Case "cly"
+	;Dante
+		char.fighter = New Fighter
+			;Data
+			char\name$ = "cly"
+			char\display_name$ = "Clytaemestra"	
+			char\player = player
+			
+			;Location		
+			char\x = 600
+			char\y = floor_level
+			
+			;Stats
+			char\hp = 65
+			char\strength = 7
+			char\speed = 12
+			char\projectile_count_max = 4
+			char\projectile_speed# = 13
+			char\projectile_gravity# = 6
+			char\projectile_damage = 4
+			char\critMultiplier# = 2
+			;char\knockback = 100
+			
+			;Jump Stats
+			char\jump_max_frame = 24
+			char\jump_speed = 24
+			
+			;Animation
+			char\breathing# = 2
+			char\breathingSpeed# = 0.05
+			char\breathingDirection$ = "UP"
+			char\projectile_animation_frames = 1
+			char\walk_frame = 0
+			char\walk_draw_frame = 0
+			char\walk_max_draw_frame = 1
+
+			;State
+			char\state$ = "NONE"
+			
+			;Quotes
+			char\win_quote = 5
+			
+			;Graphics
+			char\body = LoadImage("../img/Clytaemestra/body-3.png")
+			MaskImage(char\body,255,0,220)
+			char\head = LoadImage("../img/Clytaemestra/head-alt-2.png")
+			MaskImage(char\head,255,0,220)
+			char\arm= LoadImage("../img/Clytaemestra/arm-4.png")
+			MaskImage(char\arm,255,0,220)
+			char\crouch = LoadImage("../img/Clytaemestra/crouch-1.png")
+			MaskImage(char\crouch,255,0,220)
+			char\dead = LoadImage("../img/Clytaemestra/dead.png")
+			MaskImage(char\dead,255,0,220)
+			char\walk = LoadAnimImage("../img/Clytaemestra/walk-2.png",301,82,0,2)
+			MaskImage(char\walk,255,0,220)
+			
+			char\attack1 = LoadAnimImage("../img/Clytaemestra/attack-anim.png",500,550,0,5)
+			MaskImage(char\attack1,255,0,220)
+			char\basic_attack_frames = 5
+			
+			char\projectile_graphic = LoadImage("../img/Clytaemestra/throw.png")
+			MaskImage(char\projectile_graphic,255,0,220)
+			
+			If player = 2 Then
+				char\playerMultiplier = -1
+				char\x = 1320 - ImageWidth(char\body)
+				mirrorImage(char\body)
+				mirrorImage(char\head)
+				mirrorImage(char\arm)
+				mirrorImage(char\crouch)
+				mirrorImage(char\walk)
+				mirrorImage(char\dead)
+				
+				mirrorImage(char\attack1)
+				
+				mirrorImage(char\projectile_graphic)
+			End If
+	
+	
+			;Sound
+			char\swing_sound = LoadSound("../snd/sfx/Dante/dante-swing.wav")
+			char\basic_hit_sound = LoadSound("../snd/sfx/Dante/dante-basic-hit.wav")
+			char\jump_sound = LoadSound("../snd/sfx/Dante/dante-jump.wav")
+			char\step_sound = LoadSound("../snd/sfx/Dante/dante-step.wav")
+			char\crit_sound = LoadSound("../snd/sfx/Dante/dante-crit.wav")
+			char\projectile_throw_sound = LoadSound("../snd/sfx/Dante/dante-projectile-throw.wav")
+			char\projectile_sound = LoadSound("../snd/sfx/Dante/dante-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
+			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+		
+		End Select 
+
 	
 End Function
 
@@ -402,6 +494,9 @@ Function createProjectile(player)
 			Case "Achilleus"
 				;entity\x# = entity\x# - offsetCalculator(80,entity\player) 
 				;entity\y# = entity\y# + 200
+			Case "cly"
+				entity\x# = entity\x# - offsetCalculator(120,entity\player) 
+				entity\y# = entity\y# + 130
 
 				
 			End Select

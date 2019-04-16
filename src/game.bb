@@ -19,6 +19,7 @@ Include "stage.bb"
 Include "dante.bb"
 Include "don.bb"
 Include "Achilleus.bb"
+Include "clytaemestra.bb"
 
 ; Game-timing 
 Const fps=60
@@ -83,7 +84,7 @@ Function crapChooseCharacter()
 	Print "A (1): Achilleus"
 	Print "B (2): Dante"
 	Print "X (3): Don Quixote"
-	;Print "4: Hektor"
+	Print "4: Clytaemestra"
 	
 	WaitKey
 	
@@ -100,7 +101,7 @@ Function crapChooseCharacter()
 	End If
 
 	If KeyHit(5) Then
-		 player_1_char = "Hektor"
+		 player_1_char = "cly"
 	End If
 
 	FlushKeys()
@@ -110,6 +111,7 @@ Function crapChooseCharacter()
 	Print "A (1): Achilleus"
 	Print "B (2): Dante"
 	Print "X (3): Don Quixote"
+	Print "4: Clytaemestra"
 	WaitKey
 	
 	If KeyHit(2) Or KeyHit(51) Then
@@ -125,7 +127,7 @@ Function crapChooseCharacter()
 	End If
 		
 	If KeyHit(5) Then
-		 player_2_char = "Hektor"
+		 player_2_char = "cly"
 	End If
 	FlushKeys()
 	
