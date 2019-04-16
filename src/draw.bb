@@ -132,10 +132,10 @@ Function body(player)
 			char\arm_y# = char\y#
 			
 			;DrawImage(char\head,char\head_x#,char\head_y#,0)
-			;DrawImage(char\body,char\x,char\y# + char\breathing#,0)
+			DrawImage(char\body,char\x,char\y# + char\breathing#,0)
 			
 			DrawImage(char\head,char\head_x#,char\head_y#+ char\breathing#,0)
-			DrawImage(char\body,char\x,char\y,0)
+			;DrawImage(char\body,char\x,char\y,0)
 
 		End If
 	Next 
