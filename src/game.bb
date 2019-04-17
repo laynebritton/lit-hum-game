@@ -29,6 +29,7 @@ Global player1_left = 30
 Global player1_right = 32
 Global player1_attack = 33
 Global player1_throw = 46
+Global player1_start = 28
 
 .Player2_Controls
 Global player2_jump = 51
@@ -72,6 +73,7 @@ Dim quote_out$(8)
 ;crapChooseCharacter()
 loadGlobalMedia()
 loadMenuGraphics()
+loadCharacterIcons()
 Repeat	
 	characterSelect()
 Forever

@@ -116,6 +116,13 @@ Type Projectile
 	
 End Type
 
+Type char_select
+	Field char
+	Field char_gfx
+	Field x
+	Field y
+End Type
+
 Type Stage
 	Field x#
 	Field y#
