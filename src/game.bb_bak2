@@ -14,11 +14,29 @@ Include "update.bb"
 Include "collisions.bb"
 Include "quotes.bb"
 Include "stage.bb"
+Include "menu.bb"
 
 ;Fighter Files
 Include "dante.bb"
 Include "don.bb"
 Include "Achilleus.bb"
+Include "clytaemestra.bb"
+
+.Player1_Controls
+Global player1_jump = 47
+Global player1_down = 31
+Global player1_left = 30
+Global player1_right = 32
+Global player1_attack = 33
+Global player1_throw = 46
+
+.Player2_Controls
+Global player2_jump = 51
+Global player2_down = 208
+Global player2_left = 203
+Global player2_right = 205
+Global player2_attack = 37
+Global player2_throw = 50
 
 ; Game-timing 
 Const fps=60
@@ -50,14 +68,18 @@ Global font,big_quote_font
 ;General Quotes
 Dim quote_out$(8)
 
-crapChooseCharacter()
+;crapChooseCharacter()
 loadGlobalMedia()
-
+loadMenuGraphics()
 Repeat	
+	characterSelect()
+Forever
 
+Function creap()
 
 	loadingScreenQuote()
 	loadStage(selected_stage$)
+
 	SetFont font
 	createFighter(player_1_char,1)
 	createFighter(player_2_char,2)
@@ -73,8 +95,7 @@ Repeat
 		
 		drawWorld()
 	Wend
-
-Forever
+End Function 
 
 Function crapChooseCharacter()
 	FlushKeys()
@@ -110,6 +131,7 @@ Function crapChooseCharacter()
 	Print "A (1): Achilleus"
 	Print "B (2): Dante"
 	Print "X (3): Don Quixote"
+	Print "4: Clytaemestra"
 	WaitKey
 	
 	If KeyHit(2) Or KeyHit(51) Then
@@ -125,7 +147,7 @@ Function crapChooseCharacter()
 	End If
 		
 	If KeyHit(5) Then
-		 player_2_char = "Hektor"
+		 player_2_char = "cly"
 	End If
 	FlushKeys()
 	
@@ -152,14 +174,6 @@ Function crapChooseCharacter()
 	If KeyHit(5) Or KeyHit(33) Then
 		 selected_stage$ = "troy"
 	End If
-	
-	Flip
-	Cls
-End Function
- 
-Function loadingScreenQuote()
-	writeQuote(1)
-	Text 0,1020,"Loading..."	
 	
 	Flip
 	Cls
