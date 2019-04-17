@@ -28,7 +28,7 @@ End Function
 Function loadMenuAssets()
 	loadMenuGraphics()
 	loadMenuMusic()
-	maxMenuRectangles = 200
+	maxMenuRectangles = 120
 	currentMenuRectangles = 0
 
 End Function

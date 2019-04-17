@@ -3,7 +3,7 @@ Function drawWorld()
 			
 	drawFloorVisual()
 	
-	menuBubbles2()
+	;menuBubbles2()
 	
 	drawFightHUD()
 	drawQuoteBoard()
