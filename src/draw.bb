@@ -3,13 +3,15 @@ Function drawWorld()
 			
 	drawFloorVisual()
 	
+	menuBubbles2()
+	
 	drawFightHUD()
 	drawQuoteBoard()
 	
 	drawFighters()
 	drawProjectiles()
 
-
+	
 	;Should always be last lines
 	displayFPS(display_fps_on)
 	displayPlayer1Coords(display_player1_coords_on)

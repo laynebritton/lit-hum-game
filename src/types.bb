@@ -131,3 +131,9 @@ Type Stage
 	Field speed#
 	Field gfx
 End Type
+
+Type menu_rect
+	Field x
+	Field y
+	Field speed
+End Type

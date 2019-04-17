@@ -10,12 +10,7 @@ Global p1Arrow,p2Arrow
 Global p1Char,p2Char
 Global p1Position=1, p2Position=1
 
-Function loadMenuAssets()
-	loadMenuGraphics()
-	loadMenuMusic()
-End Function
-
-
+Global maxMenuRectangles,currentMenuRectangles
 
 Function drawCharacterSelect()
 	boundArrows()
@@ -25,11 +20,18 @@ Function drawCharacterSelect()
 	drawPlayerArrows()
 	getCharacterForArrows()
 
-
+	menuBubbles()
 	Flip 
 	Cls
 End Function
 
+Function loadMenuAssets()
+	loadMenuGraphics()
+	loadMenuMusic()
+	maxMenuRectangles = 200
+	currentMenuRectangles = 0
+
+End Function
 
 Function characterSelect()
 	checkCharacterSelectInput()
@@ -49,33 +51,35 @@ End Function
 Function loadMenuMusic()
 	menuMusic = LoadSound("../snd/bgm/pillar.mp3")
 	LoopSound menuMusic
+	SoundVolume menuMusic,0.5
 End Function
 
 Function drawCharacterIcons()
 	x_increment = 125
-	y_position = 800
+	x_offset = 167
+	y_position = 850
 	For x = 1 To 10
 		Select x
 			Case 1
-				DrawImage(achilleusIcon,x_increment *x, y_position, 0)
+				DrawImage(achilleusIcon,x_increment *x + x_offset, y_position, 0)
 			Case 2
-				DrawImage(danteIcon,x_increment *x, y_position, 0)
+				DrawImage(danteIcon,x_increment *x + x_offset, y_position, 0)
 			Case 3
-				DrawImage(donIcon,x_increment *x, y_position, 0)
+				DrawImage(donIcon,x_increment *x + x_offset, y_position, 0)
 			Case 4
-				DrawImage(clyIcon,x_increment *x, y_position, 0)
+				DrawImage(clyIcon,x_increment *x + x_offset, y_position, 0)
 		
 		End Select
 
-		DrawImage(charFrame,x_increment *x, y_position, 0)
+		DrawImage(charFrame,x_increment *x + x_offset, y_position, 0)
 		
 	Next	
 		
 End Function
 
 Function drawPlayerArrows()
-	DrawImage(p1Arrow,p1Position * 125, 670,0)
-	DrawImage(p2Arrow,p2Position * 125, 670,0)
+	DrawImage(p1Arrow,p1Position * 125 + 167, 720,0)
+	DrawImage(p2Arrow,p2Position * 125 + 167,720,0)
 End Function
 
 Function getCharacterForArrows()
@@ -118,7 +122,11 @@ End Function
 
 Function fight(player1$,player2$,stage)
 	PauseChannel menuMusicChannel
+	;TODO Get rid of this shit
+	crapStageSelect()
+	
 	loadingScreenQuote()
+	
 	loadStage(selected_stage$)
 	SetFont font
 	createFighter(player1$,1)
@@ -244,3 +252,53 @@ Function checkCharacterSelectInput()
 		 player_2_char$ = "cly"
 	End If
 End Function
+
+Function menuBubbles()
+	If currentMenuRectangles< maxMenuRectangles Then 											
+		currentMenuRectangles = currentMenuRectangles + 1
+		menu.menu_rect = New menu_rect 
+		For menu.menu_rect = Each menu_rect
+			menu\x = Rand(15,1900)
+			menu\y = Rand(0,1080)
+			menu\speed = Rand(6,13)
+		Next
+	End If
+
+
+	For menu.menu_rect = Each menu_rect
+		Color Rand(68,128),Rand(68,128),Rand(68,129)
+		Oval menu\x,menu\y,2,50,1
+		menu\y = menu\y - menu\speed 
+		If menu\y < -10 Then
+			menu\y = 1100
+			menu\speed = Rand(6,13)
+			menu\x = Rand(15,1900)
+		End If
+	Next 
+
+End Function 
+
+Function menuBubbles2()
+	If currentMenuRectangles< maxMenuRectangles Then 											
+		currentMenuRectangles = currentMenuRectangles + 1
+		menu.menu_rect = New menu_rect 
+		For menu.menu_rect = Each menu_rect
+			menu\x = Rand(15,1900)
+			menu\y = Rand(0,1080)
+			menu\speed = Rand(13,20)
+		Next
+	End If
+
+
+	For menu.menu_rect = Each menu_rect
+		Color Rand(68,128),Rand(68,128),Rand(68,129)
+		Oval menu\x,menu\y,50,2,1
+		menu\x = menu\x - menu\speed 
+		If menu\x < -100 Then
+			menu\x = 2020
+			menu\speed = Rand(13,20)
+			menu\y = Rand(0,1080)
+		End If
+	Next 
+
+End Function 
