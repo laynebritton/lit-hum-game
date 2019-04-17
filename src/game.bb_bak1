@@ -29,6 +29,7 @@ Global player1_left = 30
 Global player1_right = 32
 Global player1_attack = 33
 Global player1_throw = 46
+Global player1_start = 28
 
 .Player2_Controls
 Global player2_jump = 51
@@ -55,6 +56,8 @@ Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,
 Global quote_board
 Global song
 Global channel
+Global menuMusic
+Global menuMusicChannel
 
 ;Global Values
 Global player_1_char$="Achilleus",player_2_char$="Dante"
@@ -71,8 +74,10 @@ Dim quote_out$(8)
 
 ;crapChooseCharacter()
 loadGlobalMedia()
-loadMenuGraphics()
+loadMenuAssets()
 loadCharacterIcons()
+
+menuMusicChannel = PlaySound(menuMusic)
 Repeat	
 	characterSelect()
 Forever

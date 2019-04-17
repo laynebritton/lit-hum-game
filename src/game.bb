@@ -56,6 +56,8 @@ Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,
 Global quote_board
 Global song
 Global channel
+Global menuMusic
+Global menuMusicChannel
 
 ;Global Values
 Global player_1_char$="Achilleus",player_2_char$="Dante"
@@ -72,8 +74,10 @@ Dim quote_out$(8)
 
 ;crapChooseCharacter()
 loadGlobalMedia()
-loadMenuGraphics()
+loadMenuAssets()
 loadCharacterIcons()
+
+menuMusicChannel = PlaySound(menuMusic)
 Repeat	
 	characterSelect()
 Forever

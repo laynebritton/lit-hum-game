@@ -13,6 +13,13 @@ Function checkInput()
 		togglePlayer1Coords()
 	End If
 	
+	;Start functionality
+	If KeyHit(player1_start) Then
+		If game_state$="END" Then
+			clearFight()
+		End If
+	End If
+	
 	;Player 1 Movement
 	If KeyHit(player1_jump) Then
 		;Player 1 Move Up

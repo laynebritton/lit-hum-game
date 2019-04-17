@@ -1,3 +1,5 @@
+;Yes the menu code is janky and kinda sucks
+;Please don't hate on it, I slapped it together really fast if you can't tell lol
 Global stagebg
 
 Global charFrame
@@ -5,10 +7,15 @@ Global danteIcon,donIcon,achilleusIcon,clyIcon
 
 
 Global p1Arrow,p2Arrow
-Global p1X,p2X
-Global p1Y,p2Y
 Global p1Char,p2Char
 Global p1Position=1, p2Position=1
+
+Function loadMenuAssets()
+	loadMenuGraphics()
+	loadMenuMusic()
+End Function
+
+
 
 Function drawCharacterSelect()
 	boundArrows()
@@ -39,9 +46,14 @@ Function loadMenuGraphics()
 
 End Function
 
+Function loadMenuMusic()
+	menuMusic = LoadSound("../snd/bgm/pillar.mp3")
+	LoopSound menuMusic
+End Function
+
 Function drawCharacterIcons()
 	x_increment = 125
-	y_position = 700
+	y_position = 800
 	For x = 1 To 10
 		Select x
 			Case 1
@@ -59,6 +71,11 @@ Function drawCharacterIcons()
 		
 	Next	
 		
+End Function
+
+Function drawPlayerArrows()
+	DrawImage(p1Arrow,p1Position * 125, 670,0)
+	DrawImage(p2Arrow,p2Position * 125, 670,0)
 End Function
 
 Function getCharacterForArrows()
@@ -100,6 +117,7 @@ Function loadCharacterIcons()
 End Function
 
 Function fight(player1$,player2$,stage)
+	PauseChannel menuMusicChannel
 	loadingScreenQuote()
 	loadStage(selected_stage$)
 	SetFont font
@@ -107,11 +125,11 @@ Function fight(player1$,player2$,stage)
 	createFighter(player2$,2)
 	
 	frameTimer=CreateTimer(60)
-	
+
 	fightChannel = PlaySound(song)
 	fight_state = True
 	clear_game_states()
-	While fight_state
+	While (Not game_state$ ="FIGHT_OVER")
 		WaitTimer(frameTimer)
 
 		checkInput()
@@ -120,24 +138,12 @@ Function fight(player1$,player2$,stage)
 		
 		drawWorld()
 		
-		For char.fighter = Each fighter
-			If char\state$= "DEAD" Then
-				fight_state = False
-			End If
-		Next
 	Wend
 	
 	StopChannel(fightChannel)
+	ResumeChannel menuMusicChannel
 	clearFight()
-	For char.fighter = Each fighter
-		Delete char
-	Next
 	
-End Function
-
-Function drawPlayerArrows()
-	DrawImage(p1Arrow,p1Position * 125, 570,0)
-	DrawImage(p2Arrow,p2Position * 125, 570,0)
 End Function
 
 

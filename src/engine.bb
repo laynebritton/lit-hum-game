@@ -150,8 +150,16 @@ Function clearProjectiles()
 	Next
 End Function 
 
+Function clearFighters()
+	For char.fighter = Each fighter
+		Delete char
+	Next
+End Function 
+
 Function clearFight()
+	game_state$="FIGHT_OVER"
 	clearProjectiles()
+	clearFighters()
 End Function
 
 Function die(player)
