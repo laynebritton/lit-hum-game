@@ -28,8 +28,9 @@ Function fight(player1$,player2$,stage)
 	
 	frameTimer=CreateTimer(60)
 	
-	PlaySound song
+	fightChannel = PlaySound(song)
 	fight_state = True
+	clear_game_states()
 	While fight_state
 		WaitTimer(frameTimer)
 
@@ -46,6 +47,8 @@ Function fight(player1$,player2$,stage)
 		Next
 	Wend
 	
+	StopChannel(fightChannel)
+	clearFight()
 	For char.fighter = Each fighter
 		Delete char
 	Next

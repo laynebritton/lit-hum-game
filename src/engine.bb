@@ -144,6 +144,16 @@ Function deactivateShield(player)
 	Next
 End Function 
 
+Function clearProjectiles()
+	For entity.projectile = Each Projectile
+		Delete entity
+	Next
+End Function 
+
+Function clearFight()
+	clearProjectiles()
+End Function
+
 Function die(player)
 	For char.fighter = Each fighter
 		If char\player = player Then

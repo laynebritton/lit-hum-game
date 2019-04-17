@@ -50,3 +50,9 @@ Function able_to_jump_state()
 		End If
 	Next	
 End Function 
+
+
+Function clear_game_states()
+	game_state$=""
+	highlight_state=""
+End Function 

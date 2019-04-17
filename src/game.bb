@@ -54,6 +54,7 @@ Global test
 Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound,ding
 Global quote_board
 Global song
+Global channel
 
 ;Global Values
 Global player_1_char$="Achilleus",player_2_char$="Dante"
