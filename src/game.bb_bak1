@@ -15,6 +15,7 @@ Include "collisions.bb"
 Include "quotes.bb"
 Include "stage.bb"
 Include "menu.bb"
+Include "books.bb"
 
 ;Fighter Files
 Include "dante.bb"
@@ -77,6 +78,7 @@ Dim quote_out$(8)
 loadGlobalMedia()
 loadMenuAssets()
 loadCharacterIcons()
+loadCharacterSplashes()
 
 menuMusicChannel = PlaySound(menuMusic)
 Repeat	

@@ -21,6 +21,7 @@ Include "dante.bb"
 Include "don.bb"
 Include "Achilleus.bb"
 Include "clytaemestra.bb"
+Include "Odysseus.bb"
 
 .Player1_Controls
 Global player1_jump = 47
@@ -76,6 +77,7 @@ Dim quote_out$(8)
 loadGlobalMedia()
 loadMenuAssets()
 loadCharacterIcons()
+loadCharacterSplashes()
 
 menuMusicChannel = PlaySound(menuMusic)
 Repeat	

@@ -4,11 +4,13 @@ Global stagebg
 
 Global charFrame
 Global danteIcon,donIcon,achilleusIcon,clyIcon,odysseusIcon
-
+Global danteSplash,donSplash,achilleusSplash,clySplash,odysseusSplash
+Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2
 
 Global p1Arrow,p2Arrow
 Global p1Char,p2Char
 Global p1Position=1, p2Position=1
+Global p1Book, p2Book
 
 Global maxMenuRectangles,currentMenuRectangles
 
@@ -19,11 +21,14 @@ Function drawCharacterSelect()
 	drawCharacterIcons()
 	drawPlayerArrows()
 	getCharacterForArrows()
+	drawCharacterSplashes()
 
 	menuBubbles()
 	Flip 
 	Cls
 End Function
+
+
 
 Function loadMenuAssets()
 	loadMenuGraphics()
@@ -80,13 +85,83 @@ Function drawCharacterIcons()
 		
 End Function
 
+Function drawCharacterSplashes()
+	drawP1 = False
+	Color 0,0,0
+		
+	Select player_1_char$ 
+		Case "Achilleus"
+			p1Splash = achilleusSplash
+			p1Book = Inferno
+			drawP1 = True
+		Case "Don"
+			p1Splash = donSplash
+			p1Book = Quixote
+			drawP1 = True
+		Case "Dante"
+			p1Splash = danteSplash
+			p1Book = Inferno
+			drawP1 = True
+		Case "cly"
+			p1Splash = clySplash
+			p1Book = Inferno
+			drawP1 = True
+		Case "Odysseus"
+			p1Splash = odysseusSplash
+			p1Book = Inferno
+			drawP1 = True
+			
+		Default
+			drawP1 = False
+	End Select
+
+	If drawP1 Then 
+		DrawImage(p1Splash,240,150,0)
+		DrawImage(p1Book,20,350,0)
+		Color 0,0,0
+		Rect 240,150,ImageWidth(p1Splash),ImageHeight(p1Splash),0
+	End If		
+	
+
+	drawP2 = False
+	Color 0,0,0
+	
+	Select player_2_char$ 
+		Case "Achilleus"
+			p2Splash = achilleusSplash2
+			drawP2 = True
+		Case "Don"
+			p2Splash = donSplash2
+			drawP2 = True
+		Case "Dante"
+			p2Splash = danteSplash2
+			drawP2 = True
+		Case "cly"
+			p2Splash = clySplash2
+			drawP2 = True
+		Case "Odysseus"
+			p2Splash = odysseusSplash2
+			drawP2 = True
+			
+		Default
+			drawP2 = False
+	End Select
+
+	If drawP2 Then 
+		DrawImage(p2Splash,1030,150,0)
+		Color 0,0,0
+		Rect 1030,150,ImageWidth(p2Splash),ImageHeight(p2Splash),0
+	End If		
+
+End Function 
+
 Function drawPlayerArrows()
 	DrawImage(p1Arrow,p1Position * 125 + 167, 720,0)
 	DrawImage(p2Arrow,p2Position * 125 + 167,720,0)
 End Function
 
 Function getCharacterForArrows()
-	Select p1Position
+	Select p1Position 
 		Case 1
 			player_1_char$ = "Achilleus"
 		Case 2
@@ -124,6 +199,21 @@ Function loadCharacterIcons()
 	clyIcon = LoadImage("../img/menu/cly-small.png")
 	odysseusIcon = LoadImage("../img/menu/odysseus-small.png")
 
+End Function
+
+Function loadCharacterSplashes()
+	danteSplash = LoadImage("../img/menu/dante-big.png")
+	donSplash = LoadImage("../img/menu/don-big.png")
+	achilleusSplash = LoadImage("../img/menu/achilleus-big.png")
+	clySplash = LoadImage("../img/menu/cly-big.png")
+	odysseusSplash = LoadImage("../img/menu/odysseus-big.png")
+
+
+	danteSplash2 = LoadImage("../img/menu/dante-big-2.png")
+	donSplash2 = LoadImage("../img/menu/don-big-2.png")
+	achilleusSplash2 = LoadImage("../img/menu/achilleus-big-2.png")
+	clySplash2 = LoadImage("../img/menu/cly-big-2.png")
+	odysseusSplash2 = LoadImage("../img/menu/odysseus-big-2.png")
 End Function
 
 Function fight(player1$,player2$,stage)
