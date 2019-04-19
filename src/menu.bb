@@ -3,7 +3,7 @@
 Global stagebg
 
 Global charFrame
-Global danteIcon,donIcon,achilleusIcon,clyIcon
+Global danteIcon,donIcon,achilleusIcon,clyIcon,odysseusIcon
 
 
 Global p1Arrow,p2Arrow
@@ -14,7 +14,7 @@ Global maxMenuRectangles,currentMenuRectangles
 
 Function drawCharacterSelect()
 	boundArrows()
-	;DrawImage(stagebg,0,0)
+	DrawImage(stagebg,0,0)
 
 	drawCharacterIcons()
 	drawPlayerArrows()
@@ -39,7 +39,7 @@ Function characterSelect()
 End Function 
 
 Function loadMenuGraphics()
-	stagebg = LoadImage("../img/bg/menu-bg.png")
+	stagebg = LoadImage("../img/bg/gradient-bg.png")
 	p1Arrow = LoadImage("../img/menu/p1-2.png")
 	MaskImage(p1Arrow ,255,0,220)
 
@@ -68,6 +68,9 @@ Function drawCharacterIcons()
 				DrawImage(donIcon,x_increment *x + x_offset, y_position, 0)
 			Case 4
 				DrawImage(clyIcon,x_increment *x + x_offset, y_position, 0)
+			Case 5
+				DrawImage(odysseusIcon,x_increment *x + x_offset, y_position, 0)
+			
 		
 		End Select
 
@@ -119,7 +122,7 @@ Function loadCharacterIcons()
 	donIcon = LoadImage("../img/menu/don-small.png")
 	achilleusIcon = LoadImage("../img/menu/achilleus-small.png")
 	clyIcon = LoadImage("../img/menu/cly-small.png")
-
+	odysseusIcon = LoadImage("../img/menu/odysseus-small.png")
 
 End Function
 

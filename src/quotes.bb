@@ -35,6 +35,13 @@ Function writeQuote(quote)
 			Text 960,105, "this man deserved, more than deserved, such sacrament." + Chr(34),True,True
 			Text 960,140, "-Clytaemestra (Aeschylis, Agamemnon (1395-1396))",True,True
 
+		Case 6
+			Text 960,70,Chr(34) + "It is not pious, gloating over men",True,True
+			Text 960,105, "who have been killed. Divine fate toke them down,",True,True
+			Text 960,140, "and their own wicked deeds."+ Chr(34),True,True
+			Text 960,175, "-Odysseus (Homer, The Odyssey (22.411-413))",True,True
+
+
 	End Select
 	
 	SetFont(font)

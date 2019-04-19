@@ -470,18 +470,18 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
-			char\hp = 85
+			char\hp = 75
 			char\strength = 7
 			char\speed = 15
 			char\projectile_count_max = 4
 			char\projectile_speed# = 15
-			char\projectile_gravity# = 2
-			char\projectile_damage = 7
+			char\projectile_gravity# = 3
+			char\projectile_damage = 5
 			char\critMultiplier# = 2.5
 			char\knockback = 100
 			;Jump Stats
-			char\jump_max_frame = 28
-			char\jump_speed = 29
+			char\jump_max_frame = 26
+			char\jump_speed = 30
 			
 			;Animation
 			char\breathing# = 2
@@ -497,7 +497,7 @@ Function createFighter(fighterName$,player)
 			char\shield_state$ ="FALSE"
 			
 			;Quotes
-			char\win_quote = 4
+			char\win_quote = 6
 			
 			;Graphics
 			char\body = LoadImage("../img/Odysseus/body-1.png")

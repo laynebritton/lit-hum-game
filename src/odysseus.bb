@@ -40,6 +40,9 @@ Function OdysseusArrowHold(player)
 				End If
 				;x_offset = offsetCalculator(215,char\player)
 				y_offset = 115 + char\breathing#
+				If char\crouch_state$="TRUE" Then
+					y_offset = y_offset + 90
+				End If
 				DrawImage(char\projectile_graphic,char\x# + player_2_offset,char\y# + y_offset,0)
 			End If
 		End If
