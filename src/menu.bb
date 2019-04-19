@@ -88,27 +88,35 @@ End Function
 Function drawCharacterSplashes()
 	drawP1 = False
 	Color 0,0,0
+	SetFont(big_quote_font)
 		
 	Select player_1_char$ 
 		Case "Achilleus"
 			p1Splash = achilleusSplash
 			p1Book = Iliad
+			
+			Text 240,100,"Achilleus, Son of Peleus"
 			drawP1 = True
 		Case "Don"
 			p1Splash = donSplash
 			p1Book = Quixote
+			Text 240,100,"Don Quixote de La Mancha"
 			drawP1 = True
 		Case "Dante"
 			p1Splash = danteSplash
 			p1Book = Inferno
+			Text 240,100,"Dante Alighieri"
+
 			drawP1 = True
 		Case "cly"
 			p1Splash = clySplash
 			p1Book = Oresteia
+			Text 240,100,"Clytaemestra"
 			drawP1 = True
 		Case "Odysseus"
 			p1Splash = odysseusSplash
 			p1Book = Odyssey
+			Text 240,100,"Odysseus, Son of Laertes"
 			drawP1 = True
 			
 		Default
@@ -119,7 +127,7 @@ Function drawCharacterSplashes()
 		DrawImage(p1Splash,240,150,0)
 		DrawImage(p1Book,20,350,0)
 		Color 0,0,0
-		Rect 240,150,ImageWidth(p1Splash),ImageHeight(p1Splash),0
+		Rect 240,150,ImageWidth(p1Splash),ImageHeight(p1Splash),0	
 	End If		
 	
 
@@ -130,22 +138,32 @@ Function drawCharacterSplashes()
 		Case "Achilleus"
 			p2Splash = achilleusSplash2
 			p2Book = Iliad
+			Text 1030,100,"Achilleus, Son of Peleus"
+			
 			drawP2 = True
 		Case "Don"
 			p2Splash = donSplash2
 			p2Book = Quixote
+			Text 1030,100,"Don Quixote de La Mancha"
+
 			drawP2 = True
 		Case "Dante"
 			p2Splash = danteSplash2
 			p2Book = Inferno
+			Text 1030,100,"Dante Alighieri"
+
 			drawP2 = True
 		Case "cly"
 			p2Splash = clySplash2
 			p2Book = Oresteia
+			Text 1030,100,"Clytaemestra"
+
 			drawP2 = True
 		Case "Odysseus"
 			p2Splash = odysseusSplash2
 			p2Book = Odyssey
+			Text 1030,100,"Odysseus, Son of Laertes"
+
 			drawP2 = True
 			
 		Default
