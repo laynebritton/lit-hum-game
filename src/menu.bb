@@ -276,6 +276,7 @@ End Function
 
 
 Function incrementArrow(number)
+	PlaySound blipSound
 	Select number
 		Case 1
 			p1Position = p1Position + 1
@@ -286,6 +287,7 @@ Function incrementArrow(number)
 End Function 
 
 Function decrementArrow(number)
+	PlaySound blipSound
 	Select number
 		Case 1
 			p1Position = p1Position - 1

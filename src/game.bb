@@ -60,6 +60,7 @@ Global song
 Global channel
 Global menuMusic
 Global menuMusicChannel
+Global blipSound
 
 ;Global Values
 Global player_1_char$="Achilleus",player_2_char$="Dante"
@@ -128,7 +129,11 @@ Function loadGlobalMedia()
 	projectile_collide_sound = LoadSound("../snd/sfx/gbl/projectile-collide.wav")
 	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
 	ding = LoadSound("../snd/sfx/gbl/ding.wav")
+	blipSound = LoadSound("../snd/sfx/gbl/blip.wav")
+	SoundVolume blipSound,.4	
+	
 	SoundVolume song,.35
+	
 End Function
 
 Function initGlobalValues()
