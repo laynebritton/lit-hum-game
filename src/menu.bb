@@ -92,7 +92,7 @@ Function drawCharacterSplashes()
 	Select player_1_char$ 
 		Case "Achilleus"
 			p1Splash = achilleusSplash
-			p1Book = Inferno
+			p1Book = Iliad
 			drawP1 = True
 		Case "Don"
 			p1Splash = donSplash
@@ -104,11 +104,11 @@ Function drawCharacterSplashes()
 			drawP1 = True
 		Case "cly"
 			p1Splash = clySplash
-			p1Book = Inferno
+			p1Book = Oresteia
 			drawP1 = True
 		Case "Odysseus"
 			p1Splash = odysseusSplash
-			p1Book = Inferno
+			p1Book = Odyssey
 			drawP1 = True
 			
 		Default
@@ -129,18 +129,23 @@ Function drawCharacterSplashes()
 	Select player_2_char$ 
 		Case "Achilleus"
 			p2Splash = achilleusSplash2
+			p2Book = Iliad
 			drawP2 = True
 		Case "Don"
 			p2Splash = donSplash2
+			p2Book = Quixote
 			drawP2 = True
 		Case "Dante"
 			p2Splash = danteSplash2
+			p2Book = Inferno
 			drawP2 = True
 		Case "cly"
 			p2Splash = clySplash2
+			p2Book = Oresteia
 			drawP2 = True
 		Case "Odysseus"
 			p2Splash = odysseusSplash2
+			p2Book = Odyssey
 			drawP2 = True
 			
 		Default
@@ -149,6 +154,7 @@ Function drawCharacterSplashes()
 
 	If drawP2 Then 
 		DrawImage(p2Splash,1030,150,0)
+		DrawImage(p2Book,1700,350,0)
 		Color 0,0,0
 		Rect 1030,150,ImageWidth(p2Splash),ImageHeight(p2Splash),0
 	End If		
