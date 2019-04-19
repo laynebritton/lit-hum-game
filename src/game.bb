@@ -95,7 +95,9 @@ Function crapStageSelect()
 	Print "A (1): 9th Circle of Hell"
 	Print "B (2): Montaigne's Room"
 	Print "X (3): Symposium"
-	Print " (4): Sack of Troy"
+	Print "  (4): Sack of Troy"
+	Print "  (5): Departing Carthage"
+	Print "  (6): Taunting the Giant"
 	WaitKey
 	
 	If KeyHit(2) Or KeyHit(47)  Then
@@ -112,6 +114,14 @@ Function crapStageSelect()
 	
 	If KeyHit(5) Or KeyHit(33) Then
 		 selected_stage$ = "troy"
+	End If
+	
+	If KeyHit(6) Or KeyHit(33) Then
+		 selected_stage$ = "carthage"
+	End If
+
+	If KeyHit(7) Or KeyHit(33) Then
+		 selected_stage$ = "polyphemus"
 	End If
 	
 	Flip
