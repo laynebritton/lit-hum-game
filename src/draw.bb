@@ -119,6 +119,9 @@ Function drawFighters()
 			
 			Case "cly"
 				drawCly()
+				
+			Case "Odysseus"
+				drawOdysseus()
 			
 				
 		End Select

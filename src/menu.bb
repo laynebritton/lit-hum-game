@@ -14,7 +14,7 @@ Global maxMenuRectangles,currentMenuRectangles
 
 Function drawCharacterSelect()
 	boundArrows()
-	DrawImage(stagebg,0,0)
+	;DrawImage(stagebg,0,0)
 
 	drawCharacterIcons()
 	drawPlayerArrows()
@@ -49,7 +49,7 @@ Function loadMenuGraphics()
 End Function
 
 Function loadMenuMusic()
-	menuMusic = LoadSound("../snd/bgm/pillar.mp3")
+	menuMusic = LoadSound("../snd/bgm/pillar-trap.mp3")
 	LoopSound menuMusic
 	SoundVolume menuMusic,0.5
 End Function
@@ -92,7 +92,8 @@ Function getCharacterForArrows()
 			player_1_char$ = "Don"
 		Case 4
 			player_1_char$ = "cly"
-		
+		Case 5
+			player_1_char$ = "Odysseus"
 		End Select
 		
 	Select p2Position
@@ -104,6 +105,8 @@ Function getCharacterForArrows()
 			player_2_char$ = "Don"
 		Case 4
 			player_2_char$ = "cly"
+		Case 5
+			player_2_char$ = "Odysseus"
 		
 		End Select
 		
@@ -178,8 +181,8 @@ End Function
 
 
 Function boundArrows()
-	If p1Position > 4 Then p1Position = 4
-	If p2Position > 4 Then p2Position = 4
+	If p1Position > 5 Then p1Position = 5
+	If p2Position > 5 Then p2Position = 5
 	
 	If p1Position < 1 Then p1Position = 1
 	If p2Position < 1 Then p2Position = 1
@@ -266,7 +269,8 @@ Function menuBubbles()
 
 
 	For menu.menu_rect = Each menu_rect
-		Color Rand(68,128),Rand(68,128),Rand(68,129)
+		;Color Rand(68,128),Rand(68,128),Rand(68,129)
+		Color 128,128,128
 		Oval menu\x,menu\y,2,50,1
 		menu\y = menu\y - menu\speed 
 		If menu\y < -10 Then
@@ -291,7 +295,8 @@ Function menuBubbles2()
 
 
 	For menu.menu_rect = Each menu_rect
-		Color Rand(68,128),Rand(68,128),Rand(68,129)
+		;Color Rand(68,128),Rand(68,128),Rand(68,129)
+		Color 128,128,128
 		Oval menu\x,menu\y,50,2,1
 		menu\x = menu\x - menu\speed 
 		If menu\x < -100 Then

@@ -365,7 +365,7 @@ Function createFighter(fighterName$,player)
 
 
 	Case "cly"
-	;Dante
+	;Clytaemestra
 		char.fighter = New Fighter
 			;Data
 			char\name$ = "cly"
@@ -455,9 +455,104 @@ Function createFighter(fighterName$,player)
 			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
 			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
 		
-		End Select 
 
+		
+	Case "Odysseus"
+	;Odysseus
+		char.fighter = New Fighter
+			;Data
+			char\name$ = "Odysseus"
+			char\display_name$ = "Odysseus, Son of Laertes"	
+			char\player = player
+			
+			;Location		
+			char\x = 600
+			char\y = floor_level
+			
+			;Stats
+			char\hp = 85
+			char\strength = 7
+			char\speed = 15
+			char\projectile_count_max = 4
+			char\projectile_speed# = 15
+			char\projectile_gravity# = 2
+			char\projectile_damage = 7
+			char\critMultiplier# = 2.5
+			char\knockback = 100
+			;Jump Stats
+			char\jump_max_frame = 28
+			char\jump_speed = 29
+			
+			;Animation
+			char\breathing# = 2
+			char\breathingSpeed# = 0.07
+			char\breathingDirection$ = "UP"
+			char\projectile_animation_frames = 1
+			char\walk_frame = 0
+			char\walk_draw_frame = 0
+			char\walk_max_draw_frame = 1
+
+			;State
+			char\state$ = "NONE"
+			char\shield_state$ ="FALSE"
+			
+			;Quotes
+			char\win_quote = 4
+			
+			;Graphics
+			char\body = LoadImage("../img/Odysseus/body-1.png")
+			MaskImage(char\body,255,0,220)
+			char\head = LoadImage("../img/Odysseus/head-1.png")
+			MaskImage(char\head,255,0,220)
+			char\arm= LoadImage("../img/Odysseus/leg-2.png")
+			MaskImage(char\arm,255,0,220)
+			char\crouch = LoadImage("../img/Achilleus/achilleus-crouch.png")
+			MaskImage(char\crouch,255,0,220)
+			char\dead = LoadImage("../img/Achilleus/achilleus-dead.png")
+			MaskImage(char\dead,255,0,220)
+			char\walk = LoadAnimImage("../img/Odysseus/walk-anim-2.png",337,134,0,2)
+			MaskImage(char\walk,255,0,220)
+			
+			char\cosmetic1 = LoadImage("../img/Odysseus/odysseus-arm-nohit-2.png")
+			MaskImage(char\cosmetic1,255,0,220)
+			
+			char\attack1 = LoadAnimImage("../img/Odysseus/attack-anim.png",450,250,0,4)
+			MaskImage(char\attack1,255,0,220)
+			char\basic_attack_frames = 4
+			
+			char\projectile_graphic = LoadImage("../img/Odysseus/projectile.png")
+			MaskImage(char\projectile_graphic,255,0,220)
+			
+			If player = 2 Then
+				char\playerMultiplier = -1
+				char\x = 1320 - ImageWidth(char\body)
+				mirrorImage(char\body)
+				mirrorImage(char\head)
+				mirrorImage(char\arm)
+				mirrorImage(char\crouch)
+				mirrorImage(char\walk)
+				mirrorImage(char\dead)
+				
+				mirrorImage(char\attack1)
+				
+				mirrorImage(char\projectile_graphic)
+			End If
 	
+	
+			;Sound
+			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+
+
+	End Select 
 End Function
 
 Function createProjectile(player)

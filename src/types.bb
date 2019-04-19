@@ -14,7 +14,7 @@ Type Fighter
 	Field crouch
 	Field walk
 	Field dead
-	Field spear
+	Field cosmetic1
 	
 	;Animation
 	Field breathing#
