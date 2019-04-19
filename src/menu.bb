@@ -181,11 +181,11 @@ End Function
 
 
 Function boundArrows()
-	If p1Position > 5 Then p1Position = 5
-	If p2Position > 5 Then p2Position = 5
+	If p1Position > 5 Then p1Position = 1
+	If p2Position > 5 Then p2Position = 1
 	
-	If p1Position < 1 Then p1Position = 1
-	If p2Position < 1 Then p2Position = 1
+	If p1Position < 1 Then p1Position = 5
+	If p2Position < 1 Then p2Position = 5
 End Function 
 
 

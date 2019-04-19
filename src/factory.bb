@@ -506,9 +506,9 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\head,255,0,220)
 			char\arm= LoadImage("../img/Odysseus/leg-2.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Achilleus/achilleus-crouch.png")
+			char\crouch = LoadImage("../img/Odysseus/crouch-2.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Achilleus/achilleus-dead.png")
+			char\dead = LoadImage("../img/Odysseus/dead.png")
 			MaskImage(char\dead,255,0,220)
 			char\walk = LoadAnimImage("../img/Odysseus/walk-anim-2.png",337,134,0,2)
 			MaskImage(char\walk,255,0,220)
@@ -532,6 +532,7 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\crouch)
 				mirrorImage(char\walk)
 				mirrorImage(char\dead)
+				mirrorImage(char\cosmetic1)
 				
 				mirrorImage(char\attack1)
 				
@@ -592,7 +593,16 @@ Function createProjectile(player)
 			Case "cly"
 				entity\x# = entity\x# - offsetCalculator(120,entity\player) 
 				entity\y# = entity\y# + 130
-
+			Case "Odysseus"
+				If entity\player = 1 Then
+					entity\x# = entity\x# + offsetCalculator(180,entity\player) 
+				End If 
+				
+				If entity\player =2 Then
+					entity\x# = entity\x#; + offsetCalculator(180,entity\player) 
+				End If 
+				
+				entity\y# = entity\y# + 100
 				
 			End Select
 				
