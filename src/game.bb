@@ -130,7 +130,7 @@ Function loadGlobalMedia()
 	fighter_died_sound = LoadSound("../snd/sfx/gbl/die2.wav")
 	ding = LoadSound("../snd/sfx/gbl/ding.wav")
 	blipSound = LoadSound("../snd/sfx/gbl/blip.wav")
-	SoundVolume blipSound,.4	
+	SoundVolume blipSound,.6	
 	
 	SoundVolume song,.35
 	

@@ -54,7 +54,7 @@ Function loadMenuGraphics()
 End Function
 
 Function loadMenuMusic()
-	menuMusic = LoadSound("../snd/bgm/pillar-trap.mp3")
+	menuMusic = LoadSound("../snd/bgm/menu.wav")
 	LoopSound menuMusic
 	SoundVolume menuMusic,0.5
 End Function

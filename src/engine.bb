@@ -156,10 +156,17 @@ Function clearFighters()
 	Next
 End Function 
 
+Function clearStages()
+	For box.stage = Each stage
+		Delete box
+	Next
+End Function
+
 Function clearFight()
 	game_state$="FIGHT_OVER"
 	clearProjectiles()
 	clearFighters()
+	clearStages()
 End Function
 
 Function die(player)
