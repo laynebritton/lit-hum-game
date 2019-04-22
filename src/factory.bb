@@ -553,11 +553,11 @@ Function createFighter(fighterName$,player)
 			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
 
 	Case "Aeneas"
-	;Odysseus
+	;Aeneas
 		char.fighter = New Fighter
 			;Data
-			char\name$ = "Odysseus"
-			char\display_name$ = "Odysseus, Son of Laertes"	
+			char\name$ = "Aeneas"
+			char\display_name$ = "Aeneas, Son of Anchises"	
 			char\player = player
 			
 			;Location		
@@ -565,22 +565,24 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
-			char\hp = 75
-			char\strength = 7
-			char\speed = 15
-			char\projectile_count_max = 4
+			char\hp = 90
+			char\strength = 8
+			char\speed = 12
+			char\projectile_count_max = 2
 			char\projectile_speed# = 15
 			char\projectile_gravity# = 3
-			char\projectile_damage = 5
-			char\critMultiplier# = 2.5
+			char\projectile_damage = 4
+			char\critMultiplier# = 2
 			char\knockback = 100
+			char\canAttackWhileShielding$="TRUE"
+			char\canShootWhileShielding$="FALSE"
 			;Jump Stats
-			char\jump_max_frame = 26
-			char\jump_speed = 30
+			char\jump_max_frame = 28
+			char\jump_speed = 26
 			
 			;Animation
-			char\breathing# = 2
-			char\breathingSpeed# = 0.07
+			char\breathing# = 3
+			char\breathingSpeed# = 0.05
 			char\breathingDirection$ = "UP"
 			char\projectile_animation_frames = 1
 			char\walk_frame = 0
@@ -608,7 +610,7 @@ Function createFighter(fighterName$,player)
 			char\walk = LoadAnimImage("../img/Aeneas/walk-anim.png",320,215,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\cosmetic1 = LoadImage("../img/Aeneas/un-shield-2.png")
+			char\cosmetic1 = LoadImage("../img/Aeneas/un-shield-4.png")
 			MaskImage(char\cosmetic1,255,0,220)
 			
 			char\attack1 = LoadAnimImage("../img/Aeneas/attack-anim.png",400,300,0,5)
@@ -651,7 +653,7 @@ End Function
 
 Function createProjectile(player)
 	For char.fighter = Each fighter
-		If char\player = player And char\projectile_count < char\projectile_count_max  And (Not char\state$="DEAD") Then
+		If char\player = player And char\projectile_count < char\projectile_count_max  And (Not char\state$="DEAD") And (Not ((char\shield_state$ = "TRUE") And (char\canShootWhileShielding$="FALSE"))) Then
 			char\projectile_count = char\projectile_count + 1
 			
 			entity.projectile = New Projectile
@@ -697,6 +699,18 @@ Function createProjectile(player)
 				
 				entity\y# = entity\y# + 100
 				
+			Case "Aeneas"
+				If entity\player = 1 Then
+					entity\x# = entity\x# + offsetCalculator(110,entity\player) 
+					entity\y# = entity\y# + 50
+				End If 
+				
+				If entity\player =2 Then
+					entity\x# = entity\x# + offsetCalculator(30,entity\player) 
+					entity\y# = entity\y# + 50
+				End If 
+				
+				entity\y# = entity\y# + 100
 			End Select
 				
 			PlaySound char\projectile_throw_sound

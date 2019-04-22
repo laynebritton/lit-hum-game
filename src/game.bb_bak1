@@ -96,7 +96,7 @@ Function crapStageSelect()
 	Print "B (2): Montaigne's Room"
 	Print "X (3): Symposium"
 	Print "  (4): Sack of Troy"
-	Print "  (5): Departing Carthage"
+	Print "  (5): De-parting Carthage"
 	Print "  (6): Taunting the Giant"
 	WaitKey
 	

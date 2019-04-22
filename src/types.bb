@@ -60,6 +60,8 @@ Type Fighter
 	Field projectile_damage
 	Field knockback=0
 	Field critMultiplier#=2
+	Field canAttackWhileShielding$
+	Field canShootWhileShielding$
 	
 	;Sounds
 	Field swing_sound

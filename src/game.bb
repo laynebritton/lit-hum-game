@@ -23,6 +23,7 @@ Include "don.bb"
 Include "Achilleus.bb"
 Include "clytaemestra.bb"
 Include "Odysseus.bb"
+Include "Aeneas.bb"
 
 .Player1_Controls
 Global player1_jump = 47

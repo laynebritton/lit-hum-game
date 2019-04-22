@@ -212,7 +212,7 @@ Function getCharacterForArrows()
 		Case 5
 			player_2_char$ = "Odysseus"
 		Case 6
-			player_1_char$ = "Aeneas"
+			player_2_char$ = "Aeneas"
 		
 		End Select
 		

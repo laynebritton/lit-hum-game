@@ -48,7 +48,7 @@ End Function
 
 Function basicAttack(player)
 	For char.fighter = Each fighter
-		If char\player = player And char\state$ = "NONE" And (Not char\shield_state$ = "TRUE") Then
+		If char\player = player And char\state$ = "NONE" And ((Not char\shield_state$ = "TRUE") Or (char\canAttackWhileShielding$="TRUE")) Then
 			char\state$ = "BASIC_ATTACK"
 		End If
 	Next

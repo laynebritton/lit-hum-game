@@ -122,7 +122,9 @@ Function drawFighters()
 				
 			Case "Odysseus"
 				drawOdysseus()
-			
+
+			Case "Aeneas"
+				drawAeneas()
 				
 		End Select
 	Next 
