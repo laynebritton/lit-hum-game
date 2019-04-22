@@ -40,7 +40,12 @@ Function writeQuote(quote)
 			Text 960,105, "who have been killed. Divine fate took them down,",True,True
 			Text 960,140, "and their own wicked deeds."+ Chr(34),True,True
 			Text 960,175, "-Odysseus (Homer, The Odyssey (22.411-413))",True,True
-
+		
+		Case 7
+			Text 960,70,Chr(34) + "I am set to face",True,True
+			Text 960,105, "Aeneas, set to suffer death in all",True,True
+			Text 960,140, "its bitterness"+ Chr(34),True,True
+			Text 960,175, "-Turnus (Virgil, The Aeneid(12.902-904))",True,True
 
 	End Select
 	

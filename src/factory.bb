@@ -594,7 +594,7 @@ Function createFighter(fighterName$,player)
 			char\shield_state$ ="FALSE"
 			
 			;Quotes
-			char\win_quote = 6
+			char\win_quote = 7
 			
 			;Graphics
 			char\body = LoadImage("../img/Aeneas/body-1.png")
@@ -605,7 +605,7 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\arm,255,0,220)
 			char\crouch = LoadImage("../img/Aeneas/crouch.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Aeneas/dead.png")
+			char\dead = LoadImage("../img/Aeneas/dead-2.png")
 			MaskImage(char\dead,255,0,220)
 			char\walk = LoadAnimImage("../img/Aeneas/walk-anim.png",320,215,0,2)
 			MaskImage(char\walk,255,0,220)
