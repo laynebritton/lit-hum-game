@@ -227,6 +227,7 @@ End Function
 
 Function loadCharacterSplashes()
 	danteSplash = LoadImage("../img/menu/dante-big.png")
+	MaskImage(danteSplash,255,0,220)
 	donSplash = LoadImage("../img/menu/don-big.png")
 	achilleusSplash = LoadImage("../img/menu/achilleus-big.png")
 	clySplash = LoadImage("../img/menu/cly-big.png")
@@ -234,6 +235,7 @@ Function loadCharacterSplashes()
 
 
 	danteSplash2 = LoadImage("../img/menu/dante-big-2.png")
+	MaskImage(danteSplash2,255,0,220)
 	donSplash2 = LoadImage("../img/menu/don-big-2.png")
 	achilleusSplash2 = LoadImage("../img/menu/achilleus-big-2.png")
 	clySplash2 = LoadImage("../img/menu/cly-big-2.png")
@@ -382,7 +384,7 @@ Function menuBubbles()
 		For menu.menu_rect = Each menu_rect
 			menu\x = Rand(15,1900)
 			menu\y = Rand(0,1080)
-			menu\speed = Rand(6,13)
+			menu\speed = Rand(8,15)
 		Next
 	End If
 
@@ -394,7 +396,7 @@ Function menuBubbles()
 		menu\y = menu\y - menu\speed 
 		If menu\y < -10 Then
 			menu\y = 1100
-			menu\speed = Rand(6,13)
+			menu\speed = Rand(8,15)
 			menu\x = Rand(15,1900)
 		End If
 	Next 
