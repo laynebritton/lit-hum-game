@@ -196,6 +196,8 @@ Function getCharacterForArrows()
 			player_1_char$ = "cly"
 		Case 5
 			player_1_char$ = "Odysseus"
+		Case 6
+			player_1_char$ = "Aeneas"
 		End Select
 		
 	Select p2Position
@@ -209,6 +211,8 @@ Function getCharacterForArrows()
 			player_2_char$ = "cly"
 		Case 5
 			player_2_char$ = "Odysseus"
+		Case 6
+			player_1_char$ = "Aeneas"
 		
 		End Select
 		
@@ -302,11 +306,11 @@ End Function
 
 
 Function boundArrows()
-	If p1Position > 5 Then p1Position = 1
-	If p2Position > 5 Then p2Position = 1
+	If p1Position > 6 Then p1Position = 1
+	If p2Position > 6 Then p2Position = 1
 	
-	If p1Position < 1 Then p1Position = 5
-	If p2Position < 1 Then p2Position = 5
+	If p1Position < 1 Then p1Position = 6
+	If p2Position < 1 Then p2Position = 6
 End Function 
 
 

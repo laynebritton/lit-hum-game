@@ -599,21 +599,21 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\body,255,0,220)
 			char\head = LoadImage("../img/Aeneas/head-2.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Odysseus/leg-2.png")
+			char\arm= LoadImage("../img/Aeneas/arm-2.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Odysseus/crouch-2.png")
+			char\crouch = LoadImage("../img/Aeneas/crouch.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Odysseus/dead.png")
+			char\dead = LoadImage("../img/Aeneas/dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Odysseus/walk-anim-2.png",337,134,0,2)
+			char\walk = LoadAnimImage("../img/Aeneas/walk-anim.png",320,215,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\cosmetic1 = LoadImage("../img/Odysseus/odysseus-arm-nohit-2.png")
+			char\cosmetic1 = LoadImage("../img/Aeneas/un-shield-2.png")
 			MaskImage(char\cosmetic1,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Odysseus/attack-anim.png",450,250,0,4)
+			char\attack1 = LoadAnimImage("../img/Aeneas/attack-anim.png",400,300,0,5)
 			MaskImage(char\attack1,255,0,220)
-			char\basic_attack_frames = 4
+			char\basic_attack_frames = 5
 			
 			char\projectile_graphic = LoadImage("../img/Odysseus/projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
