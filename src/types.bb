@@ -83,6 +83,7 @@ Type Fighter
 	Field shield_state$ ="FALSE"
 	Field movement_state$
 	Field attacking
+	Field wins
 	
 	;Quotes
 	Field win_quote

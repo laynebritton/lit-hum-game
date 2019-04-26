@@ -68,6 +68,7 @@ Global blipSound
 Global player_1_char$="Achilleus",player_2_char$="Dante"
 Global selected_stage$="troy"
 Global fps_count,fake_count
+Global player_1_wins=0,player_2_wins=0
 
 ;Game Settings
 Global display_fps_on=False,display_player1_coords_on=False
@@ -98,7 +99,7 @@ Function crapStageSelect()
 	Print "B (2): Montaigne's Room"
 	Print "X (3): Symposium"
 	Print "  (4): Sack of Troy"
-	Print "  (5): De-parting Carthage"
+	Print "  (5): Departing Carthage"
 	Print "  (6): Taunting the Giant"
 	WaitKey
 	
