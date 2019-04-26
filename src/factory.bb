@@ -651,11 +651,11 @@ Function createFighter(fighterName$,player)
 	
 	
 	Case "Elizabeth"
-	;Aeneas
+	;Elizabeth
 		char.fighter = New Fighter
 			;Data
-			char\name$ = "Aeneas"
-			char\display_name$ = "Aeneas, Son of Anchises"	
+			char\name$ = "Elizabeth"
+			char\display_name$ = "Elizabeth Bennet"	
 			char\player = player
 			
 			;Location		
@@ -668,19 +668,19 @@ Function createFighter(fighterName$,player)
 			char\speed = 13
 			char\projectile_count_max = 1
 			char\projectile_speed# = 17
-			char\projectile_gravity# = 3
-			char\projectile_damage = 4
+			char\projectile_gravity# = 0
+			char\projectile_damage = 7
 			char\critMultiplier# = 2
 			char\knockback = 100
 			char\canAttackWhileShielding$="FALSE"
 			char\canShootWhileShielding$="TRUE"
 			;Jump Stats
-			char\jump_max_frame = 28
-			char\jump_speed = 26
+			char\jump_max_frame = 25
+			char\jump_speed = 25
 			
 			;Animation
 			char\breathing# = 3
-			char\breathingSpeed# = 0.05
+			char\breathingSpeed# = 0.06
 			char\breathingDirection$ = "UP"
 			char\projectile_animation_frames = 1
 			char\walk_frame = 0
@@ -810,6 +810,17 @@ Function createProjectile(player)
 				End If 
 				
 				entity\y# = entity\y# + 100
+			
+			Case "Elizabeth"
+				If entity\player = 1 Then
+					entity\x# = -200
+				End If 
+				
+				If entity\player =2 Then
+					entity\x# = 2120 ;entity\x# + offsetCalculator(30,entity\player) 
+				End If 
+				
+				entity\y# = floor_level
 			End Select
 				
 			PlaySound char\projectile_throw_sound
