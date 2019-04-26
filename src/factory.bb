@@ -695,7 +695,7 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 7
 			
 			;Graphics
-			char\body = LoadImage("../img/Elizabeth/body.png")
+			char\body = LoadImage("../img/Elizabeth/body-3.png")
 			MaskImage(char\body,255,0,220)
 			char\head = LoadImage("../img/Elizabeth/head-2.png")
 			MaskImage(char\head,255,0,220)

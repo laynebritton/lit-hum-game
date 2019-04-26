@@ -6,22 +6,29 @@ Function drawElizabeth()
 			Else
 				drawBreathing()	
 				ElizabethWalk(char\player)
-				
-				If char\state$ = "NONE" Then
-					DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\arm_y#+ char\breathing#,0)
-				Else If char\state$ = "BASIC_ATTACK" Then
-					ElizabethAttackAnimation()
-				End If
-								
+												
 
 				If char\crouch_state$="TRUE" Then
+					If char\state$ = "NONE" Then
+						DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\arm_y#+ char\breathing#,0)
+					Else If char\state$ = "BASIC_ATTACK" Then
+						ElizabethAttackAnimation()
+					End If
+					
 					activateShield(char\player)
 					ElizabethCrouch(char\player)
+
 				Else If char\crouch_state$="FALSE" Then 
 					deactivateShield(char\player)
 					
 					ElizabethBow(char\player)
 					body(char\player)
+					
+					If char\state$ = "NONE" Then
+						DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\arm_y#+ char\breathing#,0)
+					Else If char\state$ = "BASIC_ATTACK" Then
+						ElizabethAttackAnimation()
+					End If
 					
 				End If
 				

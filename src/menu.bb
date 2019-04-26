@@ -3,9 +3,9 @@
 Global stagebg
 
 Global charFrame
-Global danteIcon,donIcon,achilleusIcon,clyIcon,odysseusIcon,aeneasIcon
-Global danteSplash,donSplash,achilleusSplash,clySplash,odysseusSplash,aeneasSplash
-Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aeneasSplash2
+Global danteIcon,donIcon,achilleusIcon,clyIcon,odysseusIcon,aeneasIcon,elizabethIcon
+Global danteSplash,donSplash,achilleusSplash,clySplash,odysseusSplash,aeneasSplash,elizabethSplash
+Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aeneasSplash2,elizabethSplash2
 
 Global p1Arrow,p2Arrow
 Global p1Char,p2Char
@@ -77,7 +77,9 @@ Function drawCharacterIcons()
 				DrawImage(odysseusIcon,x_increment *x + x_offset, y_position, 0)
 			Case 6
 				DrawImage(aeneasIcon,x_increment *x + x_offset, y_position, 0)			
-		
+			Case 7
+				DrawImage(elizabethIcon,x_increment *x + x_offset, y_position, 0)				
+
 		End Select
 
 		DrawImage(charFrame,x_increment *x + x_offset, y_position, 0)
@@ -125,7 +127,13 @@ Function drawCharacterSplashes()
 			p1Book = Aeneid
 			Text 240,100,"Aeneas, Son of Anchises"
 			drawP1 = True
-			
+		
+		Case "Elizabeth"
+			p1Splash = elizabethSplash
+			p1Book = Pride
+			Text 240,100,"Elizabeth Bennet"
+			drawP1 = True
+						
 		Default
 			drawP1 = False
 	End Select
@@ -178,6 +186,13 @@ Function drawCharacterSplashes()
 			p2Book = Aeneid
 			Text 1030,100,"Aeneas, Son of Anchises"
 			drawP2 = True
+
+		Case "Elizabeth"
+			p2Splash = elizabethSplash2
+			p2Book = Pride
+			Text 1030,100,"Elizabeth Bennet"
+			drawP2 = True
+
 		Default
 			drawP2 = False
 	End Select
@@ -242,6 +257,7 @@ Function loadCharacterIcons()
 	clyIcon = LoadImage("../img/menu/cly-small.png")
 	odysseusIcon = LoadImage("../img/menu/odysseus-small.png")
 	aeneasIcon = LoadImage("../img/menu/aeneas-small.png")
+	elizabethIcon = LoadImage("../img/menu/elizabeth-small.png")
 
 End Function
 
@@ -253,7 +269,8 @@ Function loadCharacterSplashes()
 	clySplash = LoadImage("../img/menu/cly-big.png")
 	odysseusSplash = LoadImage("../img/menu/odysseus-big.png")
 	aeneasSplash = LoadImage("../img/menu/aeneas-big.png")
-
+	elizabethSplash = LoadImage("../img/menu/elizabeth-big.png")
+	MaskImage(elizabethSplash,255,0,220)
 
 	danteSplash2 = LoadImage("../img/menu/dante-big-2.png")
 	MaskImage(danteSplash2,255,0,220)
@@ -262,6 +279,8 @@ Function loadCharacterSplashes()
 	clySplash2 = LoadImage("../img/menu/cly-big-2.png")
 	odysseusSplash2 = LoadImage("../img/menu/odysseus-big-2.png")
 	aeneasSplash2 = LoadImage("../img/menu/aeneas-big-2.png")
+	elizabethSplash2 = LoadImage("../img/menu/elizabeth-big-2.png")
+	MaskImage(elizabethSplash2,255,0,220)
 
 End Function
 
