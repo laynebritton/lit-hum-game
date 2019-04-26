@@ -162,6 +162,14 @@ Function clearStages()
 	Next
 End Function
 
+Function addWin(player)
+	For char.fighter = Each fighter
+		If char\player = player Then
+			char\wins = char\wins + 1
+		End If
+	Next
+End Function 
+
 Function clearFight()
 	game_state$="FIGHT_OVER"
 	clearProjectiles()

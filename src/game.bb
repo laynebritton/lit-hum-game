@@ -18,13 +18,13 @@ Include "menu.bb"
 Include "books.bb"
 
 ;Fighter Files
-Include "dante.bb"
-Include "don.bb"
-Include "Achilleus.bb"
-Include "clytaemestra.bb"
-Include "Odysseus.bb"
-Include "Aeneas.bb"
-Include "Elizabeth.bb"
+Include "fighters/dante.bb"
+Include "fighters/don.bb"
+Include "fighters/Achilleus.bb"
+Include "fighters/clytaemestra.bb"
+Include "fighters/Odysseus.bb"
+Include "fighters/Aeneas.bb"
+Include "fighters/Elizabeth.bb"
 
 .Player1_Controls
 Global player1_jump = 47
@@ -68,7 +68,6 @@ Global blipSound
 Global player_1_char$="Achilleus",player_2_char$="Dante"
 Global selected_stage$="troy"
 Global fps_count,fake_count
-Global player_1_wins=0,player_2_wins=0
 
 ;Game Settings
 Global display_fps_on=False,display_player1_coords_on=False
