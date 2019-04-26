@@ -663,17 +663,17 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
-			char\hp = 90
-			char\strength = 8
-			char\speed = 12
-			char\projectile_count_max = 2
-			char\projectile_speed# = 15
+			char\hp = 100
+			char\strength = 6
+			char\speed = 13
+			char\projectile_count_max = 1
+			char\projectile_speed# = 17
 			char\projectile_gravity# = 3
 			char\projectile_damage = 4
 			char\critMultiplier# = 2
 			char\knockback = 100
-			char\canAttackWhileShielding$="TRUE"
-			char\canShootWhileShielding$="FALSE"
+			char\canAttackWhileShielding$="FALSE"
+			char\canShootWhileShielding$="TRUE"
 			;Jump Stats
 			char\jump_max_frame = 28
 			char\jump_speed = 26
@@ -695,27 +695,27 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 7
 			
 			;Graphics
-			char\body = LoadImage("../img/Aeneas/body-1.png")
+			char\body = LoadImage("../img/Elizabeth/body.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Aeneas/head-2.png")
+			char\head = LoadImage("../img/Elizabeth/head-2.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Aeneas/arm-2.png")
+			char\arm= LoadImage("../img/Elizabeth/arm-6.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Aeneas/crouch.png")
+			char\crouch = LoadImage("../img/Elizabeth/crouch.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Aeneas/dead-2.png")
+			char\dead = LoadImage("../img/Elizabeth/dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Aeneas/walk-anim.png",320,215,0,2)
+			char\walk = LoadAnimImage("../img/Elizabeth/walk-2.png",200,24,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\cosmetic1 = LoadImage("../img/Aeneas/un-shield-4.png")
+			char\cosmetic1 = LoadImage("../img/Elizabeth/acc-1.png")
 			MaskImage(char\cosmetic1,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Aeneas/attack-anim.png",400,300,0,5)
+			char\attack1 = LoadAnimImage("../img/Elizabeth//attack-anim.png",300,305,0,4)
 			MaskImage(char\attack1,255,0,220)
-			char\basic_attack_frames = 5
+			char\basic_attack_frames = 4
 			
-			char\projectile_graphic = LoadImage("../img/Odysseus/projectile.png")
+			char\projectile_graphic = LoadImage("../img/Elizabeth/collins-3.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			If player = 2 Then
