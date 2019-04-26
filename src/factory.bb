@@ -692,7 +692,7 @@ Function createFighter(fighterName$,player)
 			char\shield_state$ ="FALSE"
 			
 			;Quotes
-			char\win_quote = 7
+			char\win_quote = 8
 			
 			;Graphics
 			char\body = LoadImage("../img/Elizabeth/body-3.png")

@@ -46,6 +46,12 @@ Function writeQuote(quote)
 			Text 960,105, "Aeneas, set to suffer death in all",True,True
 			Text 960,140, "its bitterness"+ Chr(34),True,True
 			Text 960,175, "-Turnus (Virgil, The Aeneid(12.902-904))",True,True
+		
+		Case 8
+			Text 960,70,Chr(34) + "If what I have hitherto said can appear to you",True,True
+			Text 960,105, "in the form of encouragement, I know not how to express my refusal",True,True
+			Text 960,140, "in such a way as may convince you of it being one."+ Chr(34),True,True
+			Text 960,175, "-Elizabeth (Austen, Pride and Prejudice(I.XIX))",True,True
 
 	End Select
 	
