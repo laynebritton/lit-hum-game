@@ -56,7 +56,7 @@ Global game_state_timer
 
 ;Global Media
 Global test
-Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound,ding
+Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound,ding,next_round_sound
 Global quote_board
 Global song
 Global channel
@@ -68,7 +68,7 @@ Global blipSound
 Global player_1_char$="Achilleus",player_2_char$="Elizabeth"
 Global selected_stage$="troy"
 Global fps_count,fake_count
-Global winsNeeded=3
+Global winsNeeded=2
 ;Game Settings
 Global display_fps_on=False,display_player1_coords_on=False
 
@@ -143,6 +143,8 @@ Function loadGlobalMedia()
 	ding = LoadSound("../snd/sfx/gbl/ding.wav")
 	blipSound = LoadSound("../snd/sfx/gbl/blip.wav")
 	SoundVolume blipSound,.6	
+	
+	next_round_sound = LoadSound("../snd/sfx/gbl/next-round.wav")
 	
 	SoundVolume song,.35
 	

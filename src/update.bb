@@ -42,7 +42,7 @@ Function highlight_state()
 End Function
 
 Function inbetween_state()
-	If game_state_timer + 2500 < MilliSecs() Then
+	If game_state_timer + 3500 > MilliSecs() Then
 		game_state$ = "BETWEEN"
 	Else 
 		game_state$ = ""

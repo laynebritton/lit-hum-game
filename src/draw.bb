@@ -35,14 +35,15 @@ End Function
 
 Function drawBetweenRounds()
 	If game_state$="BETWEEN" Then
-		
+		SetFont big_quote_font
 		For char.fighter = Each fighter
 			If (Not char\state$="DEAD") Then
-				Text 0,0,char\name$ + " wins!"
+				Text 800,500,"Round " + currentRound + ": " + char\display_name$ + " " + "wins!"
 			End If
 		Next
 
 	End If
+	SetFont font
 End Function
 
 Function drawHighlight()
@@ -122,12 +123,12 @@ Function drawWins()
 		Color 201,204,75
 		If char\player = 1 Then
 			For i = 0 To (char\wins) -1
-				Oval 400 + i*(30), 200, 25,25,1
+				Oval 400 + i*(30), 205, 25,25,1
 			Next
 		End If
 		If char\player = 2 Then
 			For i = 0 To (char\wins) -1
-				Oval 1490 - i*(30), 200, 25,25,1
+				Oval 1490 - i*(30), 205, 25,25,1
 			Next
 		End If
 	Next

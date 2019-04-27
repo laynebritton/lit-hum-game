@@ -14,6 +14,8 @@ Global p1Book, p2Book
 
 Global maxMenuRectangles,currentMenuRectangles
 
+Global currentRound=1
+
 Function drawCharacterSelect()
 	boundArrows()
 	DrawImage(stagebg,0,0)
@@ -305,7 +307,7 @@ Function fight(player1$,player2$,stage)
 	While (Not game_state$ ="FIGHT_OVER")
 		WaitTimer(frameTimer)
 
-		If (Not game_state$="Between") Then
+		If (Not game_state$="BETWEEN") Then
 			checkInput()
 		End If 
 			

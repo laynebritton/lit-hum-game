@@ -31,11 +31,13 @@ Function dealDamageTo(player,amount)
 			char\hp= char\hp - amount
 			If char\hp <= 0 Then 
 				die(char\player)
+				markAllProjectilesForDeletion()
+
 				;addWin(char\player)
 				;start_hightlight_state()
 				
 				For char2.fighter = Each fighter
-					If (Not char2\player = char\player) And (Not char2\state$="DEAD") Then
+					If (Not char2\player = char\player) And (Not char2\state$="DEAD") And (Not game_state$="BETWEEN") Then
 						addWin(char2\player)
 						
 						If (char2\wins >= winsNeeded) Then
@@ -63,6 +65,7 @@ Function nextRound()
 		char\y = char\start_y#
 		char\state$ = "NONE"
 	Next 
-	
+	currentRound = currentRound+1
+	PlaySound(next_round_sound)
 End Function
 

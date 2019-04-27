@@ -144,6 +144,12 @@ Function deactivateShield(player)
 	Next
 End Function 
 
+Function markAllProjectilesForDeletion()
+	For entity.projectile = Each Projectile
+		entity\toDelete = True
+	Next
+End Function
+
 Function clearProjectiles()
 	For entity.projectile = Each Projectile
 		Delete entity
@@ -181,6 +187,7 @@ Function clearFight()
 	clearProjectiles()
 	clearFighters()
 	clearStages()
+	currentRound=1
 End Function
 
 Function die(player)
