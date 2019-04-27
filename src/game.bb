@@ -65,7 +65,7 @@ Global menuMusicChannel
 Global blipSound
 
 ;Global Values
-Global player_1_char$="Achilleus",player_2_char$="Dante"
+Global player_1_char$="Achilleus",player_2_char$="Elizabeth"
 Global selected_stage$="troy"
 Global fps_count,fake_count
 Global winsNeeded=3

@@ -37,10 +37,17 @@ Function dealDamageTo(player,amount)
 				For char2.fighter = Each fighter
 					If (Not char2\player = char\player) And (Not char2\state$="DEAD") Then
 						addWin(char2\player)
+						
+						If (char2\wins >= winsNeeded) Then
+							start_highlight_state()
+						Else 
+							start_between_state()
+						End If
+					
 					End If
 				Next
 				
-				nextRound()
+				;nextRound()
 			Else
 				char\state$="HURT"
 				char\invincibility_frames = char\invincibility_frames + 5
@@ -54,6 +61,8 @@ Function nextRound()
 		char\hp = char\max_hp
 		char\x = char\start_x#
 		char\y = char\start_y#
+		char\state$ = "NONE"
 	Next 
 	
 End Function
+

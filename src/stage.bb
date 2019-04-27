@@ -78,6 +78,8 @@ Function loadStage(name$)
 
 	Next
 	
+	LoopSound song
+	
 	End Select
 End Function
 Function preventStageOverflow()

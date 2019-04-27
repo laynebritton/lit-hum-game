@@ -9,7 +9,7 @@ Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aenea
 
 Global p1Arrow,p2Arrow
 Global p1Char,p2Char
-Global p1Position=1, p2Position=6
+Global p1Position=1, p2Position=7
 Global p1Book, p2Book
 
 Global maxMenuRectangles,currentMenuRectangles
@@ -305,7 +305,9 @@ Function fight(player1$,player2$,stage)
 	While (Not game_state$ ="FIGHT_OVER")
 		WaitTimer(frameTimer)
 
-		checkInput()
+		If (Not game_state$="Between") Then
+			checkInput()
+		End If 
 			
 		refreshWorld()
 		

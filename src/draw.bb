@@ -24,6 +24,7 @@ Function drawFightHUD()
 	drawHealthBars()
 	drawProjectilesAvailable()
 	drawWins()
+	drawBetweenRounds()
 	drawHighlight()
 End Function
 
@@ -32,8 +33,20 @@ Function drawFloorVisual()
 	;Rect 0,floor_level + 360,1920,10,1
 End Function
 
+Function drawBetweenRounds()
+	If game_state$="BETWEEN" Then
+		
+		For char.fighter = Each fighter
+			If (Not char\state$="DEAD") Then
+				Text 0,0,char\name$ + " wins!"
+			End If
+		Next
+
+	End If
+End Function
+
 Function drawHighlight()
-	If game_state$ = "" Then
+	If game_state$ = "HIGHLIGHT" Then
 		
 		For char.fighter = Each fighter
 			For char2.fighter = Each fighter

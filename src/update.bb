@@ -22,9 +22,14 @@ End Function
 Function game_states()
 	Select game_state$
 	
+	Case "BETWEEN"
+		inbetween_state()
+
 	Case "HIGHLIGHT"
 		highlight_state()
+
 	End Select
+	
 End Function
 
 
@@ -36,8 +41,22 @@ Function highlight_state()
 	End If
 End Function
 
+Function inbetween_state()
+	If game_state_timer + 2500 < MilliSecs() Then
+		game_state$ = "BETWEEN"
+	Else 
+		game_state$ = ""
+		nextRound()
+	End If
+End Function
+
 Function start_highlight_state()
 	game_state$ = "HIGHLIGHT"
+	game_state_timer = MilliSecs()
+End Function
+
+Function start_between_state()
+	game_state$ = "BETWEEN"
 	game_state_timer = MilliSecs()
 End Function
 
