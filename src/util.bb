@@ -67,5 +67,6 @@ Function nextRound()
 	Next 
 	currentRound = currentRound+1
 	PlaySound(next_round_sound)
+	FlushKeys()
 End Function
 
