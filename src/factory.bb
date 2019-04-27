@@ -64,6 +64,9 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Dante/dante-projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
+			
+			char\icon = danteIcon ;Icon
+		
 			If player = 2 Then
 				char\playerMultiplier = -1
 				char\x = 1320 - ImageWidth(char\body)
@@ -77,9 +80,11 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\attack1)
 				
 				mirrorImage(char\projectile_graphic)
+				mirrorImage(char\icon)
 			End If
 	
-	
+
+			
 			;Sound
 			char\swing_sound = LoadSound("../snd/sfx/Dante/dante-swing.wav")
 			char\basic_hit_sound = LoadSound("../snd/sfx/Dante/dante-basic-hit.wav")
@@ -153,6 +158,8 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Don/don-projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
+			char\icon = donIcon ;Icon
+
 			If player = 2 Then
 				char\playerMultiplier = -1
 				char\x = 1320 - ImageWidth(char\body)
@@ -166,6 +173,8 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\attack1)
 				
 				mirrorImage(char\projectile_graphic)
+				mirrorImage(char\icon)
+
 			End If
 	
 	
@@ -243,6 +252,8 @@ Function createFighter(fighterName$,player)
 			
 			char\projectile_graphic = LoadImage("../img/Achilleus/achilleus-spear-2.png")
 			MaskImage(char\projectile_graphic,255,0,220)
+
+			char\icon = achilleusIcon ;Icon
 			
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -257,6 +268,7 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\attack1)
 				
 				mirrorImage(char\projectile_graphic)
+				mirrorImage(char\icon)
 			End If
 	
 	
@@ -336,6 +348,8 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Hektor/achilleus-spear-2.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
+			char\icon = achilleusIcon ;Icon
+
 			If player = 2 Then
 				char\playerMultiplier = -1
 				char\x = 1320 - ImageWidth(char\body)
@@ -428,6 +442,8 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Clytaemestra/throw.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
+			char\icon = clyIcon ;Icon
+
 			If player = 2 Then
 				char\playerMultiplier = -1
 				char\x = 1320 - ImageWidth(char\body)
@@ -441,6 +457,8 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\attack1)
 				
 				mirrorImage(char\projectile_graphic)
+				mirrorImage(char\icon)
+
 			End If
 	
 	
@@ -524,6 +542,8 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Odysseus/projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
+			char\icon = odysseusIcon ;Icon
+
 			If player = 2 Then
 				char\playerMultiplier = -1
 				char\x = 1320 - ImageWidth(char\body)
@@ -538,6 +558,8 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\attack1)
 				
 				mirrorImage(char\projectile_graphic)
+				mirrorImage(char\icon)
+
 			End If
 	
 	
@@ -621,6 +643,8 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Odysseus/projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
+			char\icon = aeneasIcon ;Icon
+
 			If player = 2 Then
 				char\playerMultiplier = -1
 				char\x = 1320 - ImageWidth(char\body)
@@ -635,6 +659,8 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\attack1)
 				
 				mirrorImage(char\projectile_graphic)
+				mirrorImage(char\icon)
+
 			End If
 	
 	
@@ -719,6 +745,8 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Elizabeth/collins-3.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
+			char\icon = elizabethIcon ;Icon
+
 			If player = 2 Then
 				char\playerMultiplier = -1
 				char\x = 1320 - ImageWidth(char\body)
@@ -733,6 +761,8 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\attack1)
 				
 				mirrorImage(char\projectile_graphic)
+				mirrorImage(char\icon)
+
 			End If
 	
 	

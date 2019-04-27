@@ -15,6 +15,7 @@ Type Fighter
 	Field walk
 	Field dead
 	Field cosmetic1
+	Field icon
 	
 	;Animation
 	Field breathing#

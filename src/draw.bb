@@ -20,6 +20,7 @@ Function drawWorld()
 End Function
 
 Function drawFightHUD()
+	drawFighterIcons()
 	drawFighterDisplayName()
 	drawHealthBars()
 	drawProjectilesAvailable()
@@ -76,6 +77,22 @@ End Function
 Function drawProjectiles()
 	For entity.projectile = Each Projectile
 		DrawImage(entity\graphic,entity\x#,entity\y#,0)
+	Next
+End Function
+
+Function drawFighterIcons()
+	x = 0
+	y = 30
+	For char.fighter = Each fighter
+		If char\player = 1 Then
+			x = 45
+		End If
+
+		If char\player = 2 Then
+			x = 1760
+		End If
+		DrawImage(char\icon,x,y,0)
+		DrawImage(charFrame,x,y,0)
 	Next
 End Function
 
