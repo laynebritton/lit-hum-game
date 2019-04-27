@@ -23,6 +23,7 @@ Function drawFightHUD()
 	drawFighterDisplayName()
 	drawHealthBars()
 	drawProjectilesAvailable()
+	drawWins()
 	drawHighlight()
 End Function
 
@@ -32,12 +33,12 @@ Function drawFloorVisual()
 End Function
 
 Function drawHighlight()
-	If game_state$ = "HIGHLIGHT" Then
+	If game_state$ = "" Then
 		
 		For char.fighter = Each fighter
 			For char2.fighter = Each fighter
 				If char2\state$ = "DEAD" Then
-					If (Not char\state$ = "DEAD") Then
+					If (Not char\state$ = "DEAD") And (char\wins >= winsNeeded) Then
 						Color 64,64,64
 						Rect 0,0,1920,char\y#,1
 						Rect 0, char\y# + ImageHeight(char\body), 1920,1080,1
@@ -98,6 +99,22 @@ Function drawProjectilesAvailable()
 		If char\player = 2 Then
 			For i = 0 To (char\projectile_count_max - char\projectile_count) -1
 				Oval 1490 - i*(30), 175, 25,25,1
+			Next
+		End If
+	Next
+End Function 
+
+Function drawWins()
+	For char.fighter = Each fighter
+		Color 201,204,75
+		If char\player = 1 Then
+			For i = 0 To (char\wins) -1
+				Oval 400 + i*(30), 200, 25,25,1
+			Next
+		End If
+		If char\player = 2 Then
+			For i = 0 To (char\wins) -1
+				Oval 1490 - i*(30), 200, 25,25,1
 			Next
 		End If
 	Next

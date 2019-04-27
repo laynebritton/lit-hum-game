@@ -31,7 +31,9 @@ Type Fighter
 	Field invincibility_frames
 	
 	;Physical Locations
+	Field start_x#
 	Field x#
+	Field start_y#
 	Field y#
 	Field head_x#
 	Field head_y#
@@ -51,6 +53,7 @@ Type Fighter
 	Field projectile_count
 	
 	;Stats
+	Field max_hp
 	Field hp
 	Field strength
 	Field speed#

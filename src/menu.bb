@@ -301,6 +301,7 @@ Function fight(player1$,player2$,stage)
 	fightChannel = PlaySound(song)
 	fight_state = True
 	clear_game_states()
+	clearWins()
 	While (Not game_state$ ="FIGHT_OVER")
 		WaitTimer(frameTimer)
 

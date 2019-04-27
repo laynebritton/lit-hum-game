@@ -15,6 +15,7 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
+			
 			char\hp = 100
 			char\strength = 5
 			char\speed = 10
@@ -748,6 +749,10 @@ Function createFighter(fighterName$,player)
 			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
 	
 	End Select 
+	
+	char\max_hp = char\hp
+	char\start_x# = char\x#
+	char\start_y# = char\y#
 End Function
 
 Function createProjectile(player)

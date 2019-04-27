@@ -162,6 +162,12 @@ Function clearStages()
 	Next
 End Function
 
+Function clearWins()
+	For char.fighter = Each fighter
+		char\wins=0
+	Next
+End Function
+
 Function addWin(player)
 	For char.fighter = Each fighter
 		If char\player = player Then
