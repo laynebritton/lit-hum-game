@@ -21,8 +21,8 @@ End Function
 
 Function drawFightHUD()
 	drawFighterIcons()
-	drawFighterDisplayName()
 	drawHealthBars()
+	drawFighterDisplayName()
 	drawProjectilesAvailable()
 	drawWins()
 	drawBetweenRounds()
@@ -101,7 +101,7 @@ Function drawFighterDisplayName()
 		;Color 59,82,73
 		Color 44,87,132
 		If char\player = 1 Then
-			Text 400,75,char\display_name
+			Text 181,30,char\display_name
 		Else If char\player = 2 Then
 			Text 1320,75,char\display_name
 		End If
@@ -112,9 +112,15 @@ Function drawHealthBars()
 	For char.fighter = Each fighter
 		Color 71,0,36
 		If char\player = 1 Then
-			Rect 400,100,(char\hp)*2,50
+			Rect 180,30,(char\hp)*5,25
+			Color 0,0,0
+			Rect 180,30,(char\max_hp)*5,25,0
 		Else If char\player = 2 Then
-			Rect 1320 + (200 - (char\hp*2)),100,(char\hp)*2,50
+			Rect 1740 - (char\hp)*5,30,(char\hp)*5,25
+			;Rect 1320 + (200 - (char\hp*2)),100,(char\hp)*5,25
+			Color 0,0,0
+			Rect 1740 - (char\max_hp)*5,30,(char\max_hp)*5,25,0
+
 		End If
 	Next
 End Function 
@@ -124,7 +130,8 @@ Function drawProjectilesAvailable()
 		Color 44,87,132
 		If char\player = 1 Then
 			For i = 0 To (char\projectile_count_max - char\projectile_count) -1
-				Oval 400 + i*(30), 175, 25,25,1
+				;Oval 400 + i*(30), 175, 25,25,1
+				Rect 180 + i*(32), 60, 30, 10
 			Next
 		End If
 		If char\player = 2 Then
@@ -140,8 +147,15 @@ Function drawWins()
 		Color 201,204,75
 		If char\player = 1 Then
 			For i = 0 To (char\wins) -1
-				Oval 400 + i*(30), 205, 25,25,1
+				If i <= winsNeeded -1 Then
+					Rect 180 + i*(32), 115,30,30,1
+				End If
 			Next
+			
+			Color 0,0,0
+			For i = 0 To winsNeeded -1
+				Rect 180 + i*(32), 115,30,30,0
+			Next 
 		End If
 		If char\player = 2 Then
 			For i = 0 To (char\wins) -1

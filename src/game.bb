@@ -57,6 +57,7 @@ Global game_state_timer
 ;Global Media
 Global test
 Global character_collision_sound,step_sound,jump_sound,projectile_collide_sound,fighter_died_sound,ding,next_round_sound
+
 Global quote_board
 Global song
 Global channel
