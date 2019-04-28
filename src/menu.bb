@@ -367,7 +367,8 @@ Function fight(player1$,player2$,stage)
 	StopChannel(fightChannel)
 	ResumeChannel menuMusicChannel
 	clearFight()
-	
+	stageSelectState=False
+
 End Function
 
 
@@ -592,6 +593,10 @@ Function checkStageSelectInput()
 	
 	If KeyHit(player1_up) Or KeyHit(player2_up) Then
 		decrementStageArrow(5)
+	End If
+	
+	If KeyHit(player1_throw) Or KeyHit(player2_throw) Then
+		stageSelectState=False
 	End If
 	
 End Function
