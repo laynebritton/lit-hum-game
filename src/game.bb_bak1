@@ -31,6 +31,7 @@ Global player1_jump = 47
 Global player1_down = 31
 Global player1_left = 30
 Global player1_right = 32
+Global player1_up = 17;W
 Global player1_attack = 33
 Global player1_throw = 46
 Global player1_start = 28
@@ -67,7 +68,6 @@ Global blipSound
 
 ;Global Values
 Global player_1_char$="Achilleus",player_2_char$="Elizabeth"
-Global selected_stage$="troy"
 Global fps_count,fake_count
 Global winsNeeded=2
 ;Game Settings
@@ -86,8 +86,9 @@ loadCharacterSplashes()
 loadBooks()
 
 menuMusicChannel = PlaySound(menuMusic)
-Repeat	
-	characterSelect()
+Repeat
+	menuNavigator()
+	;characterSelect()
 Forever
 
 Function crapStageSelect()

@@ -47,6 +47,7 @@ Function drawCharacterSelect()
 End Function
 
 Function drawStageSelect()
+	boundStageArrow()	
 	DrawImage(stagebg,0,0)
 
 	drawStageArrow()
@@ -407,7 +408,16 @@ Function decrementStageArrow(amount)
 	stagePosition = stagePosition - amount 
 End Function
 
-Function boundStageArrow()
+Function boundStageArrow()	
+	If stagePosition = -1 Then
+		stagePosition = 9
+	Else If stagePosition <= -2 Then
+		stagePosition = stagePosition +10
+	Else If stagePosition = 10 Then
+		stagePosition = 0
+	Else If stagePosition >= 11 Then
+		stagePosition = stagePosition - 10
+	End If
 
 End Function
 
@@ -516,6 +526,10 @@ Function checkStageSelectInput()
 	
 	If KeyHit(player1_down) Or KeyHit(player2_down) Then
 		incrementStageArrow(5)
+	End If
+	
+	If KeyHit(player1_up) Or KeyHit(player2_up) Then
+		decrementStageArrow(5)
 	End If
 	
 End Function
