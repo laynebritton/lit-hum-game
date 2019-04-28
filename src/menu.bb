@@ -10,8 +10,8 @@ Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aenea
 Global stageArrow
 Global stageFrame,bigStageFrame 
 
-Global troyIcon,hellIcon,symposiumIcon,towerIcon,boatIcon,didoIcon
-Global troySplash,hellSplash,symposiumSplash,towerSplash,boatSplash,didoSplash
+Global troyIcon,hellIcon,symposiumIcon,towerIcon,boatIcon,didoIcon,thermopylaeIcon
+Global troySplash,hellSplash,symposiumSplash,towerSplash,boatSplash,didoSplash,thermopylaeSplash
 
 Global p1Arrow,p2Arrow
 Global p1Char,p2Char
@@ -439,6 +439,13 @@ Function loadStageIconsAndSplashes()
 	
 	didoSplash = LoadImage("../img/menu/stage/dido-splash.png")
 	MaskImage(didoSplash,255,0,220)
+	
+	thermopylaeIcon = LoadImage("../img/menu/stage/thermopylae-icon.png")
+	MaskImage(thermopylaeIcon,255,0,220)
+	
+	thermopylaeSplash = LoadImage("../img/menu/stage/thermopylae-splash.png")
+	MaskImage(thermopylaeSplash,255,0,220)
+	
 End Function
 
 Function incrementStageArrow(amount)
@@ -499,10 +506,10 @@ Function getStageForArrow()
 			toDrawStageSplash = boatSplash
 			stageDisplayName$ = "Taunting Polyphemus"
 		Case 6
-			selected_stage$ = "paradiso"
-			stageBook = odyssey
-			toDrawStageSplash = boatSplash
-			stageDisplayName$ = "Paradiso"
+			selected_stage$ = "thermopylae"
+			stageBook = histories
+			toDrawStageSplash = thermopylaeSplash
+			stageDisplayName$ = "Thermopylae"
 	End Select
 End Function
 
@@ -528,6 +535,9 @@ Function drawStageIcons()
 		Select i
 			Case 0
 				DrawImage(boatIcon,225 + i*(300),330,0)
+			Case 1
+				DrawImage(thermopylaeIcon,225 + i*(300),330,0)
+			
 		End Select
 		DrawImage(stageFrame,225 + i*(300),330,0)
 	Next
