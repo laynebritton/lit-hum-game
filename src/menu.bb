@@ -10,6 +10,9 @@ Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aenea
 Global stageArrow
 Global stageFrame,bigStageFrame 
 
+Global troyIcon,hellIcon,symposiumIcon,towerIcon,boatIcon,didoIcon
+Global troySplash,hellSplash,symposiumSplash,towerSplash,boatSplash,didoSplash
+
 Global p1Arrow,p2Arrow
 Global p1Char,p2Char
 Global p1Position=1, p2Position=7
@@ -18,6 +21,8 @@ Global p1Book, p2Book
 Global selected_stage$="troy"
 Global stagePosition=0
 Global stageBook
+Global toDrawStageSplash
+Global stageDisplayName
 
 Global maxMenuRectangles,currentMenuRectangles
 
@@ -53,6 +58,7 @@ Function drawStageSelect()
 	drawStageArrow()
 	getStageForArrow()
 	drawStageIcons()
+	drawStageSplash()
 	
 	menuBubbles()
 	Flip
@@ -93,7 +99,6 @@ Function loadMenuGraphics()
 	MaskImage(stageFrame,255,0,220)
 	bigStageFrame = LoadImage("../img/menu/big-stage-frame.png")
 	MaskImage(bigStageFrame,255,0,220)
-
 
 End Function
 
@@ -397,6 +402,43 @@ Function boundArrows()
 	
 End Function 
 
+Function loadStageIconsAndSplashes()
+	troyIcon = LoadImage("../img/menu/stage/troy-icon.png")
+	MaskImage(troyIcon,255,0,220)
+	
+	troySplash = LoadImage("../img/menu/stage/troy-splash.png")
+	MaskImage(troySplash,255,0,220)
+
+	hellIcon = LoadImage("../img/menu/stage/hell-icon.png")
+	MaskImage(hellIcon,255,0,220)
+	
+	hellSplash = LoadImage("../img/menu/stage/hell-splash.png")
+	MaskImage(hellSplash,255,0,220)
+	
+	symposiumIcon = LoadImage("../img/menu/stage/symposium-icon.png")
+	MaskImage(symposiumIcon,255,0,220)
+
+	symposiumSplash = LoadImage("../img/menu/stage/symposium-splash.png")
+	MaskImage(symposiumSplash,255,0,220)
+
+	towerIcon = LoadImage("../img/menu/stage/tower-icon.png")
+	MaskImage(towerIcon,255,0,220)
+
+	towerSplash = LoadImage("../img/menu/stage/tower-splash.png")
+	MaskImage(towerSplash,255,0,220)
+	
+	boatIcon = LoadImage("../img/menu/stage/boat-icon.png")
+	MaskImage(boatIcon,255,0,220)
+
+	boatSplash = LoadImage("../img/menu/stage/boat-splash.png")
+	MaskImage(boatSplash,255,0,220)
+	
+	didoIcon = LoadImage("../img/menu/stage/dido-icon.png")
+	MaskImage(didoIcon,255,0,220)
+	
+	didoSplash = LoadImage("../img/menu/stage/dido-splash.png")
+	MaskImage(didoSplash,255,0,220)
+End Function
 
 Function incrementStageArrow(amount)
 	PlaySound blipSound
@@ -423,45 +465,65 @@ End Function
 
 Function getStageForArrow()
 	Select stagePosition
-		Case 1
+		Case 0
 			selected_stage$ = "troy"
 			stageBook = aeneid
-		Case 2
+			toDrawStageSplash = troySplash
+		Case 1
 			selected_stage$ = "hell"
 			stageBook = inferno
-		Case 3
+			toDrawStageSplash = hellSplash
+		Case 2
 			selected_stage$ = "symposium"
 			stageBook = iliad
-		Case 4
+			toDrawStageSplash = symposiumSplash
+		Case 3
 			selected_stage$ = "tower"
 			stageBook = iliad
-		Case 5
+			toDrawStageSplash = towerSplash
+		Case 4
 			selected_stage$ = "carthage"
 			stageBook = aeneid
-		Case 6
+			toDrawStageSplash = didoSplash
+
+		Case 5
 			selected_stage$ = "polyphemus"
 			stageBook = odyssey
-
+			toDrawStageSplash = boatSplash
 	End Select
 End Function
 
 Function drawStageIcons()
 	
 	For i = 0 To 4
-		Select x
+		Select i
+			Case 0
+				DrawImage(troyIcon,225 + i*(300),75,0)
 			Case 1
-			
+				DrawImage(hellIcon,225 + i*(300),75,0)
+			Case 2
+				DrawImage(symposiumIcon,225 + i*(300),75,0)
+			Case 3
+				DrawImage(towerIcon,225 + i*(300),75,0)				
+			Case 4
+				DrawImage(didoIcon,225 + i*(300),75,0)
 		End Select
 		DrawImage(stageFrame,225 + i*(300),75,0)
 	Next
 	
 	For i = 0 To 4
-		Select x
-			Case 1
-			
+		Select i
+			Case 0
+				DrawImage(boatIcon,225 + i*(300),330,0)
 		End Select
 		DrawImage(stageFrame,225 + i*(300),330,0)
 	Next
+End Function
+
+Function drawStageSplash()
+	DrawImage(toDrawStageSplash,225,515,0)
+	DrawImage(bigStageFrame,225,515,0)
+	DrawImage(stageBook,1135,724,0)
 End Function
 
 Function drawStageArrow()
