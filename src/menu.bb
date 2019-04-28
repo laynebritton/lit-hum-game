@@ -10,8 +10,8 @@ Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aenea
 Global stageArrow
 Global stageFrame,bigStageFrame 
 
-Global troyIcon,hellIcon,symposiumIcon,towerIcon,boatIcon,didoIcon,thermopylaeIcon
-Global troySplash,hellSplash,symposiumSplash,towerSplash,boatSplash,didoSplash,thermopylaeSplash
+Global troyIcon,hellIcon,symposiumIcon,towerIcon,boatIcon,didoIcon,thermopylaeIcon,darcyIcon
+Global troySplash,hellSplash,symposiumSplash,towerSplash,boatSplash,didoSplash,thermopylaeSplash,darcySplash
 
 Global p1Arrow,p2Arrow
 Global p1Char,p2Char
@@ -445,7 +445,12 @@ Function loadStageIconsAndSplashes()
 	
 	thermopylaeSplash = LoadImage("../img/menu/stage/thermopylae-splash.png")
 	MaskImage(thermopylaeSplash,255,0,220)
+
+	darcyIcon = LoadImage("../img/menu/stage/darcy-icon.png")
+	MaskImage(darcyIcon,255,0,220)
 	
+	darcySplash = LoadImage("../img/menu/stage/darcy-splash.png")
+	MaskImage(darcySplash,255,0,220)
 End Function
 
 Function incrementStageArrow(amount)
@@ -510,6 +515,11 @@ Function getStageForArrow()
 			stageBook = histories
 			toDrawStageSplash = thermopylaeSplash
 			stageDisplayName$ = "Thermopylae"
+		Case 7
+			selected_stage$ = "darcy"
+			stageBook = pride
+			toDrawStageSplash = darcySplash
+			stageDisplayName$ = "Mr. Darcy's House"
 	End Select
 End Function
 
@@ -537,7 +547,8 @@ Function drawStageIcons()
 				DrawImage(boatIcon,225 + i*(300),330,0)
 			Case 1
 				DrawImage(thermopylaeIcon,225 + i*(300),330,0)
-			
+			Case 2
+				DrawImage(darcyIcon,225 + i*(300),330,0)	
 		End Select
 		DrawImage(stageFrame,225 + i*(300),330,0)
 	Next

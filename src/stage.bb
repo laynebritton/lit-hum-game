@@ -85,6 +85,17 @@ Function loadStage(name$)
 			
 			song  = LoadSound("../snd/bgm/nemesis.mp3")
 
+	Case "darcy"
+		box.stage = New stage
+			box\gfx = LoadImage("../img/bg/darcy.png")
+			box\x# = -100
+			box\y# = -500
+			box\base_height# = box\y#
+			box\speed# = 3.2
+			floor_level=460
+			box\floor_mod# = floor_level
+
+			song  = LoadSound("../snd/bgm/revenge.mp3")
 			
 	For box.stage = Each stage
 		;box\floor_mod# = floor_level
