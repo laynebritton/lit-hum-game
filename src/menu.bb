@@ -307,7 +307,7 @@ Function fight(player1$,player2$,stage)
 	While (Not game_state$ ="FIGHT_OVER")
 		WaitTimer(frameTimer)
 
-		If (Not game_state$="BETWEEN") Then
+		If (Not game_state$="BETWEEN") And (Not isTransitionOnScreen()) Then
 			checkInput()
 		End If 
 			

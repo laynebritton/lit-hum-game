@@ -862,3 +862,10 @@ Function createProjectile(player)
 		End If
 	Next 
 End Function
+
+Function createScreenTransition()
+	screen.transition_rect = New transition_rect
+		screen\x = -3000
+		screen\y = 0
+		screen\speed = 160
+End Function 

@@ -59,6 +59,7 @@ Function dealDamageTo(player,amount)
 End Function 
 
 Function nextRound()
+	createScreenTransition()
 	For char.fighter = Each fighter
 		char\hp = char\max_hp
 		char\x = char\start_x#

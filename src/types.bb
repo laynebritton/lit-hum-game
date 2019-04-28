@@ -144,3 +144,9 @@ Type menu_rect
 	Field y
 	Field speed
 End Type
+
+Type transition_rect
+	Field x
+	Field y
+	Field speed
+End Type

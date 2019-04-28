@@ -11,7 +11,8 @@ Function drawWorld()
 	drawFighters()
 	drawProjectiles()
 
-	
+	drawScreenTransitions()
+
 	;Should always be last lines
 	displayFPS(display_fps_on)
 	displayPlayer1Coords(display_player1_coords_on)
@@ -274,6 +275,18 @@ Function drawDeadFighter()
 	For char.fighter = Each fighter	
 		If char\state$ = "DEAD" Then
 			DrawImage(char\dead,char\x#,char\y#,0)
+		End If
+	Next
+End Function
+
+Function drawScreenTransitions()
+	For screen.transition_rect = Each transition_rect
+		Color 0,0,0
+		screen\x = screen\x + screen\speed
+		Rect screen\x,screen\y,3000,1200,1
+		
+		If screen\x > 3000 Then
+			Delete screen
 		End If
 	Next
 End Function

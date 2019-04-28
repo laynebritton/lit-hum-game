@@ -190,6 +190,20 @@ Function clearFight()
 	currentRound=1
 End Function
 
+Function isTransitionOnScreen()
+	i = 0
+	For screen.transition_rect = Each transition_rect
+		i = i + 1
+	Next
+	
+	If i > 0 Then
+		Return True
+	Else
+		Return False
+	End If
+	
+End Function
+
 Function die(player)
 	For char.fighter = Each fighter
 		If char\player = player Then
