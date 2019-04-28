@@ -103,7 +103,7 @@ Function drawFighterDisplayName()
 		If char\player = 1 Then
 			Text 181,30,char\display_name
 		Else If char\player = 2 Then
-			Text 1320,75,char\display_name
+			Text 1741 - (char\max_hp)*5,30,char\display_name
 		End If
 	Next
 End Function 
@@ -136,7 +136,7 @@ Function drawProjectilesAvailable()
 		End If
 		If char\player = 2 Then
 			For i = 0 To (char\projectile_count_max - char\projectile_count) -1
-				Oval 1490 - i*(30), 175, 25,25,1
+				Rect 1710 - i*(32), 60, 30, 10
 			Next
 		End If
 	Next
@@ -157,10 +157,18 @@ Function drawWins()
 				Rect 180 + i*(32), 115,30,30,0
 			Next 
 		End If
+		
 		If char\player = 2 Then
 			For i = 0 To (char\wins) -1
-				Oval 1490 - i*(30), 205, 25,25,1
+				If i <= winsNeeded -1 Then
+					Rect 1710 - i*(32), 115,30,30,1
+				End If
 			Next
+			
+			Color 0,0,0
+			For i = 0 To winsNeeded -1
+				Rect 1710 - i*(32), 115,30,30,0
+			Next 
 		End If
 	Next
 End Function 
