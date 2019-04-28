@@ -22,7 +22,7 @@ Global selected_stage$="troy"
 Global stagePosition=0
 Global stageBook
 Global toDrawStageSplash
-Global stageDisplayName
+Global stageDisplayName$
 
 Global maxMenuRectangles,currentMenuRectangles
 
@@ -470,27 +470,35 @@ Function getStageForArrow()
 			selected_stage$ = "troy"
 			stageBook = aeneid
 			toDrawStageSplash = troySplash
+			stageDisplayName$ = "The Sack of Troy"
 		Case 1
 			selected_stage$ = "hell"
 			stageBook = inferno
 			toDrawStageSplash = hellSplash
+			stageDisplayName$ = "9th Circle of Hell"
 		Case 2
 			selected_stage$ = "symposium"
 			stageBook = iliad
 			toDrawStageSplash = symposiumSplash
+			stageDisplayName$ = "Symposium"
+
 		Case 3
 			selected_stage$ = "tower"
 			stageBook = iliad
 			toDrawStageSplash = towerSplash
+			stageDisplayName$ = "Montaigne's Room"
+
 		Case 4
 			selected_stage$ = "carthage"
 			stageBook = aeneid
 			toDrawStageSplash = didoSplash
-
+			stageDisplayName$ = "Leaving Dido"
 		Case 5
 			selected_stage$ = "polyphemus"
 			stageBook = odyssey
 			toDrawStageSplash = boatSplash
+			stageDisplayName$ = "Taunting Polyphemus"
+
 	End Select
 End Function
 
@@ -525,6 +533,8 @@ Function drawStageSplash()
 	DrawImage(toDrawStageSplash,225,515,0)
 	DrawImage(bigStageFrame,225,515,0)
 	DrawImage(stageBook,1135,724,0)
+	Color 0,0,0
+	Text 1135,515,stageDisplayName$
 End Function
 
 Function drawStageArrow()

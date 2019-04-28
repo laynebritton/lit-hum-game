@@ -41,6 +41,7 @@ Global player2_jump = 51
 Global player2_down = 208
 Global player2_left = 203
 Global player2_right = 205
+Global player2_up = 200 ;up
 Global player2_attack = 37
 Global player2_throw = 50
 
