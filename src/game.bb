@@ -67,7 +67,6 @@ Global blipSound
 
 ;Global Values
 Global player_1_char$="Achilleus",player_2_char$="Elizabeth"
-Global selected_stage$="troy"
 Global fps_count,fake_count
 Global winsNeeded=2
 ;Game Settings
@@ -86,8 +85,9 @@ loadCharacterSplashes()
 loadBooks()
 
 menuMusicChannel = PlaySound(menuMusic)
-Repeat	
-	characterSelect()
+Repeat
+	menuNavigator()
+	;characterSelect()
 Forever
 
 Function crapStageSelect()

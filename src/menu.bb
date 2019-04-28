@@ -7,14 +7,30 @@ Global danteIcon,donIcon,achilleusIcon,clyIcon,odysseusIcon,aeneasIcon,elizabeth
 Global danteSplash,donSplash,achilleusSplash,clySplash,odysseusSplash,aeneasSplash,elizabethSplash
 Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aeneasSplash2,elizabethSplash2
 
+Global stageArrow
+Global stageFrame,bigStageFrame 
+
 Global p1Arrow,p2Arrow
 Global p1Char,p2Char
 Global p1Position=1, p2Position=7
 Global p1Book, p2Book
 
+Global selected_stage$="troy"
+Global stagePosition=0
+Global stageBook
+
 Global maxMenuRectangles,currentMenuRectangles
 
 Global currentRound=1
+Global stageSelectState=False
+
+Function menuNavigator()
+	If stageSelectState=False Then
+		characterSelect()
+	Else If stageSelectState=True Then
+		stageSelect()
+	End If
+End Function 
 
 Function drawCharacterSelect()
 	boundArrows()
@@ -30,7 +46,17 @@ Function drawCharacterSelect()
 	Cls
 End Function
 
+Function drawStageSelect()
+	DrawImage(stagebg,0,0)
 
+	drawStageArrow()
+	getStageForArrow()
+	drawStageIcons()
+	
+	menuBubbles()
+	Flip
+	Cls
+End Function
 
 Function loadMenuAssets()
 	loadMenuGraphics()
@@ -45,6 +71,13 @@ Function characterSelect()
 	drawCharacterSelect()
 End Function 
 
+
+Function stageSelect()
+	checkStageSelectInput()
+	drawStageSelect()
+End Function 
+
+
 Function loadMenuGraphics()
 	stagebg = LoadImage("../img/bg/gradient-bg.png")
 	p1Arrow = LoadImage("../img/menu/p1-2.png")
@@ -52,6 +85,14 @@ Function loadMenuGraphics()
 
 	p2Arrow = LoadImage("../img/menu/p2-2.png")
 	MaskImage(p2Arrow ,255,0,220)
+	
+	stageArrow = LoadImage("../img/menu/stage-arrow-2.png")
+	MaskImage(stageArrow,255,0,220)
+	stageFrame = LoadImage("../img/menu/stage-frame.png")
+	MaskImage(stageFrame,255,0,220)
+	bigStageFrame = LoadImage("../img/menu/big-stage-frame.png")
+	MaskImage(bigStageFrame,255,0,220)
+
 
 End Function
 
@@ -289,7 +330,7 @@ End Function
 Function fight(player1$,player2$,stage)
 	PauseChannel menuMusicChannel
 	;TODO Get rid of this shit
-	crapStageSelect()
+	;crapStageSelect()
 	
 	loadingScreenQuote()
 	
@@ -346,18 +387,80 @@ Function decrementArrow(number)
 	End Select
 End Function 
 
-
-
 Function boundArrows()
 	If p1Position > 7 Then p1Position = 1
 	If p2Position > 7 Then p2Position = 1
 	
 	If p1Position < 1 Then p1Position = 7
 	If p2Position < 1 Then p2Position = 7
+	
 End Function 
 
 
- 
+Function incrementStageArrow(amount)
+	PlaySound blipSound
+	stagePosition = stagePosition + amount
+End Function
+
+Function decrementStageArrow(amount)
+	PlaySound blipSound
+	stagePosition = stagePosition - amount 
+End Function
+
+Function boundStageArrow()
+
+End Function
+
+Function getStageForArrow()
+	Select stagePosition
+		Case 1
+			selected_stage$ = "troy"
+			stageBook = aeneid
+		Case 2
+			selected_stage$ = "hell"
+			stageBook = inferno
+		Case 3
+			selected_stage$ = "symposium"
+			stageBook = iliad
+		Case 4
+			selected_stage$ = "tower"
+			stageBook = iliad
+		Case 5
+			selected_stage$ = "carthage"
+			stageBook = aeneid
+		Case 6
+			selected_stage$ = "polyphemus"
+			stageBook = odyssey
+
+	End Select
+End Function
+
+Function drawStageIcons()
+	
+	For i = 0 To 4
+		Select x
+			Case 1
+			
+		End Select
+		DrawImage(stageFrame,225 + i*(300),75,0)
+	Next
+	
+	For i = 0 To 4
+		Select x
+			Case 1
+			
+		End Select
+		DrawImage(stageFrame,225 + i*(300),330,0)
+	Next
+End Function
+
+Function drawStageArrow()
+	If stagePosition <= 4 Then
+		DrawImage(stageArrow,225 + (stagePosition*(300)),0,0)
+	Else If stagePosition >= 5 Then
+		DrawImage(stageArrow,225 + ((stagePosition-5)*(300)),225,0)
+	End If
+End Function 
 Function loadingScreenQuote()
 	writeQuote(1)
 	Text 0,1020,"Loading..."	
@@ -372,7 +475,8 @@ Function checkCharacterSelectInput()
 	End If 
 	
 	If KeyHit(player1_start) Then
-		fight(player_1_char, player_2_char, select_stage$)
+		;fight(player_1_char, player_2_char, select_stage$)
+		stageSelectState=True
 	End If
 	
 	If KeyHit(player1_right) Then
@@ -391,37 +495,29 @@ Function checkCharacterSelectInput()
 		decrementArrow(2)
 	End If
 		
-	If KeyHit(2) Or KeyHit(player1_jump) Then
-		player_1_char$ = "Achilleus"
-	End If
+End Function
+
+Function checkStageSelectInput()
+	If KeyHit(1) Then
+		End
+	End If 
 	
-	If KeyHit(3) Or KeyHit(player1_throw) Then
-		 player_1_char$ = "Dante"
-	End If
-	
-	If KeyHit(4) Or KeyHit(player1_attack) Then
-		 player_1_char$ = "Don"
+	If KeyHit(player1_start) Then
+		fight(player_1_char, player_2_char, selected_stage$)
 	End If
 
-	If KeyHit(5) Or KeyHit(player1_down) Then
-		 player_1_char$ = "cly"
+	If KeyHit(player1_right) Or KeyHit(player2_right) Then
+		incrementStageArrow(1)
 	End If
 	
-	If KeyHit(2) Or KeyHit(player2_jump) Then
-		 player_2_char$ = "Achilleus"
+	If KeyHit(player1_left) Or KeyHit(player2_left) Then
+		decrementStageArrow(1)
 	End If
 	
-	If KeyHit(3) Or KeyHit(player2_throw) Then
-		 player_2_char$ = "Dante"
+	If KeyHit(player1_down) Or KeyHit(player2_down) Then
+		incrementStageArrow(5)
 	End If
 	
-	If KeyHit(4) Or KeyHit(player2_attack) Then
-		 player_2_char$ = "Don"
-	End If
-		
-	If KeyHit(5) Or KeyHit(player2_down) Then
-		 player_2_char$ = "cly"
-	End If
 End Function
 
 Function menuBubbles()
