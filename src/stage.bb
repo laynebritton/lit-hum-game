@@ -73,6 +73,17 @@ Function loadStage(name$)
 
 			song  = LoadSound("../snd/bgm/avenge.mp3")
 
+	Case "paradiso"
+		box.stage = New stage
+			box\gfx = OpenMovie("../img/bg/paradiso.gif")
+		If box\gfx=0 Then RuntimeError "Error - Movie not loaded!" 
+			box\x# = 0
+			box\y# = 0
+			box\base_height# = box\y#
+			box\speed# = 5
+			floor_level=460
+			box\floor_mod# = floor_level
+			
 	For box.stage = Each stage
 		;box\floor_mod# = floor_level
 
@@ -94,12 +105,21 @@ End Function
 
 Function drawStage()
 	For box.stage = Each stage
-		trackStage()
-		preventStageOverflow()
-		DrawImage(box\gfx,box\x#,box\y#,0)
+		If selected_stage$="paradiso" Then
+			drawParadiso()
+		Else
+			trackStage()
+			preventStageOverflow()
+			DrawImage(box\gfx,box\x#,box\y#,0)
+		End If
 	Next 
 End Function
 
+Function drawParadiso()
+	For box.stage = Each stage
+		DrawMovie(box\gfx,0,0,1920,1080)
+	Next
+End Function
 ;Function moveStageX(amount#);
 ;	stage_x# = stage_x# + amount#
 ;End Function

@@ -478,13 +478,13 @@ Function getStageForArrow()
 			stageDisplayName$ = "9th Circle of Hell"
 		Case 2
 			selected_stage$ = "symposium"
-			stageBook = iliad
+			stageBook = symposium
 			toDrawStageSplash = symposiumSplash
 			stageDisplayName$ = "Symposium"
 
 		Case 3
 			selected_stage$ = "tower"
-			stageBook = iliad
+			stageBook = essays
 			toDrawStageSplash = towerSplash
 			stageDisplayName$ = "Montaigne's Room"
 
@@ -498,7 +498,11 @@ Function getStageForArrow()
 			stageBook = odyssey
 			toDrawStageSplash = boatSplash
 			stageDisplayName$ = "Taunting Polyphemus"
-
+		Case 6
+			selected_stage$ = "paradiso"
+			stageBook = odyssey
+			toDrawStageSplash = boatSplash
+			stageDisplayName$ = "Paradiso"
 	End Select
 End Function
 
