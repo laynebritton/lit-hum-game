@@ -791,15 +791,15 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
-			char\hp = 120
-			char\strength = 10
+			char\hp = 110
+			char\strength = 7
 			char\speed = 9
 			char\projectile_count_max = 2
 			char\projectile_speed# = 0
-			char\projectile_gravity# = 10
+			char\projectile_gravity# = 11
 			char\projectile_damage = 7
 			char\critMultiplier# = 2
-			char\knockback = 100
+			char\knockback = 120
 			char\canAttackWhileShielding$="FALSE"
 			char\canShootWhileShielding$="TRUE"
 			;Jump Stats
@@ -807,8 +807,8 @@ Function createFighter(fighterName$,player)
 			char\jump_speed = 25
 			
 			;Animation
-			char\breathing# = 5
-			char\breathingSpeed# = 0.06
+			char\breathing# = 4
+			char\breathingSpeed# = 0.05
 			char\breathingDirection$ = "UP"
 			char\projectile_animation_frames = 1
 			char\walk_frame = 0
@@ -820,7 +820,7 @@ Function createFighter(fighterName$,player)
 			char\shield_state$ ="FALSE"
 			
 			;Quotes
-			char\win_quote = 8
+			char\win_quote = 9
 			
 			;Graphics
 			char\body = LoadImage("../img/Satan/body-1.png")

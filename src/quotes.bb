@@ -52,7 +52,10 @@ Function writeQuote(quote)
 			Text 960,105, "in the form of encouragement, I know not how to express my refusal",True,True
 			Text 960,140, "in such a way as may convince you of it being one."+ Chr(34),True,True
 			Text 960,175, "-Elizabeth (Austen, Pride and Prejudice(I.XIX))",True,True
-
+		Case 9
+			Text 960,70,Chr(34) + "Abolish his own works. This would surpass",True,True
+			Text 960,105, "common revenge, and interrupt his joy" + Chr(34),True,True
+			Text 960,140, "-Satan (Milton, Paradise Lost (II.370-371))",True,True
 	End Select
 	
 	SetFont(font)
