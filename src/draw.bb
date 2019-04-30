@@ -40,6 +40,7 @@ Function drawBetweenRounds()
 		SetFont big_quote_font
 		For char.fighter = Each fighter
 			If (Not char\state$="DEAD") Then
+				Color 201,204,75
 				Text 800,500,"Round " + currentRound + ": " + char\display_name$ + " " + "wins!"
 			End If
 		Next
@@ -117,10 +118,10 @@ Function drawHealthBars()
 			Color 0,0,0
 			Rect 180,30,(char\max_hp)*6,25,0
 		Else If char\player = 2 Then
-			Rect 1740 - (char\hp)*5,30,(char\hp)*6,25
+			Rect 1740 - (char\hp)*6,30,(char\hp)*6,25
 			;Rect 1320 + (200 - (char\hp*2)),100,(char\hp)*5,25
 			Color 0,0,0
-			Rect 1740 - (char\max_hp)*6,30,(char\max_hp)*5,25,0
+			Rect 1740 - (char\max_hp)*6,30,(char\max_hp)*6,25,0
 
 		End If
 	Next
