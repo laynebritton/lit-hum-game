@@ -84,6 +84,7 @@ loadGlobalMedia()
 loadMenuAssets()
 loadCharacterIcons()
 loadCharacterSplashes()
+loadStageIconsAndSplashes()
 loadBooks()
 
 menuMusicChannel = PlaySound(menuMusic)

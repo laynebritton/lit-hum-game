@@ -198,7 +198,10 @@ Function drawFighters()
 				drawAeneas()
 
 			Case "Elizabeth"
-				drawElizabeth()				
+				drawElizabeth()					
+			
+			Case "Satan"
+				drawSatan()			
 		End Select
 	Next 
 End Function

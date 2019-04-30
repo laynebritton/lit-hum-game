@@ -779,11 +779,11 @@ Function createFighter(fighterName$,player)
 			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
 	
 	Case "Satan"
-	;Elizabeth
+	;Satan
 		char.fighter = New Fighter
 			;Data
-			char\name$ = "Elizabeth"
-			char\display_name$ = "Elizabeth Bennet"	
+			char\name$ = "Satan"
+			char\display_name$ = "Satan"	
 			char\player = player
 			
 			;Location		
@@ -791,12 +791,12 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
-			char\hp = 100
-			char\strength = 6
-			char\speed = 13
-			char\projectile_count_max = 1
-			char\projectile_speed# = 17
-			char\projectile_gravity# = 0
+			char\hp = 120
+			char\strength = 10
+			char\speed = 9
+			char\projectile_count_max = 2
+			char\projectile_speed# = 0
+			char\projectile_gravity# = 10
 			char\projectile_damage = 7
 			char\critMultiplier# = 2
 			char\knockback = 100
@@ -807,7 +807,7 @@ Function createFighter(fighterName$,player)
 			char\jump_speed = 25
 			
 			;Animation
-			char\breathing# = 3
+			char\breathing# = 5
 			char\breathingSpeed# = 0.06
 			char\breathingDirection$ = "UP"
 			char\projectile_animation_frames = 1
@@ -839,7 +839,10 @@ Function createFighter(fighterName$,player)
 			char\cosmetic1 = LoadImage("../img/Satan/acc-2.png")
 			MaskImage(char\cosmetic1,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Satan/attack-3.png",500,700,0,4)
+			char\cosmetic2 = LoadImage("../img/Satan/acc2-2.png")
+			MaskImage(char\cosmetic2,255,0,220)
+			
+			char\attack1 = LoadAnimImage("../img/Satan/attack-4.png",500,700,0,4)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 4
 			
@@ -858,6 +861,7 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\walk)
 				mirrorImage(char\dead)
 				mirrorImage(char\cosmetic1)
+				mirrorImage(char\cosmetic2)
 				
 				mirrorImage(char\attack1)
 				
@@ -957,8 +961,17 @@ Function createProjectile(player)
 				End If 
 				
 				entity\y# = floor_level
-			End Select
 				
+			Case "Satan"
+				For char2.fighter = Each fighter
+					If (Not char2\player = char\player) Then
+						entity\x# = char2\x#
+					End If
+				Next
+				
+				entity\y# = -250
+			End Select
+
 			PlaySound char\projectile_throw_sound
 		End If
 	Next 

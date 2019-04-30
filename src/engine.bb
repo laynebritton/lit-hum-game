@@ -58,7 +58,7 @@ Function updateProjectiles()
 	For entity.projectile = Each Projectile
 		entity\x# = entity\x# + offsetCalculator(entity\speed#,entity\player)
 		entity\y# = entity\y# + entity\gravity#
-		If entity\x# > 2220 Or entity\x# < -200 Then
+		If entity\x# > 2220 Or entity\x# < -200  Or entity\y# > 1400 Or entity\y# < -500 Then
 			entity\toDelete = True
 		End If
 	Next
