@@ -791,13 +791,13 @@ Function createFighter(fighterName$,player)
 			char\y = floor_level
 			
 			;Stats
-			char\hp = 110
-			char\strength = 7
+			char\hp = 100
+			char\strength = 6
 			char\speed = 9
 			char\projectile_count_max = 2
 			char\projectile_speed# = 0
 			char\projectile_gravity# = 11
-			char\projectile_damage = 7
+			char\projectile_damage = 6
 			char\critMultiplier# = 2
 			char\knockback = 120
 			char\canAttackWhileShielding$="FALSE"
