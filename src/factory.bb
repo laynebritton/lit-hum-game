@@ -778,6 +778,107 @@ Function createFighter(fighterName$,player)
 			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
 			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
 	
+	Case "Satan"
+	;Elizabeth
+		char.fighter = New Fighter
+			;Data
+			char\name$ = "Elizabeth"
+			char\display_name$ = "Elizabeth Bennet"	
+			char\player = player
+			
+			;Location		
+			char\x = 600
+			char\y = floor_level
+			
+			;Stats
+			char\hp = 100
+			char\strength = 6
+			char\speed = 13
+			char\projectile_count_max = 1
+			char\projectile_speed# = 17
+			char\projectile_gravity# = 0
+			char\projectile_damage = 7
+			char\critMultiplier# = 2
+			char\knockback = 100
+			char\canAttackWhileShielding$="FALSE"
+			char\canShootWhileShielding$="TRUE"
+			;Jump Stats
+			char\jump_max_frame = 25
+			char\jump_speed = 25
+			
+			;Animation
+			char\breathing# = 3
+			char\breathingSpeed# = 0.06
+			char\breathingDirection$ = "UP"
+			char\projectile_animation_frames = 1
+			char\walk_frame = 0
+			char\walk_draw_frame = 0
+			char\walk_max_draw_frame = 1
+
+			;State
+			char\state$ = "NONE"
+			char\shield_state$ ="FALSE"
+			
+			;Quotes
+			char\win_quote = 8
+			
+			;Graphics
+			char\body = LoadImage("../img/Satan/body-1.png")
+			MaskImage(char\body,255,0,220)
+			char\head = LoadImage("../img/Satan/head-2.png")
+			MaskImage(char\head,255,0,220)
+			char\arm= LoadImage("../img/Satan/arm-2.png")
+			MaskImage(char\arm,255,0,220)
+			char\crouch = LoadImage("../img/Satan/crouch-2.png")
+			MaskImage(char\crouch,255,0,220)
+			char\dead = LoadImage("../img/Satan/dead-1.png")
+			MaskImage(char\dead,255,0,220)
+			char\walk = LoadAnimImage("../img/Satan/walk-2.png",523,127,0,2)
+			MaskImage(char\walk,255,0,220)
+			
+			char\cosmetic1 = LoadImage("../img/Satan/acc-2.png")
+			MaskImage(char\cosmetic1,255,0,220)
+			
+			char\attack1 = LoadAnimImage("../img/Satan/attack-3.png",500,700,0,4)
+			MaskImage(char\attack1,255,0,220)
+			char\basic_attack_frames = 4
+			
+			char\projectile_graphic = LoadImage("../img/Satan/projectile-3.png")
+			MaskImage(char\projectile_graphic,255,0,220)
+			
+			char\icon = elizabethIcon ;Icon
+
+			If player = 2 Then
+				char\playerMultiplier = -1
+				char\x = 1320 - ImageWidth(char\body)
+				mirrorImage(char\body)
+				mirrorImage(char\head)
+				mirrorImage(char\arm)
+				mirrorImage(char\crouch)
+				mirrorImage(char\walk)
+				mirrorImage(char\dead)
+				mirrorImage(char\cosmetic1)
+				
+				mirrorImage(char\attack1)
+				
+				mirrorImage(char\projectile_graphic)
+				mirrorImage(char\icon)
+
+			End If
+	
+	
+			;Sound
+			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+	
 	End Select 
 	
 	char\max_hp = char\hp
