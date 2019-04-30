@@ -95,7 +95,7 @@ Function loadStage(name$)
 			floor_level=460
 			box\floor_mod# = floor_level
 
-			song  = LoadSound("../snd/bgm/revenge.mp3")
+			song  = LoadSound("../snd/bgm/griselda.mp3")
 			
 	For box.stage = Each stage
 		;box\floor_mod# = floor_level

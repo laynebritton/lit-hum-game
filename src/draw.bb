@@ -108,7 +108,7 @@ Function drawFighterDisplayName()
 		If char\player = 1 Then
 			Text 181,30,char\display_name
 		Else If char\player = 2 Then
-			Text 1741 - (char\max_hp)*5,30,char\display_name
+			Text 1741 - (char\max_hp)*6,30,char\display_name
 		End If
 	Next
 End Function 
