@@ -803,7 +803,7 @@ Function createFighter(fighterName$,player)
 			char\canAttackWhileShielding$="FALSE"
 			char\canShootWhileShielding$="TRUE"
 			;Jump Stats
-			char\jump_max_frame = 25
+			char\jump_max_frame = 34
 			char\jump_speed = 25
 			
 			;Animation
@@ -852,7 +852,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Satan/projectile-3.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
-			char\icon = elizabethIcon ;Icon
+			char\icon = satanIcon ;Icon
 
 			If player = 2 Then
 				char\playerMultiplier = -1

@@ -1,4 +1,4 @@
-Global iliad,odyssey,oresteia,inferno,quixote,aeneid,pride,symposium,essays,histories
+Global iliad,odyssey,oresteia,inferno,quixote,aeneid,pride,symposium,essays,histories,lost
 
 Function loadBooks()
 
@@ -15,5 +15,7 @@ Function loadBooks()
 	MaskImage(essays,255,0,220)
 	histories = LoadImage("../img/books/histories.png")
 	MaskImage(histories,255,0,220)
-
+	lost = LoadImage("../img/books/lost.png")
+	MaskImage(histories,255,0,220)
+	
 End Function
