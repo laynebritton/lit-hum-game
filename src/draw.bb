@@ -88,13 +88,16 @@ Function drawFighterIcons()
 	For char.fighter = Each fighter
 		If char\player = 1 Then
 			x = 45
+			DrawImage(char\icon,x,y,0)
+			DrawImage(charFrame,x,y,0)
 		End If
 
 		If char\player = 2 Then
 			x = 1760
+			DrawImage(char\icon,x,y,0)
+			DrawImage(charFrame,x,y,0)
 		End If
-		DrawImage(char\icon,x,y,0)
-		DrawImage(charFrame,x,y,0)
+
 	Next
 End Function
 
