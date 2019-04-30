@@ -5,36 +5,24 @@ Function drawSatan()
 				drawDeadFighter()
 			Else
 				drawBreathing()	
-				SatanWalk(char\player)
-												
-
-				If char\crouch_state$="TRUE" Then
+				If char\crouch_state$="TRUE" Then 				
+					;activateShield(char\player)
+					SatanCrouch(char\player)
+				Else
+					SatanWalk(char\player)
+					SatanBow(char\player)				
+	
 					If char\state$ = "NONE" Then
-						DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\arm_y#+ char\breathing#,0)
+						DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\arm_y#,0)
 					Else If char\state$ = "BASIC_ATTACK" Then
 						SatanAttackArm(char\player)
 						SatanAttackAnimation()
 					End If
-					
-					activateShield(char\player)
-					SatanCrouch(char\player)
-
-				Else If char\crouch_state$="FALSE" Then 
+	
 					deactivateShield(char\player)
-					
-					SatanBow(char\player)
 					body(char\player)
-					
-					If char\state$ = "NONE" Then
-						DrawImage(char\arm,char\x - offsetCalculator(3, char\player),char\arm_y#+ char\breathing#,0)
-					Else If char\state$ = "BASIC_ATTACK" Then
-						SatanAttackAnimation()
-					End If
-					
-				End If
-				
-				
-
+	
+				End If 
 			End If
 		End If
 	Next
@@ -80,12 +68,16 @@ Function SatanCrouch(player)
 	For char.fighter = Each fighter
 		If char\player = player Then
 			char\head_x# = char\x# ;- offsetCalculator(0,char\player)
-			char\head_y# = char\y# ;+ 90 
+			char\head_y# = char\y# + 200 
 			char\arm_x# = char\x# ;-offsetCalculator(0,char\player)
 			char\arm_y# = char\y# ;+ 90+ char\breathing#
 			
-			DrawImage(char\head,char\head_x#,char\head_y#+ char\breathing#,0)
-			DrawImage(char\crouch,char\x,char\y + char\breathing#,0)
+			;DrawImage(char\head,char\head_x#,char\head_y#+ char\breathing#,0)
+			player_2_offset = 175
+			If char\player=2 Then
+				player_2_offset = 270
+			End If
+			DrawImage(char\crouch,char\x + player_2_offset,char\y + 400 + char\breathing#,0)
 			
 		End If
 	Next
@@ -95,9 +87,9 @@ End Function
 Function SatanAttackAnimation()
 	For char.fighter = Each fighter
 		If char\name = "Satan" And char\state$ = "BASIC_ATTACK" Then
-			player_2_offset = 520
+			player_2_offset = 160
 			If char\player=2 Then
-				player_2_offset = 125;ImageWidth(char\attack1); - 160
+				player_2_offset = 135;ImageWidth(char\attack1); - 160
 			End If
 			
 			char\attack_x = char\x + offsetCalculator(player_2_offset,char\player)
@@ -109,11 +101,11 @@ Function SatanAttackAnimation()
 			playsoundAtFrame(char\attackAnimFrame,1,char\swing_sound)
 			playsoundAtFrame(char\attackAnimFrame,60,char\swing_sound)
 			
-			If (char\attackAnimFrame / 11) > char\basic_attack_frames - 1 Then
+			If (char\attackAnimFrame / 10) > char\basic_attack_frames - 1 Then
 				char\attackAnimFrame = 0
 				char\state$ = "NONE"
 			End If
-			DrawImage(char\attack1,char\attack_x,char\attack_y,(char\attackAnimFrame / 11))
+			DrawImage(char\attack1,char\attack_x,char\attack_y,(char\attackAnimFrame / 10))
 			
 		End If
 	Next 

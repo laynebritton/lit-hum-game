@@ -836,14 +836,17 @@ Function createFighter(fighterName$,player)
 			char\walk = LoadAnimImage("../img/Satan/walk-2.png",523,127,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\cosmetic1 = LoadImage("../img/Satan/acc-2.png")
+			char\cosmetic1 = LoadImage("../img/Satan/acc-3.png")
 			MaskImage(char\cosmetic1,255,0,220)
 			
 			char\cosmetic2 = LoadImage("../img/Satan/acc2-2.png")
 			MaskImage(char\cosmetic2,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Satan/attack-4.png",500,700,0,4)
-			MaskImage(char\attack1,255,0,220)
+			If player = 1 Then
+				;Override typical protocol because this file is huge
+				char\attack1 = LoadAnimImage("../img/Satan/attack-4.png",500,700,0,4)
+				MaskImage(char\attack1,255,0,220)
+			End If 
 			char\basic_attack_frames = 4
 			
 			char\projectile_graphic = LoadImage("../img/Satan/projectile-3.png")
@@ -863,7 +866,8 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\cosmetic1)
 				mirrorImage(char\cosmetic2)
 				
-				mirrorImage(char\attack1)
+				char\attack1 = LoadAnimImage("../img/Satan/attack-4-mirror.png",500,700,0,4)
+				MaskImage(char\attack1,255,0,220)
 				
 				mirrorImage(char\projectile_graphic)
 				mirrorImage(char\icon)
