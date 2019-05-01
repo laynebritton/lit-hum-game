@@ -88,24 +88,24 @@ End Function
 
 
 Function loadMenuGraphics()
-	stagebg = LoadImage("../img/bg/gradient-bg.png")
-	p1Arrow = LoadImage("../img/menu/p1-2.png")
+	stagebg = LoadImage("img/bg/gradient-bg.png")
+	p1Arrow = LoadImage("img/menu/p1-2.png")
 	MaskImage(p1Arrow ,255,0,220)
 
-	p2Arrow = LoadImage("../img/menu/p2-2.png")
+	p2Arrow = LoadImage("img/menu/p2-2.png")
 	MaskImage(p2Arrow ,255,0,220)
 	
-	stageArrow = LoadImage("../img/menu/stage-arrow-2.png")
+	stageArrow = LoadImage("img/menu/stage-arrow-2.png")
 	MaskImage(stageArrow,255,0,220)
-	stageFrame = LoadImage("../img/menu/stage-frame.png")
+	stageFrame = LoadImage("img/menu/stage-frame.png")
 	MaskImage(stageFrame,255,0,220)
-	bigStageFrame = LoadImage("../img/menu/big-stage-frame.png")
+	bigStageFrame = LoadImage("img/menu/big-stage-frame.png")
 	MaskImage(bigStageFrame,255,0,220)
 
 End Function
 
 Function loadMenuMusic()
-	menuMusic = LoadSound("../snd/bgm/menu.wav")
+	menuMusic = LoadSound("snd/bgm/menu.wav")
 	LoopSound menuMusic
 	SoundVolume menuMusic,0.5
 End Function
@@ -390,50 +390,50 @@ Function getRandomCharacter(player)
 End Function
 
 Function loadCharacterIcons()
-	charFrame = LoadImage("../img/menu/char-frame.png")
+	charFrame = LoadImage("img/menu/char-frame.png")
 	MaskImage(charFrame,255,0,220)
-	danteIcon = LoadImage("../img/menu/dante-small.png")
-	donIcon = LoadImage("../img/menu/don-small.png")
-	achilleusIcon = LoadImage("../img/menu/achilleus-small.png")
-	clyIcon = LoadImage("../img/menu/cly-small.png")
-	odysseusIcon = LoadImage("../img/menu/odysseus-small.png")
-	aeneasIcon = LoadImage("../img/menu/aeneas-small.png")
-	elizabethIcon = LoadImage("../img/menu/elizabeth-small.png")
-	satanIcon = LoadImage("../img/menu/satan-small.png")
-	aiasIcon = LoadImage("../img/menu/aias-small.png")
+	danteIcon = LoadImage("img/menu/dante-small.png")
+	donIcon = LoadImage("img/menu/don-small.png")
+	achilleusIcon = LoadImage("img/menu/achilleus-small.png")
+	clyIcon = LoadImage("img/menu/cly-small.png")
+	odysseusIcon = LoadImage("img/menu/odysseus-small.png")
+	aeneasIcon = LoadImage("img/menu/aeneas-small.png")
+	elizabethIcon = LoadImage("img/menu/elizabeth-small.png")
+	satanIcon = LoadImage("img/menu/satan-small.png")
+	aiasIcon = LoadImage("img/menu/aias-small.png")
 	MaskImage(aiasIcon,255,0,220)
-	randomIcon = LoadImage("../img/menu/randomIcon.png")
+	randomIcon = LoadImage("img/menu/randomIcon.png")
 	MaskImage(randomIcon,255,0,220)
 
 End Function
 
 Function loadCharacterSplashes()
-	danteSplash = LoadImage("../img/menu/dante-big.png")
+	danteSplash = LoadImage("img/menu/dante-big.png")
 	MaskImage(danteSplash,255,0,220)
-	donSplash = LoadImage("../img/menu/don-big.png")
-	achilleusSplash = LoadImage("../img/menu/achilleus-big.png")
-	clySplash = LoadImage("../img/menu/cly-big.png")
-	odysseusSplash = LoadImage("../img/menu/odysseus-big.png")
-	aeneasSplash = LoadImage("../img/menu/aeneas-big.png")
-	elizabethSplash = LoadImage("../img/menu/elizabeth-big.png")
+	donSplash = LoadImage("img/menu/don-big.png")
+	achilleusSplash = LoadImage("img/menu/achilleus-big.png")
+	clySplash = LoadImage("img/menu/cly-big.png")
+	odysseusSplash = LoadImage("img/menu/odysseus-big.png")
+	aeneasSplash = LoadImage("img/menu/aeneas-big.png")
+	elizabethSplash = LoadImage("img/menu/elizabeth-big.png")
 	MaskImage(elizabethSplash,255,0,220)
-	satanSplash = LoadImage("../img/menu/satan-big.png")
+	satanSplash = LoadImage("img/menu/satan-big.png")
 	MaskImage(satanSplash,255,0,220)
-	aiasSplash = LoadImage("../img/menu/aias-big.png")
+	aiasSplash = LoadImage("img/menu/aias-big.png")
 	MaskImage(aiasSplash,255,0,220)
 	
-	danteSplash2 = LoadImage("../img/menu/dante-big-2.png")
+	danteSplash2 = LoadImage("img/menu/dante-big-2.png")
 	MaskImage(danteSplash2,255,0,220)
-	donSplash2 = LoadImage("../img/menu/don-big-2.png")
-	achilleusSplash2 = LoadImage("../img/menu/achilleus-big-2.png")
-	clySplash2 = LoadImage("../img/menu/cly-big-2.png")
-	odysseusSplash2 = LoadImage("../img/menu/odysseus-big-2.png")
-	aeneasSplash2 = LoadImage("../img/menu/aeneas-big-2.png")
-	elizabethSplash2 = LoadImage("../img/menu/elizabeth-big-2.png")
+	donSplash2 = LoadImage("img/menu/don-big-2.png")
+	achilleusSplash2 = LoadImage("img/menu/achilleus-big-2.png")
+	clySplash2 = LoadImage("img/menu/cly-big-2.png")
+	odysseusSplash2 = LoadImage("img/menu/odysseus-big-2.png")
+	aeneasSplash2 = LoadImage("img/menu/aeneas-big-2.png")
+	elizabethSplash2 = LoadImage("img/menu/elizabeth-big-2.png")
 	MaskImage(elizabethSplash2,255,0,220)
-	satanSplash2 = LoadImage("../img/menu/satan-big-2.png")
+	satanSplash2 = LoadImage("img/menu/satan-big-2.png")
 	MaskImage(satanSplash2,255,0,220)
-	aiasSplash2 = LoadImage("../img/menu/aias-big-2.png")
+	aiasSplash2 = LoadImage("img/menu/aias-big-2.png")
 	MaskImage(aiasSplash2,255,0,220)
 
 
@@ -510,64 +510,64 @@ Function boundArrows()
 End Function 
 
 Function loadStageIconsAndSplashes()
-	troyIcon = LoadImage("../img/menu/stage/troy-icon.png")
+	troyIcon = LoadImage("img/menu/stage/troy-icon.png")
 	MaskImage(troyIcon,255,0,220)
 	
-	troySplash = LoadImage("../img/menu/stage/troy-splash.png")
+	troySplash = LoadImage("img/menu/stage/troy-splash.png")
 	MaskImage(troySplash,255,0,220)
 
-	hellIcon = LoadImage("../img/menu/stage/hell-icon.png")
+	hellIcon = LoadImage("img/menu/stage/hell-icon.png")
 	MaskImage(hellIcon,255,0,220)
 	
-	hellSplash = LoadImage("../img/menu/stage/hell-splash.png")
+	hellSplash = LoadImage("img/menu/stage/hell-splash.png")
 	MaskImage(hellSplash,255,0,220)
 	
-	symposiumIcon = LoadImage("../img/menu/stage/symposium-icon.png")
+	symposiumIcon = LoadImage("img/menu/stage/symposium-icon.png")
 	MaskImage(symposiumIcon,255,0,220)
 
-	symposiumSplash = LoadImage("../img/menu/stage/symposium-splash.png")
+	symposiumSplash = LoadImage("img/menu/stage/symposium-splash.png")
 	MaskImage(symposiumSplash,255,0,220)
 
-	towerIcon = LoadImage("../img/menu/stage/tower-icon.png")
+	towerIcon = LoadImage("img/menu/stage/tower-icon.png")
 	MaskImage(towerIcon,255,0,220)
 
-	towerSplash = LoadImage("../img/menu/stage/tower-splash.png")
+	towerSplash = LoadImage("img/menu/stage/tower-splash.png")
 	MaskImage(towerSplash,255,0,220)
 	
-	boatIcon = LoadImage("../img/menu/stage/boat-icon.png")
+	boatIcon = LoadImage("img/menu/stage/boat-icon.png")
 	MaskImage(boatIcon,255,0,220)
 
-	boatSplash = LoadImage("../img/menu/stage/boat-splash.png")
+	boatSplash = LoadImage("img/menu/stage/boat-splash.png")
 	MaskImage(boatSplash,255,0,220)
 	
-	didoIcon = LoadImage("../img/menu/stage/dido-icon.png")
+	didoIcon = LoadImage("img/menu/stage/dido-icon.png")
 	MaskImage(didoIcon,255,0,220)
 	
-	didoSplash = LoadImage("../img/menu/stage/dido-splash.png")
+	didoSplash = LoadImage("img/menu/stage/dido-splash.png")
 	MaskImage(didoSplash,255,0,220)
 	
-	thermopylaeIcon = LoadImage("../img/menu/stage/thermopylae-icon.png")
+	thermopylaeIcon = LoadImage("img/menu/stage/thermopylae-icon.png")
 	MaskImage(thermopylaeIcon,255,0,220)
 	
-	thermopylaeSplash = LoadImage("../img/menu/stage/thermopylae-splash.png")
+	thermopylaeSplash = LoadImage("img/menu/stage/thermopylae-splash.png")
 	MaskImage(thermopylaeSplash,255,0,220)
 
-	darcyIcon = LoadImage("../img/menu/stage/darcy-icon.png")
+	darcyIcon = LoadImage("img/menu/stage/darcy-icon.png")
 	MaskImage(darcyIcon,255,0,220)
 	
-	darcySplash = LoadImage("../img/menu/stage/darcy-splash.png")
+	darcySplash = LoadImage("img/menu/stage/darcy-splash.png")
 	MaskImage(darcySplash,255,0,220)
 
-	edenIcon = LoadImage("../img/menu/stage/eden-icon.png")
+	edenIcon = LoadImage("img/menu/stage/eden-icon.png")
 	MaskImage(edenIcon,255,0,220)
 			
-	edenSplash = LoadImage("../img/menu/stage/eden-splash.png")
+	edenSplash = LoadImage("img/menu/stage/eden-splash.png")
 	MaskImage(edenSplash,255,0,220)
 
-	paradisoIcon = LoadImage("../img/menu/stage/paradiso-icon.png")
+	paradisoIcon = LoadImage("img/menu/stage/paradiso-icon.png")
 	MaskImage(paradisoIcon,255,0,220)
 			
-	paradisoSplash = LoadImage("../img/menu/stage/paradiso-splash.png")
+	paradisoSplash = LoadImage("img/menu/stage/paradiso-splash.png")
 	MaskImage(paradisoSplash,255,0,220)
 End Function
 
