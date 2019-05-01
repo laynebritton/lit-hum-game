@@ -951,7 +951,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Aias/achilleus-spear-2.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 
-			char\icon = achilleusIcon ;Icon
+			char\icon = aiasIcon ;Icon
 			
 			If player = 2 Then
 				char\playerMultiplier = -1

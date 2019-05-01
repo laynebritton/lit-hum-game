@@ -3,9 +3,9 @@
 Global stagebg
 
 Global charFrame
-Global danteIcon,donIcon,achilleusIcon,clyIcon,odysseusIcon,aeneasIcon,elizabethIcon,satanIcon
-Global danteSplash,donSplash,achilleusSplash,clySplash,odysseusSplash,aeneasSplash,elizabethSplash,satanSplash
-Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aeneasSplash2,elizabethSplash2,satanSplash2
+Global danteIcon,donIcon,achilleusIcon,clyIcon,odysseusIcon,aeneasIcon,elizabethIcon,satanIcon,aiasIcon
+Global danteSplash,donSplash,achilleusSplash,clySplash,odysseusSplash,aeneasSplash,elizabethSplash,satanSplash,aiasSplash
+Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aeneasSplash2,elizabethSplash2,satanSplash2,aiasSplash2
 
 Global stageArrow
 Global stageFrame,bigStageFrame 
@@ -130,7 +130,9 @@ Function drawCharacterIcons()
 				DrawImage(elizabethIcon,x_increment *x + x_offset, y_position, 0)				
 			Case 8
 				DrawImage(satanIcon,x_increment *x + x_offset, y_position, 0)
-
+			Case 9
+				DrawImage(aiasIcon,x_increment *x + x_offset, y_position, 0)
+				
 		End Select
 
 		DrawImage(charFrame,x_increment *x + x_offset, y_position, 0)
@@ -189,6 +191,11 @@ Function drawCharacterSplashes()
 			p1Splash = satanSplash
 			p1Book = lost
 			Text 240,100,"Satan"
+			drawP1 = True
+		Case "Aias"
+			p1Splash = aiasSplash
+			p1Book = iliad
+			Text 240,100,"Telamonian Aias"
 			drawP1 = True
 
 		Default
@@ -255,7 +262,11 @@ Function drawCharacterSplashes()
 			p2Book = lost
 			Text 1030,100,"Satan"
 			drawP2 = True
-			
+		Case "Aias"
+			p2Splash = aiasSplash2
+			p2Book = iliad
+			Text 1030,100,"Telamonian Aias"
+			drawP2 = True
 		Default
 			drawP2 = False
 	End Select
@@ -330,7 +341,8 @@ Function loadCharacterIcons()
 	aeneasIcon = LoadImage("../img/menu/aeneas-small.png")
 	elizabethIcon = LoadImage("../img/menu/elizabeth-small.png")
 	satanIcon = LoadImage("../img/menu/satan-small.png")
-
+	aiasIcon = LoadImage("../img/menu/aias-small.png")
+	MaskImage(aiasIcon,255,0,220)
 End Function
 
 Function loadCharacterSplashes()
@@ -345,6 +357,8 @@ Function loadCharacterSplashes()
 	MaskImage(elizabethSplash,255,0,220)
 	satanSplash = LoadImage("../img/menu/satan-big.png")
 	MaskImage(satanSplash,255,0,220)
+	aiasSplash = LoadImage("../img/menu/aias-big.png")
+	MaskImage(aiasSplash,255,0,220)
 	
 	danteSplash2 = LoadImage("../img/menu/dante-big-2.png")
 	MaskImage(danteSplash2,255,0,220)
@@ -357,6 +371,9 @@ Function loadCharacterSplashes()
 	MaskImage(elizabethSplash2,255,0,220)
 	satanSplash2 = LoadImage("../img/menu/satan-big-2.png")
 	MaskImage(satanSplash2,255,0,220)
+	aiasSplash2 = LoadImage("../img/menu/aias-big-2.png")
+	MaskImage(aiasSplash2,255,0,220)
+
 
 End Function
 
