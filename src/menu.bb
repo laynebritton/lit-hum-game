@@ -3,7 +3,7 @@
 Global stagebg
 
 Global charFrame
-Global danteIcon,donIcon,achilleusIcon,clyIcon,odysseusIcon,aeneasIcon,elizabethIcon,satanIcon,aiasIcon
+Global danteIcon,donIcon,achilleusIcon,clyIcon,odysseusIcon,aeneasIcon,elizabethIcon,satanIcon,aiasIcon,randomIcon
 Global danteSplash,donSplash,achilleusSplash,clySplash,odysseusSplash,aeneasSplash,elizabethSplash,satanSplash,aiasSplash
 Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aeneasSplash2,elizabethSplash2,satanSplash2,aiasSplash2
 
@@ -28,6 +28,8 @@ Global maxMenuRectangles,currentMenuRectangles
 
 Global currentRound=1
 Global stageSelectState=False
+
+Global p1RandomTimer,p2RandomTimer
 
 Function menuNavigator()
 	If stageSelectState=False Then
@@ -132,7 +134,8 @@ Function drawCharacterIcons()
 				DrawImage(satanIcon,x_increment *x + x_offset, y_position, 0)
 			Case 9
 				DrawImage(aiasIcon,x_increment *x + x_offset, y_position, 0)
-				
+			Case 10
+				DrawImage(randomIcon,x_increment *x + x_offset, y_position, 0)				
 		End Select
 
 		DrawImage(charFrame,x_increment *x + x_offset, y_position, 0)
@@ -305,6 +308,8 @@ Function getCharacterForArrows()
 			player_1_char$ = "Satan"
 		Case 9
 			player_1_char$ = "Aias"
+		Case 10
+			getRandomCharacter(1)
 		End Select
 		
 	Select p2Position
@@ -326,8 +331,62 @@ Function getCharacterForArrows()
 			player_2_char$ = "Satan"		
 		Case 9
 			player_2_char$ = "Aias"
+		Case 10
+			getRandomCharacter(2)
 		End Select
 		
+End Function
+
+Function getRandomCharacter(player)
+
+	i = Rnd(1,9)
+	If player = 1 And p1RandomTimer - MilliSecs() <= 0 Then 
+		p1RandomTimer = MilliSecs() + 100
+		Select i
+			Case 1
+				player_1_char$ = "Achilleus"
+			Case 2
+				player_1_char$ = "Dante"
+			Case 3
+				player_1_char$ = "Don"
+			Case 4
+				player_1_char$ = "cly"
+			Case 5
+				player_1_char$ = "Odysseus"
+			Case 6
+				player_1_char$ = "Aeneas"
+			Case 7
+				player_1_char$ = "Elizabeth"
+			Case 8
+				player_1_char$ = "Satan"
+			Case 9
+				player_1_char$ = "Aias"
+		End Select
+	End If
+
+	If player = 2  And p2RandomTimer - MilliSecs() <= 0 Then 
+		p2RandomTimer = MilliSecs() + 100
+		Select i
+			Case 1
+				player_2_char$ = "Achilleus"
+			Case 2
+				player_2_char$ = "Dante"
+			Case 3
+				player_2_char$ = "Don"
+			Case 4
+				player_2_char$ = "cly"
+			Case 5
+				player_2_char$ = "Odysseus"
+			Case 6
+				player_2_char$ = "Aeneas"
+			Case 7
+				player_2_char$ = "Elizabeth"
+			Case 8
+				player_2_char$ = "Satan"		
+			Case 9
+				player_2_char$ = "Aias"
+		End Select
+	End If
 End Function
 
 Function loadCharacterIcons()
@@ -343,6 +402,9 @@ Function loadCharacterIcons()
 	satanIcon = LoadImage("../img/menu/satan-small.png")
 	aiasIcon = LoadImage("../img/menu/aias-small.png")
 	MaskImage(aiasIcon,255,0,220)
+	randomIcon = LoadImage("../img/menu/randomIcon.png")
+	MaskImage(randomIcon,255,0,220)
+
 End Function
 
 Function loadCharacterSplashes()
