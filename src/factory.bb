@@ -65,7 +65,7 @@ Function createFighter(fighterName$,player)
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			
-			char\icon = danteIcon ;Icon
+			char\icon = CopyImage(danteIcon) ;Icon
 		
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -158,7 +158,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Don/don-projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
-			char\icon = donIcon ;Icon
+			char\icon = CopyImage(donIcon) ;Icon
 
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -253,7 +253,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Achilleus/achilleus-spear-2.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 
-			char\icon = achilleusIcon ;Icon
+			char\icon = CopyImage(achilleusIcon) ;Icon
 			
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -442,7 +442,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Clytaemestra/throw.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
-			char\icon = clyIcon ;Icon
+			char\icon = CopyImage(clyIcon);Icon
 
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -542,7 +542,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Odysseus/projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
-			char\icon = odysseusIcon ;Icon
+			char\icon = CopyImage(odysseusIcon) ;Icon
 
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -643,7 +643,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Odysseus/projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
-			char\icon = aeneasIcon ;Icon
+			char\icon = CopyImage(aeneasIcon) ;Icon
 
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -745,7 +745,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Elizabeth/collins-3.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
-			char\icon = elizabethIcon ;Icon
+			char\icon = CopyImage(elizabethIcon) ;Icon
 
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -951,7 +951,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Aias/achilleus-spear-2.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 
-			char\icon = aiasIcon ;Icon
+			char\icon = CopyImage(aiasIcon) ;Icon
 			
 			If player = 2 Then
 				char\playerMultiplier = -1
