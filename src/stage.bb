@@ -121,7 +121,7 @@ Function loadStage(name$)
 			box\frame = 0
 			box\max_frame = 4
 
-			song  = LoadSound("../snd/bgm/carminaburana.mp3")
+			song  = LoadSound("../snd/bgm/carminaburana2.wav")
 			
 	For box.stage = Each stage
 		;box\floor_mod# = floor_level
