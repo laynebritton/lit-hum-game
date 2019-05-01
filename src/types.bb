@@ -53,6 +53,7 @@ Type Fighter
 	Field attack_x#=0
 	Field attack_y#=0
 	Field projectile_count
+	Field projectile_timer
 	
 	;Stats
 	Field max_hp

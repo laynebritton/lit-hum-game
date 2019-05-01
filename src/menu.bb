@@ -15,7 +15,7 @@ Global troySplash,hellSplash,symposiumSplash,towerSplash,boatSplash,didoSplash,t
 
 Global p1Arrow,p2Arrow
 Global p1Char,p2Char
-Global p1Position=1, p2Position=7
+Global p1Position=1, p2Position=2
 Global p1Book, p2Book
 
 Global selected_stage$="troy"

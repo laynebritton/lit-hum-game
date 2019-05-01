@@ -852,7 +852,7 @@ Function createFighter(fighterName$,player)
 			char\projectile_graphic = LoadImage("../img/Satan/projectile-3.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
-			char\icon = satanIcon ;Icon
+			char\icon = CopyImage(satanIcon) ;Icon
 
 			If player = 2 Then
 				char\playerMultiplier = -1
@@ -991,7 +991,9 @@ End Function
 
 Function createProjectile(player)
 	For char.fighter = Each fighter
-		If char\player = player And char\projectile_count < char\projectile_count_max  And (Not char\state$="DEAD") And (Not ((char\shield_state$ = "TRUE") And (char\canShootWhileShielding$="FALSE"))) Then
+		
+		If char\player = player And char\projectile_timer - MilliSecs() < 0 And char\projectile_count < char\projectile_count_max  And (Not char\state$="DEAD") And (Not ((char\shield_state$ = "TRUE") And (char\canShootWhileShielding$="FALSE")))  Then
+			char\projectile_timer = MilliSecs() + 200
 			char\projectile_count = char\projectile_count + 1
 			
 			entity.projectile = New Projectile
