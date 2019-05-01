@@ -25,6 +25,7 @@ Include "fighters/clytaemestra.bb"
 Include "fighters/Odysseus.bb"
 Include "fighters/Aeneas.bb"
 Include "fighters/Elizabeth.bb"
+Include "fighters/Satan.bb"
 
 .Player1_Controls
 Global player1_jump = 47

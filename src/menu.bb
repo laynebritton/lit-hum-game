@@ -292,6 +292,8 @@ Function getCharacterForArrows()
 			player_1_char$ = "Elizabeth"
 		Case 8
 			player_1_char$ = "Satan"
+		Case 9
+			player_1_char$ = "Aias"
 		End Select
 		
 	Select p2Position
@@ -311,6 +313,8 @@ Function getCharacterForArrows()
 			player_2_char$ = "Elizabeth"
 		Case 8
 			player_2_char$ = "Satan"		
+		Case 9
+			player_2_char$ = "Aias"
 		End Select
 		
 End Function
@@ -418,11 +422,11 @@ Function decrementArrow(number)
 End Function 
 
 Function boundArrows()
-	If p1Position > 8 Then p1Position = 1
-	If p2Position > 8 Then p2Position = 1
+	If p1Position > 10 Then p1Position = 1
+	If p2Position > 10 Then p2Position = 1
 	
-	If p1Position < 1 Then p1Position = 8
-	If p2Position < 1 Then p2Position = 8
+	If p1Position < 1 Then p1Position = 10
+	If p2Position < 1 Then p2Position = 10
 	
 End Function 
 

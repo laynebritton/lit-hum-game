@@ -887,6 +887,101 @@ Function createFighter(fighterName$,player)
 			char\kill_sound = LoadSound("../snd/sfx/Satan/achilleus-kill.wav")
 			char\death_sound = LoadSound("../snd/sfx/Satan/achilleus-kill.wav")
 	
+	
+	Case "Aias"
+	;Aias
+		char.fighter = New Fighter
+			;Data
+			char\name$ = "Achilleus"
+			char\display_name$ = "Telemonian Aias"	
+			char\player = player
+			
+			;Location		
+			char\x = 600
+			char\y = floor_level
+			
+			;Stats
+			char\hp = 75
+			char\strength = 7
+			char\speed = 13
+			char\projectile_count_max = 1
+			char\projectile_speed# = 16
+			char\projectile_gravity# = 13
+			char\projectile_damage = 12
+			char\critMultiplier# = 2
+			char\knockback = 100
+			;Jump Stats
+			char\jump_max_frame = 27
+			char\jump_speed = 29
+			
+			;Animation
+			char\breathing# = 2
+			char\breathingSpeed# = 0.07
+			char\breathingDirection$ = "UP"
+			char\projectile_animation_frames = 1
+			char\walk_frame = 0
+			char\walk_draw_frame = 0
+			char\walk_max_draw_frame = 1
+
+			;State
+			char\state$ = "NONE"
+			char\shield_state$ ="FALSE"
+			
+			;Quotes
+			char\win_quote = 4
+			
+			;Graphics
+			char\body = LoadImage("../img/Aias/achilleus-body.png")
+			MaskImage(char\body,255,0,220)
+			char\head = LoadImage("../img/Aias/achilleus-head.png")
+			MaskImage(char\head,255,0,220)
+			char\arm= LoadImage("../img/Aias/achilleus-arm.png")
+			MaskImage(char\arm,255,0,220)
+			char\crouch = LoadImage("../img/Aias/achilleus-crouch.png")
+			MaskImage(char\crouch,255,0,220)
+			char\dead = LoadImage("../img/Aias/achilleus-dead.png")
+			MaskImage(char\dead,255,0,220)
+			char\walk = LoadAnimImage("../img/Aias/achilleus-walk.png",305,131,0,2)
+			MaskImage(char\walk,255,0,220)
+			
+			char\attack1 = LoadAnimImage("../img/Aias/achilleus-weapon-anim.png",200,200,0,5)
+			MaskImage(char\attack1,255,0,220)
+			char\basic_attack_frames = 5
+			
+			char\projectile_graphic = LoadImage("../img/Aias/achilleus-spear-2.png")
+			MaskImage(char\projectile_graphic,255,0,220)
+
+			char\icon = achilleusIcon ;Icon
+			
+			If player = 2 Then
+				char\playerMultiplier = -1
+				char\x = 1320 - ImageWidth(char\body)
+				mirrorImage(char\body)
+				mirrorImage(char\head)
+				mirrorImage(char\arm)
+				mirrorImage(char\crouch)
+				mirrorImage(char\walk)
+				mirrorImage(char\dead)
+				
+				mirrorImage(char\attack1)
+				
+				mirrorImage(char\projectile_graphic)
+				mirrorImage(char\icon)
+			End If
+	
+	
+			;Sound
+			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+
 	End Select 
 	
 	char\max_hp = char\hp

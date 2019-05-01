@@ -1,38 +1,7 @@
-2019/04/19 20:42:40.693 Info   Starting JoyToKey Ver5.8.2
-2019/04/19 20:42:40.693 Info   ExeFile=C:\lit-hum-game\JoyToKey_en\JoyToKey.exe
-2019/04/19 20:42:40.693 Info   ConfigDir=C:\lit-hum-game\JoyToKey_en\
-2019/04/19 20:42:40.693 Info   IniFile=C:\lit-hum-game\JoyToKey_en\JoyToKey.ini
-2019/04/19 20:42:40.693 Info   Windows Version = 6.2
-2019/04/19 20:42:40.695 Info   Loaded VistaAPI.dll (Utils\Utils.cpp#217)
-2019/04/19 20:42:40.696 Info   LicenseKey "" is not valid
-2019/04/19 20:42:40.830 Info   Loading XInput1_3.dll (Joystick.cpp#126)
-2019/04/19 20:42:40.832 Info   Initialized XInput (Joystick.cpp#144)
-2019/04/19 20:42:40.855 Info   Detected a XI joystick: XInput-0
-2019/04/19 20:42:40.855 Info   Preferred index = -1
-2019/04/19 20:42:40.855 Info   Detected a XI joystick: XInput-1
-2019/04/19 20:42:40.855 Info   Preferred index = -1
-2019/04/19 20:42:40.856 Info   DetectJoysticks: Detected 2 XI joystick(s)
-2019/04/19 20:42:41.496 Info   Detected a DI joystick: {0B0AA8C0-3271-11E6-8001-444553540000}, Controller (Xbox One For Windows), Controller (Xbox One For Windows)
-2019/04/19 20:42:41.496 Info   It is an XInput device, so skipping...
-2019/04/19 20:42:41.503 Info   Detected a DI joystick: {ACEB47E0-5FFB-11E7-8001-444553540000}, Controller (Xbox One For Windows), Controller (Xbox One For Windows)
-2019/04/19 20:42:41.503 Info   It is an XInput device, so skipping...
-2019/04/19 20:42:41.503 Info   Joystick #1: XInput Device #1
-2019/04/19 20:42:41.503 Info   Joystick #2: XInput Device #2
-2019/04/19 20:42:41.503 Info   2 joysticks are detected (Joystick.cpp#166)
-2019/04/19 20:42:41.503 Info   ConfigDir=C:\lit-hum-game\JoyToKey_en\*.cfg (ConfigFileManager.cpp#43)
-2019/04/19 20:42:41.506 Info   Failed to find AppLink.dat (AppLink\AppLinkManager.cpp#32)
-2019/04/19 20:42:41.523 Info   TimerInit: Initializing timer with x1 speed mode (interval = 16 msec)
-4/19/2019 10:28:50 PM Error  Access is denied.
- (Utils\Utils.cpp#464)
-4/19/2019 11:59:13 PM Error  Access is denied.
- (Utils\Utils.cpp#464)
-4/20/2019 12:10:44 AM Error  Access is denied.
- (Utils\Utils.cpp#464)
-4/20/2019 12:45:10 AM Error  Access is denied.
- (Utils\Utils.cpp#464)
-4/20/2019 12:58:02 AM Error  Access is denied.
- (Utils\Utils.cpp#464)
-4/20/2019 2:11:23 AM Error  Access is denied.
- (Utils\Utils.cpp#464)
-4/20/2019 2:11:25 AM Info   Received WM_QUERYENDSESSION.  Exiting... (Main.cpp#208)
-4/20/2019 2:11:25 AM Info   Application terminated (Utils\LogFile.cpp#20)
+2019/04/30 19:27:21.929 Info   Starting JoyToKey Ver5.8.2
+2019/04/30 19:27:21.929 Info   ExeFile=C:\lit-hum-game\JoyToKey_en\JoyToKey.exe
+2019/04/30 19:27:21.929 Info   ConfigDir=C:\lit-hum-game\JoyToKey_en\
+2019/04/30 19:27:21.929 Info   IniFile=C:\lit-hum-game\JoyToKey_en\JoyToKey.ini
+2019/04/30 19:27:21.929 Info   Windows Version = 6.2
+2019/04/30 19:27:21.953 Info   Loaded VistaAPI.dll (Utils\Utils.cpp#217)
+2019/04/30 19:27:21.962 Info   LicenseKey "" is not valid
