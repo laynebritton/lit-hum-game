@@ -928,7 +928,7 @@ Function createFighter(fighterName$,player)
 			char\shield_state$ ="FALSE"
 			
 			;Quotes
-			char\win_quote = 4
+			char\win_quote = 10
 			
 			;Graphics
 			char\body = LoadImage("../img/Aias/achilleus-body.png")

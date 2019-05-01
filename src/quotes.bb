@@ -56,6 +56,9 @@ Function writeQuote(quote)
 			Text 960,70,Chr(34) + "Abolish his own works. This would surpass",True,True
 			Text 960,105, "common revenge, and interrupt his joy" + Chr(34),True,True
 			Text 960,140, "-Satan (Milton, Paradise Lost (II.370-371))",True,True
+		Case 10
+			Text 960,70,Chr(34) + "Salvation's light is in our hands' work, not the mercy of battle"+ Chr(34),True,True
+			Text 960,105, "-Aias (Homer, Iliad (15.741))",True,True
 	End Select
 	
 	SetFont(font)
