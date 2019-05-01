@@ -139,6 +139,9 @@ Type Stage
 	Field floor_mod#
 	Field speed#
 	Field gfx
+	Field timer
+	Field frame
+	Field max_frame
 End Type
 
 Type menu_rect

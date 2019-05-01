@@ -97,6 +97,32 @@ Function loadStage(name$)
 
 			song  = LoadSound("../snd/bgm/griselda.mp3")
 			
+	Case "eden"
+		box.stage = New stage
+			box\gfx = LoadImage("../img/bg/eden4.jpg")
+			box\x# = -150
+			box\y# = -200
+			box\base_height# = box\y#
+			box\speed# = 3.2
+			floor_level=460
+			box\floor_mod# = floor_level
+
+			song  = LoadSound("../snd/bgm/videruntomnes.mp3")
+
+	Case "paradiso"
+		box.stage = New stage
+			box\gfx=LoadAnimImage("../img/bg/paradiso/anim-2.png",1920,1080,0,4)
+			box\x# = 0
+			box\y# = 0
+			box\base_height# = box\y#
+			box\speed# = 3.2
+			floor_level=460
+			box\floor_mod# = floor_level
+			box\frame = 0
+			box\max_frame = 4
+
+			song  = LoadSound("../snd/bgm/carminaburana.mp3")
+			
 	For box.stage = Each stage
 		;box\floor_mod# = floor_level
 
@@ -118,15 +144,24 @@ End Function
 
 Function drawStage()
 	For box.stage = Each stage
-		trackStage()
-		preventStageOverflow()
-		DrawImage(box\gfx,box\x#,box\y#,0)
+		If selected_stage$ = "paradiso" Then
+			drawParadiso()
+		Else
+			trackStage()
+			preventStageOverflow()
+			DrawImage(box\gfx,box\x#,box\y#,0)
+		End If
 	Next 
 End Function
 
 Function drawParadiso()
 	For box.stage = Each stage
-		DrawMovie(box\gfx,0,0,1920,1080)
+		If box\timer - MilliSecs() < 0 Then
+			box\frame = box\frame + 1
+			If box\frame >= 4 Then box\frame = 0
+			box\timer = MilliSecs() + 40
+		End If
+		DrawImage(box\gfx,box\x#,box\y#,box\frame)
 	Next
 End Function
 ;Function moveStageX(amount#);

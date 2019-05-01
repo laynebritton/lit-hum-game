@@ -10,8 +10,8 @@ Global danteSplash2,donSplash2,achilleusSplash2,clySplash2,odysseusSplash2,aenea
 Global stageArrow
 Global stageFrame,bigStageFrame 
 
-Global troyIcon,hellIcon,symposiumIcon,towerIcon,boatIcon,didoIcon,thermopylaeIcon,darcyIcon
-Global troySplash,hellSplash,symposiumSplash,towerSplash,boatSplash,didoSplash,thermopylaeSplash,darcySplash
+Global troyIcon,hellIcon,symposiumIcon,towerIcon,boatIcon,didoIcon,thermopylaeIcon,darcyIcon,edenIcon,paradisoIcon
+Global troySplash,hellSplash,symposiumSplash,towerSplash,boatSplash,didoSplash,thermopylaeSplash,darcySplash,edenSplash,paradisoSplash
 
 Global p1Arrow,p2Arrow
 Global p1Char,p2Char
@@ -557,6 +557,18 @@ Function loadStageIconsAndSplashes()
 	
 	darcySplash = LoadImage("../img/menu/stage/darcy-splash.png")
 	MaskImage(darcySplash,255,0,220)
+
+	edenIcon = LoadImage("../img/menu/stage/eden-icon.png")
+	MaskImage(edenIcon,255,0,220)
+			
+	edenSplash = LoadImage("../img/menu/stage/eden-splash.png")
+	MaskImage(edenSplash,255,0,220)
+
+	paradisoIcon = LoadImage("../img/menu/stage/paradiso-icon.png")
+	MaskImage(paradisoIcon,255,0,220)
+			
+	paradisoSplash = LoadImage("../img/menu/stage/paradiso-splash.png")
+	MaskImage(paradisoSplash,255,0,220)
 End Function
 
 Function incrementStageArrow(amount)
@@ -626,6 +638,16 @@ Function getStageForArrow()
 			stageBook = pride
 			toDrawStageSplash = darcySplash
 			stageDisplayName$ = "Mr. Darcy's House"
+		Case 8
+			selected_stage$ = "eden"
+			stageBook = lost
+			toDrawStageSplash = edenSplash
+			stageDisplayName$ = "Garden of Eden"
+		Case 9
+			selected_stage$ = "paradiso"
+			stageBook = paradiso
+			toDrawStageSplash = paradisoSplash
+			stageDisplayName$ = "Paradiso"
 	End Select
 End Function
 
@@ -655,6 +677,10 @@ Function drawStageIcons()
 				DrawImage(thermopylaeIcon,225 + i*(300),330,0)
 			Case 2
 				DrawImage(darcyIcon,225 + i*(300),330,0)	
+			Case 3
+				DrawImage(edenIcon,225 + i*(300),330,0)	
+			Case 4
+				DrawImage(paradisoIcon,225 + i*(300),330,0)	
 		End Select
 		DrawImage(stageFrame,225 + i*(300),330,0)
 	Next
