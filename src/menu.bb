@@ -30,6 +30,7 @@ Global currentRound=1
 Global stageSelectState=False
 
 Global p1RandomTimer,p2RandomTimer
+Global controlsImage,drawControls=True
 
 Function menuNavigator()
 	If stageSelectState=False Then
@@ -48,7 +49,10 @@ Function drawCharacterSelect()
 	getCharacterForArrows()
 	drawCharacterSplashes()
 
+	drawControlsMenu()
+	controlsHelpPrompt()	
 	menuBubbles()
+	
 	Flip 
 	Cls
 End Function
@@ -62,6 +66,8 @@ Function drawStageSelect()
 	drawStageIcons()
 	drawStageSplash()
 	
+
+	drawControlsMenu()
 	menuBubbles()
 	Flip
 	Cls
@@ -86,6 +92,26 @@ Function stageSelect()
 	drawStageSelect()
 End Function 
 
+Function drawControlsMenu()
+	If drawControls = False Then	
+		DrawImage(controlsImage,0,240,0)
+	End If
+End Function
+
+Function controlsHelpPrompt()
+	SetFont(font)
+
+	Color 0,0,0
+	Text 0,1020,"Press tab for controls"
+End Function
+
+Function toggleDrawControls()
+	If drawControls = False Then
+		drawControls = True
+	Else
+		drawControls = False
+	End If
+End Function 
 
 Function loadMenuGraphics()
 	stagebg = LoadImage("img/bg/gradient-bg.png")
@@ -101,7 +127,8 @@ Function loadMenuGraphics()
 	MaskImage(stageFrame,255,0,220)
 	bigStageFrame = LoadImage("img/menu/big-stage-frame.png")
 	MaskImage(bigStageFrame,255,0,220)
-
+	controlsImage = LoadImage("img/menu/controls-bad.png")
+	MaskImage(controlsImage,255,0,220)
 End Function
 
 Function loadMenuMusic()
@@ -714,6 +741,10 @@ Function checkCharacterSelectInput()
 		End 		
 	End If 
 	
+	If KeyHit(15) Then
+		toggleDrawControls()
+	End If
+	
 	If KeyHit(player1_start) Then
 		;fight(player_1_char, player_2_char, select_stage$)
 		stageSelectState=True
@@ -741,6 +772,10 @@ Function checkStageSelectInput()
 	If KeyHit(1) Then
 		End
 	End If 
+	
+	If KeyHit(15) Then
+		toggleDrawControls()
+	End If
 	
 	If KeyHit(player1_start) Then
 		fight(player_1_char, player_2_char, selected_stage$)
