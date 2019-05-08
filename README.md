@@ -1,15 +1,8 @@
 # lit-hum-game
 
-To play the game
-1) Go into the folder "src"
-2) Double click on "Play Game" 
-3) Make it fullscreen
+To play game, launch lit-hum-game.exe
 
-This game is meant to be played using Xbox Controllers, but it can
-also be played by two people sharing the keyboard. 
-
-Select characters and stage using the 1,2, and 3 keys. 
-Play using the controls below. 
+The controls can be brought be brought in the menus up by pressing the TAB key.
 
 --------------------------------------
 Controls:
