@@ -44,24 +44,24 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 2
 			
 			;Graphics
-			char\body = LoadImage("../img/Dante/dante-body-4.png")
+			char\body = LoadImage("img/Dante/dante-body-4.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Dante/dante-head.png")
+			char\head = LoadImage("img/Dante/dante-head.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Dante/dante-arm.png")
+			char\arm= LoadImage("img/Dante/dante-arm.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Dante/dante-crouch-2.png")
+			char\crouch = LoadImage("img/Dante/dante-crouch-2.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Dante/dante-dead.png")
+			char\dead = LoadImage("img/Dante/dante-dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Dante/dante-walk.png",198,37,0,2)
+			char\walk = LoadAnimImage("img/Dante/dante-walk.png",198,37,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Dante/dante-weapon-anim.png",198,360,0,5)
+			char\attack1 = LoadAnimImage("img/Dante/dante-weapon-anim.png",198,360,0,5)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
 			
-			char\projectile_graphic = LoadImage("../img/Dante/dante-projectile.png")
+			char\projectile_graphic = LoadImage("img/Dante/dante-projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			
@@ -86,16 +86,16 @@ Function createFighter(fighterName$,player)
 
 			
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Dante/dante-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Dante/dante-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Dante/dante-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Dante/dante-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Dante/dante-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Dante/dante-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Dante/dante-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Dante/dante-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Dante/dante-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Dante/dante-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Dante/dante-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Dante/dante-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Dante/dante-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Dante/dante-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Dante/dante-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Dante/dante-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Dante/dante-kill.wav")
 			
 	Case "Don"
 	;Don Quixote
@@ -138,24 +138,24 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 3
 			
 			;Graphics
-			char\body = LoadImage("../img/Don/don-body-2.png")
+			char\body = LoadImage("img/Don/don-body-2.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Don/don-head.png")
+			char\head = LoadImage("img/Don/don-head.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Don/don-arm-2.png")
+			char\arm= LoadImage("img/Don/don-arm-2.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Don/don-crouch.png")
+			char\crouch = LoadImage("img/Don/don-crouch.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Don/don-dead.png")
+			char\dead = LoadImage("img/Don/don-dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Don/don-walk-2.png",225,124,0,2)
+			char\walk = LoadAnimImage("img/Don/don-walk-2.png",225,124,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Don/don-weapon-anim.png",500,90,0,5)
+			char\attack1 = LoadAnimImage("img/Don/don-weapon-anim.png",500,90,0,5)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
 			
-			char\projectile_graphic = LoadImage("../img/Don/don-projectile.png")
+			char\projectile_graphic = LoadImage("img/Don/don-projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			char\icon = CopyImage(donIcon) ;Icon
@@ -179,16 +179,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Don/don-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Don/don-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Don/don-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Don/don-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Don/don-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Don/don-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Don/don-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Don/don-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Don/don-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Don/don-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Don/don-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Don/don-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Don/don-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Don/don-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Don/don-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Don/don-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Don/don-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Don/don-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Don/don-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Don/don-kill.wav")
 			
 	Case "Achilleus"
 	;Achilleus
@@ -233,24 +233,24 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 4
 			
 			;Graphics
-			char\body = LoadImage("../img/Achilleus/achilleus-body.png")
+			char\body = LoadImage("img/Achilleus/achilleus-body.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Achilleus/achilleus-head.png")
+			char\head = LoadImage("img/Achilleus/achilleus-head.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Achilleus/achilleus-arm.png")
+			char\arm= LoadImage("img/Achilleus/achilleus-arm.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Achilleus/achilleus-crouch.png")
+			char\crouch = LoadImage("img/Achilleus/achilleus-crouch.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Achilleus/achilleus-dead.png")
+			char\dead = LoadImage("img/Achilleus/achilleus-dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Achilleus/achilleus-walk.png",305,131,0,2)
+			char\walk = LoadAnimImage("img/Achilleus/achilleus-walk.png",305,131,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Achilleus/achilleus-weapon-anim.png",200,200,0,5)
+			char\attack1 = LoadAnimImage("img/Achilleus/achilleus-weapon-anim.png",200,200,0,5)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
 			
-			char\projectile_graphic = LoadImage("../img/Achilleus/achilleus-spear-2.png")
+			char\projectile_graphic = LoadImage("img/Achilleus/achilleus-spear-2.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 
 			char\icon = CopyImage(achilleusIcon) ;Icon
@@ -273,16 +273,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
 
 
 	Case "Hektor"
@@ -328,24 +328,24 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 4
 			
 			;Graphics
-			char\body = LoadImage("../img/Hektor/achilleus-body.png")
+			char\body = LoadImage("img/Hektor/achilleus-body.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Hektor/achilleus-head.png")
+			char\head = LoadImage("img/Hektor/achilleus-head.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Hektor/achilleus-arm.png")
+			char\arm= LoadImage("img/Hektor/achilleus-arm.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Hektor/achilleus-crouch.png")
+			char\crouch = LoadImage("img/Hektor/achilleus-crouch.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Hektor/achilleus-dead.png")
+			char\dead = LoadImage("img/Hektor/achilleus-dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Hektor/achilleus-walk.png",305,131,0,2)
+			char\walk = LoadAnimImage("img/Hektor/achilleus-walk.png",305,131,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Hektor/achilleus-weapon-anim.png",200,200,0,5)
+			char\attack1 = LoadAnimImage("img/Hektor/achilleus-weapon-anim.png",200,200,0,5)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
 			
-			char\projectile_graphic = LoadImage("../img/Hektor/achilleus-spear-2.png")
+			char\projectile_graphic = LoadImage("img/Hektor/achilleus-spear-2.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			char\icon = achilleusIcon ;Icon
@@ -367,16 +367,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
 
 
 	Case "cly"
@@ -422,24 +422,24 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 5
 			
 			;Graphics
-			char\body = LoadImage("../img/Clytaemestra/body-3.png")
+			char\body = LoadImage("img/Clytaemestra/body-3.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Clytaemestra/head-alt-2.png")
+			char\head = LoadImage("img/Clytaemestra/head-alt-2.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Clytaemestra/arm-4.png")
+			char\arm= LoadImage("img/Clytaemestra/arm-4.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Clytaemestra/crouch-1.png")
+			char\crouch = LoadImage("img/Clytaemestra/crouch-1.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Clytaemestra/dead.png")
+			char\dead = LoadImage("img/Clytaemestra/dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Clytaemestra/walk-2.png",301,82,0,2)
+			char\walk = LoadAnimImage("img/Clytaemestra/walk-2.png",301,82,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Clytaemestra/attack-anim.png",500,550,0,5)
+			char\attack1 = LoadAnimImage("img/Clytaemestra/attack-anim.png",500,550,0,5)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
 			
-			char\projectile_graphic = LoadImage("../img/Clytaemestra/throw.png")
+			char\projectile_graphic = LoadImage("img/Clytaemestra/throw.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			char\icon = CopyImage(clyIcon);Icon
@@ -463,16 +463,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Dante/dante-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Dante/dante-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Dante/dante-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Dante/dante-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Dante/dante-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Dante/dante-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Dante/dante-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Dante/dante-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Dante/dante-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Dante/dante-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Dante/dante-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Dante/dante-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Dante/dante-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Dante/dante-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Dante/dante-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Dante/dante-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Dante/dante-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Dante/dante-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Dante/dante-kill.wav")
 		
 
 		
@@ -519,27 +519,27 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 6
 			
 			;Graphics
-			char\body = LoadImage("../img/Odysseus/body-1.png")
+			char\body = LoadImage("img/Odysseus/body-1.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Odysseus/head-1.png")
+			char\head = LoadImage("img/Odysseus/head-1.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Odysseus/leg-2.png")
+			char\arm= LoadImage("img/Odysseus/leg-2.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Odysseus/crouch-2.png")
+			char\crouch = LoadImage("img/Odysseus/crouch-2.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Odysseus/dead.png")
+			char\dead = LoadImage("img/Odysseus/dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Odysseus/walk-anim-2.png",337,134,0,2)
+			char\walk = LoadAnimImage("img/Odysseus/walk-anim-2.png",337,134,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\cosmetic1 = LoadImage("../img/Odysseus/odysseus-arm-nohit-2.png")
+			char\cosmetic1 = LoadImage("img/Odysseus/odysseus-arm-nohit-2.png")
 			MaskImage(char\cosmetic1,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Odysseus/attack-anim.png",450,250,0,4)
+			char\attack1 = LoadAnimImage("img/Odysseus/attack-anim.png",450,250,0,4)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 4
 			
-			char\projectile_graphic = LoadImage("../img/Odysseus/projectile.png")
+			char\projectile_graphic = LoadImage("img/Odysseus/projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			char\icon = CopyImage(odysseusIcon) ;Icon
@@ -564,16 +564,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
 
 	Case "Aeneas"
 	;Aeneas
@@ -620,27 +620,27 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 7
 			
 			;Graphics
-			char\body = LoadImage("../img/Aeneas/body-1.png")
+			char\body = LoadImage("img/Aeneas/body-1.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Aeneas/head-2.png")
+			char\head = LoadImage("img/Aeneas/head-2.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Aeneas/arm-2.png")
+			char\arm= LoadImage("img/Aeneas/arm-2.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Aeneas/crouch.png")
+			char\crouch = LoadImage("img/Aeneas/crouch.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Aeneas/dead-2.png")
+			char\dead = LoadImage("img/Aeneas/dead-2.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Aeneas/walk-anim.png",320,215,0,2)
+			char\walk = LoadAnimImage("img/Aeneas/walk-anim.png",320,215,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\cosmetic1 = LoadImage("../img/Aeneas/un-shield-4.png")
+			char\cosmetic1 = LoadImage("img/Aeneas/un-shield-4.png")
 			MaskImage(char\cosmetic1,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Aeneas/attack-anim.png",400,300,0,5)
+			char\attack1 = LoadAnimImage("img/Aeneas/attack-anim.png",400,300,0,5)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
 			
-			char\projectile_graphic = LoadImage("../img/Odysseus/projectile.png")
+			char\projectile_graphic = LoadImage("img/Odysseus/projectile.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			char\icon = CopyImage(aeneasIcon) ;Icon
@@ -665,16 +665,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
 	
 	
 	Case "Elizabeth"
@@ -722,27 +722,27 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 8
 			
 			;Graphics
-			char\body = LoadImage("../img/Elizabeth/body-3.png")
+			char\body = LoadImage("img/Elizabeth/body-3.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Elizabeth/head-2.png")
+			char\head = LoadImage("img/Elizabeth/head-2.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Elizabeth/arm-6.png")
+			char\arm= LoadImage("img/Elizabeth/arm-6.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Elizabeth/crouch.png")
+			char\crouch = LoadImage("img/Elizabeth/crouch.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Elizabeth/dead.png")
+			char\dead = LoadImage("img/Elizabeth/dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Elizabeth/walk-2.png",200,24,0,2)
+			char\walk = LoadAnimImage("img/Elizabeth/walk-2.png",200,24,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\cosmetic1 = LoadImage("../img/Elizabeth/acc-1.png")
+			char\cosmetic1 = LoadImage("img/Elizabeth/acc-1.png")
 			MaskImage(char\cosmetic1,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Elizabeth//attack-anim.png",300,305,0,4)
+			char\attack1 = LoadAnimImage("img/Elizabeth//attack-anim.png",300,305,0,4)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 4
 			
-			char\projectile_graphic = LoadImage("../img/Elizabeth/collins-3.png")
+			char\projectile_graphic = LoadImage("img/Elizabeth/collins-3.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			char\icon = CopyImage(elizabethIcon) ;Icon
@@ -767,16 +767,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
 	
 	Case "Satan"
 	;Satan
@@ -823,33 +823,33 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 9
 			
 			;Graphics
-			char\body = LoadImage("../img/Satan/body-1.png")
+			char\body = LoadImage("img/Satan/body-1.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Satan/head-2.png")
+			char\head = LoadImage("img/Satan/head-2.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Satan/arm-2.png")
+			char\arm= LoadImage("img/Satan/arm-2.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Satan/crouch-2.png")
+			char\crouch = LoadImage("img/Satan/crouch-2.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Satan/dead-1.png")
+			char\dead = LoadImage("img/Satan/dead-1.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Satan/walk-2.png",523,127,0,2)
+			char\walk = LoadAnimImage("img/Satan/walk-2.png",523,127,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\cosmetic1 = LoadImage("../img/Satan/acc-3.png")
+			char\cosmetic1 = LoadImage("img/Satan/acc-3.png")
 			MaskImage(char\cosmetic1,255,0,220)
 			
-			char\cosmetic2 = LoadImage("../img/Satan/acc2-2.png")
+			char\cosmetic2 = LoadImage("img/Satan/acc2-2.png")
 			MaskImage(char\cosmetic2,255,0,220)
 			
 			If player = 1 Then
 				;Override typical protocol because this file is huge
-				char\attack1 = LoadAnimImage("../img/Satan/attack-4.png",500,700,0,4)
+				char\attack1 = LoadAnimImage("img/Satan/attack-4.png",500,700,0,4)
 				MaskImage(char\attack1,255,0,220)
 			End If 
 			char\basic_attack_frames = 4
 			
-			char\projectile_graphic = LoadImage("../img/Satan/projectile-3.png")
+			char\projectile_graphic = LoadImage("img/Satan/projectile-3.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 			
 			char\icon = CopyImage(satanIcon) ;Icon
@@ -866,7 +866,7 @@ Function createFighter(fighterName$,player)
 				mirrorImage(char\cosmetic1)
 				mirrorImage(char\cosmetic2)
 				
-				char\attack1 = LoadAnimImage("../img/Satan/attack-4-mirror.png",500,700,0,4)
+				char\attack1 = LoadAnimImage("img/Satan/attack-4-mirror.png",500,700,0,4)
 				MaskImage(char\attack1,255,0,220)
 				
 				mirrorImage(char\projectile_graphic)
@@ -876,16 +876,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Satan/achilleus-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Satan/achilleus-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Satan/achilleus-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Satan/achilleus-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Satan/achilleus-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Satan/achilleus-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Satan/achilleus-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Satan/achilleus-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Satan/achilleus-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Satan/achilleus-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Satan/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Satan/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Satan/achilleus-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Satan/achilleus-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Satan/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Satan/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Satan/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Satan/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Satan/achilleus-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Satan/achilleus-kill.wav")
 	
 	
 	Case "Aias"
@@ -931,24 +931,24 @@ Function createFighter(fighterName$,player)
 			char\win_quote = 10
 			
 			;Graphics
-			char\body = LoadImage("../img/Aias/achilleus-body.png")
+			char\body = LoadImage("img/Aias/achilleus-body.png")
 			MaskImage(char\body,255,0,220)
-			char\head = LoadImage("../img/Aias/achilleus-head.png")
+			char\head = LoadImage("img/Aias/achilleus-head.png")
 			MaskImage(char\head,255,0,220)
-			char\arm= LoadImage("../img/Aias/achilleus-arm.png")
+			char\arm= LoadImage("img/Aias/achilleus-arm.png")
 			MaskImage(char\arm,255,0,220)
-			char\crouch = LoadImage("../img/Aias/achilleus-crouch.png")
+			char\crouch = LoadImage("img/Aias/achilleus-crouch.png")
 			MaskImage(char\crouch,255,0,220)
-			char\dead = LoadImage("../img/Aias/achilleus-dead.png")
+			char\dead = LoadImage("img/Aias/achilleus-dead.png")
 			MaskImage(char\dead,255,0,220)
-			char\walk = LoadAnimImage("../img/Aias/achilleus-walk.png",305,131,0,2)
+			char\walk = LoadAnimImage("img/Aias/achilleus-walk.png",305,131,0,2)
 			MaskImage(char\walk,255,0,220)
 			
-			char\attack1 = LoadAnimImage("../img/Aias/achilleus-weapon-anim.png",200,200,0,5)
+			char\attack1 = LoadAnimImage("img/Aias/achilleus-weapon-anim.png",200,200,0,5)
 			MaskImage(char\attack1,255,0,220)
 			char\basic_attack_frames = 5
 			
-			char\projectile_graphic = LoadImage("../img/Aias/achilleus-spear-2.png")
+			char\projectile_graphic = LoadImage("img/Aias/achilleus-spear-2.png")
 			MaskImage(char\projectile_graphic,255,0,220)
 
 			char\icon = CopyImage(aiasIcon) ;Icon
@@ -971,16 +971,16 @@ Function createFighter(fighterName$,player)
 	
 	
 			;Sound
-			char\swing_sound = LoadSound("../snd/sfx/Achilleus/achilleus-swing.wav")
-			char\basic_hit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-basic-hit.wav")
-			char\jump_sound = LoadSound("../snd/sfx/Achilleus/achilleus-jump.wav")
-			char\step_sound = LoadSound("../snd/sfx/Achilleus/achilleus-step.wav")
-			char\crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-crit.wav")
-			char\projectile_throw_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-throw.wav")
-			char\projectile_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-impact.wav")
-			char\projectile_crit_sound = LoadSound("../snd/sfx/Achilleus/achilleus-projectile-crit.wav")
-			char\kill_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
-			char\death_sound = LoadSound("../snd/sfx/Achilleus/achilleus-kill.wav")
+			char\swing_sound = LoadSound("snd/sfx/Achilleus/achilleus-swing.wav")
+			char\basic_hit_sound = LoadSound("snd/sfx/Achilleus/achilleus-basic-hit.wav")
+			char\jump_sound = LoadSound("snd/sfx/Achilleus/achilleus-jump.wav")
+			char\step_sound = LoadSound("snd/sfx/Achilleus/achilleus-step.wav")
+			char\crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-crit.wav")
+			char\projectile_throw_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-throw.wav")
+			char\projectile_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-impact.wav")
+			char\projectile_crit_sound = LoadSound("snd/sfx/Achilleus/achilleus-projectile-crit.wav")
+			char\kill_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
+			char\death_sound = LoadSound("snd/sfx/Achilleus/achilleus-kill.wav")
 
 	End Select 
 	

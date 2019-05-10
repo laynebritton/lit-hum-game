@@ -5,7 +5,7 @@ Function loadStage(name$)
 	Select name$
 	Case "hell"
 		box.stage = New stage
-			box\gfx = LoadImage("../img/bg/9th-circle.jpg")
+			box\gfx = LoadImage("img/bg/9th-circle.jpg")
 			box\x# = -100
 			box\y# = -400
 			box\base_height# = box\y#
@@ -13,11 +13,11 @@ Function loadStage(name$)
 			floor_level=420
 			box\floor_mod# = floor_level
 
-			song  = LoadSound("../snd/bgm/menu.wav")
+			song  = LoadSound("snd/bgm/menu.wav")
 
 	Case "tower"
 		box.stage = New stage
-			box\gfx = LoadImage("../img/bg/house.jpg")
+			box\gfx = LoadImage("img/bg/house.jpg")
 			box\x# = -300
 			box\y# = -730
 			box\base_height# = box\y#
@@ -25,10 +25,10 @@ Function loadStage(name$)
 			floor_level=500
 			box\floor_mod# = floor_level
 
-			song  = LoadSound("../snd/bgm/montaigne.mp3")
+			song  = LoadSound("snd/bgm/montaigne.mp3")
 	Case "symposium"
 		box.stage = New stage
-			box\gfx = LoadImage("../img/bg/symposium.jpg")
+			box\gfx = LoadImage("img/bg/symposium.jpg")
 			box\x# = -300
 			box\y# = 0
 			box\base_height# = box\y#
@@ -36,10 +36,10 @@ Function loadStage(name$)
 			floor_level=500
 			box\floor_mod# = floor_level
 
-			song  = LoadSound("../snd/bgm/videruntomnes.mp3")
+			song  = LoadSound("snd/bgm/videruntomnes.mp3")
 	Case "troy"
 		box.stage = New stage
-			box\gfx = LoadImage("../img/bg/troy4.jpg")
+			box\gfx = LoadImage("img/bg/troy4.jpg")
 			box\x# = -200
 			box\y# = -750
 			box\base_height# = box\y#
@@ -47,11 +47,11 @@ Function loadStage(name$)
 			floor_level=460
 			box\floor_mod# = floor_level
 
-			song  = LoadSound("../snd/bgm/revenge.mp3")
+			song  = LoadSound("snd/bgm/revenge.mp3")
 			
 	Case "carthage"
 		box.stage = New stage
-			box\gfx = LoadImage("../img/bg/carthage.png")
+			box\gfx = LoadImage("img/bg/carthage.png")
 			box\x# = -350
 			box\y# = -900
 			box\base_height# = box\y#
@@ -59,11 +59,11 @@ Function loadStage(name$)
 			floor_level=460
 			box\floor_mod# = floor_level
 
-			song  = LoadSound("../snd/bgm/nemesis.mp3")
+			song  = LoadSound("snd/bgm/nemesis.mp3")
 			
 	Case "polyphemus"
 		box.stage = New stage
-			box\gfx = LoadImage("../img/bg/polyphemus-2.jpg")
+			box\gfx = LoadImage("img/bg/polyphemus-2.jpg")
 			box\x# = -1000
 			box\y# = -450
 			box\base_height# = box\y#
@@ -71,11 +71,11 @@ Function loadStage(name$)
 			floor_level=460
 			box\floor_mod# = floor_level
 
-			song  = LoadSound("../snd/bgm/avenge.mp3")
+			song  = LoadSound("snd/bgm/avenge.mp3")
 
 	Case "thermopylae"
 		box.stage = New stage
-			box\gfx = LoadImage("../img/bg/thermopylae-6.png")
+			box\gfx = LoadImage("img/bg/thermopylae-6.png")
 			box\x# = -150
 			box\y# = -550
 			box\base_height# = box\y#
@@ -83,11 +83,11 @@ Function loadStage(name$)
 			floor_level=460
 			box\floor_mod# = floor_level
 			
-			song  = LoadSound("../snd/bgm/nemesis.mp3")
+			song  = LoadSound("snd/bgm/nemesis.mp3")
 
 	Case "darcy"
 		box.stage = New stage
-			box\gfx = LoadImage("../img/bg/darcy.png")
+			box\gfx = LoadImage("img/bg/darcy.png")
 			box\x# = -100
 			box\y# = -500
 			box\base_height# = box\y#
@@ -95,11 +95,11 @@ Function loadStage(name$)
 			floor_level=460
 			box\floor_mod# = floor_level
 
-			song  = LoadSound("../snd/bgm/griselda.mp3")
+			song  = LoadSound("snd/bgm/griselda.mp3")
 			
 	Case "eden"
 		box.stage = New stage
-			box\gfx = LoadImage("../img/bg/eden4.jpg")
+			box\gfx = LoadImage("img/bg/eden4.jpg")
 			box\x# = -150
 			box\y# = -200
 			box\base_height# = box\y#
@@ -107,11 +107,11 @@ Function loadStage(name$)
 			floor_level=460
 			box\floor_mod# = floor_level
 
-			song  = LoadSound("../snd/bgm/videruntomnes.mp3")
+			song  = LoadSound("snd/bgm/videruntomnes.mp3")
 
 	Case "paradiso"
 		box.stage = New stage
-			box\gfx=LoadAnimImage("../img/bg/paradiso/anim-2.png",1920,1080,0,4)
+			box\gfx=LoadAnimImage("img/bg/paradiso/anim-2.png",1920,1080,0,4)
 			box\x# = 0
 			box\y# = 0
 			box\base_height# = box\y#
@@ -121,7 +121,7 @@ Function loadStage(name$)
 			box\frame = 0
 			box\max_frame = 4
 
-			song  = LoadSound("../snd/bgm/carminaburana2.wav")
+			song  = LoadSound("snd/bgm/carminaburana2.wav")
 			
 	For box.stage = Each stage
 		;box\floor_mod# = floor_level
