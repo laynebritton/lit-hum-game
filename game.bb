@@ -1,5 +1,5 @@
 ;Graphics Settings
-Graphics3D 1920,1080,32,1
+Graphics3D 1920,1080,32,3
 AppTitle "Lit Hum Fighter v1.0","Close game?"
 SetBuffer BackBuffer()
 
